@@ -1,0 +1,5 @@
+pandas
+pathlib2
+matplotlib
+lxml
+click

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<verify>
+	<!-- Raven stutter efficiency file  -->
+<format type="header" text="BATTERY LIFE SETTINGS" />
+<header comment="ACP Power Features" />
+	<reg type="smn" recommend="0x2" path="PPR::ACP::ACPPGFSM::socket0::die0::ACP_PGFSM_STATUS" desc="ACP Power Gating (Static)" />
+<format type="break" />
+
+</verify>

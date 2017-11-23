@@ -1,0 +1,29 @@
+===============================================
+How to Run
+===============================================
+* This script needs to be run on host system
+with access to Wombat and Kysy.
+* Need latest Kysy, which can be found in RMS,
+http://rms/downloads
+
+1. Run the script using command prompt with
+administrator privilege. The syntax is as
+follows,
+
+stutter_efficiency_without_pdm_mode.rb {wombat_ip}
+
+for example, for my system,
+
+stutter_efficiency_without_pdm_mode.rb 10.1.37.70
+
+2. Username and password are default to "SMU","SMU"
+and can be changed on line 15 in the script
+
+3. Duration of the log can be changed on line 159
+in the script. The syntax is as follows,
+
+sleep({duration_in_seconds})
+
+for example, logging for 120 seconds,
+
+sleep(120)
