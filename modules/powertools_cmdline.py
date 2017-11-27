@@ -1,3 +1,5 @@
+# need to use python 32-bit as kysy is 32-bit
+
 # TODO: stutter efficiency log_with_pdm_mode
 # TODO: util.xml_to_dataframe value as number
 # TODO: read_register_fields_in_dataframe check recommend==value
@@ -52,9 +54,9 @@ import sys
 import matplotlib.pyplot
 
 # import kysy modules
-# print(os.path.abspath('C:\Program Files (x86)\AMD\Kysy\Python'));
-load_dir = os.path.abspath('C:\Program Files (x86)\AMD\Kysy\Python')
+load_dir = os.path.abspath('C:/bin/amd/kysy/Python')
 sys.path.append(load_dir)
+print (sys.path)
 
 from util import Util
 from stutter_efficiency import StutterEfficiency
