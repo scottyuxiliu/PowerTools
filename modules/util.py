@@ -21,7 +21,7 @@ class Util:
     read_xml_registers
     read_xml_register_fields
     write_xml_register_fields
-    
+
     """
     def __init__(self,
                  connect_type=None,
@@ -101,6 +101,17 @@ class Util:
                 self.wombat.cpuDebug().exitDebug()
                 time.sleep(5)
             if verbose is True: print("success")
+
+    def read_memory(self, base_address, size):
+        mem_mapped = Kysy.PhysicalMemorySpace.mapMemory(self.platform.platformAccess(),
+                                                        Kysy.PPRCoreTopologyPhysicalIDs(0, 0, 0, 0, 0),
+                                                        base_address,
+                                                        size,
+                                                        Kysy.MEMORY_DESTINATION_AUTO,
+                                                        Kysy.MEMORY_TYPE_AUTO)
+        mem_mapped.read
+
+        return 0
 
     def read_register(self, register_path, return_type='hex', verbose=False):
         """
