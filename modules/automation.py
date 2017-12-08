@@ -10,8 +10,8 @@ from util import Util
 
 connect_type = 'yaap'
 ip = '10.1.37.106'
-username = 'kysy'
-password = 'kysy'
+username = 'SMU'
+password = 'SMU'
 
 ut = Util(connect_type, ip, username, password)
 

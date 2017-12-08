@@ -3,7 +3,6 @@ import numpy
 import math
 import pandas
 import time
-import unicodedata
 from lxml import etree
 
 import KysyEnvironment
@@ -103,77 +102,104 @@ class Util:
             if verbose is True: print("success")
 
     def read_memory(self, base_address, size):
-        mem_mapped = Kysy.PhysicalMemorySpace.mapMemory(self.platform.platformAccess(),
-                                                        Kysy.PPRCoreTopologyPhysicalIDs(0, 0, 0, 0, 0),
-                                                        base_address,
-                                                        size,
-                                                        Kysy.MEMORY_DESTINATION_AUTO,
-                                                        Kysy.MEMORY_TYPE_AUTO)
-        mem_mapped.read
-
         return 0
 
-    def read_register(self, register_path, return_type='hex', verbose=False):
+    def read_register(self, register_path, return_type='hex', verbose=False, repeat=0, repeat_interval=0):
         """
         read register
         :param register_path:
         :param return_type: return hex or int
-        :param verbose:
+        :param verbose: output all the messages
+        :param repeat: number of times to repeat, 0 means no repeat
+        :param repeat_interval: number of seconds to wait between two reads
         :return: register hex value
         """
-        register = self.platform.regByPath(register_path)
-        register.read()
-        if return_type == 'hex':
-            if verbose is True: print ("reading {0}...".format(register_path))
-            return hex(register.value()).rstrip('L')
-        elif return_type == 'int':
-            if verbose is True: print ("reading {0}...".format(register_path))
-            return register.value()
-        else:
-            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+        dictlist = []
+        value = 0
 
-    def read_register_field(self, register_path, register_field_name, return_type='hex'):
+        for i in range(repeat):
+            register = self.platform.regByPath(register_path)
+            register.read()
+            if return_type == 'hex':
+                if verbose is True: print ("reading {0}...".format(register_path))
+                value = hex(register.value()).rstrip('L')
+                if verbose is True: print("    {0} = {1}".format(register_path, value))
+                dictlist.append({"path": register_path, "value": value})
+            elif return_type == 'int':
+                if verbose is True: print ("reading {0}...".format(register_path))
+                value = register.value()
+                if verbose is True: print("    {0} = {1}".format(register_path, value))
+                dictlist.append({"path": register_path, "value": value})
+            else:
+                raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+
+            time.sleep(repeat_interval)
+
+        return dictlist
+
+    def read_register_field(self, register_path, register_field_name, return_type='hex', verbose=False, repeat=0, repeat_interval=0):
         """
         read a single register field
         :param register_path:
         :param register_field_name:
         :param return_type:
+        :param verbose: output all the messages
+        :param repeat: number of times to repeat, 0 means no repeat
+        :param repeat_interval: number of seconds to wait between two reads
         :return:
         """
-        register = self.platform.regByPath(register_path)
-        register.read()
-        if return_type == 'hex':
-            return hex(register.field(register_field_name).value()).rstrip('L')
-        elif return_type == 'int':
-            return register.field(register_field_name).value()
-        else:
-            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+        dictlist = []
+        value = 0
 
-    def read_registers_in_dataframe(self, registers_dataframe, return_type='hex', verbose=False):
+        for i in range(repeat):
+            register = self.platform.regByPath(register_path)
+            register.read()
+            if return_type == 'hex':
+                if verbose is True: print ("reading {0}[{1}]...".format(register_path, register_field_name))
+                value = hex(register.field(register_field_name).value()).rstrip('L')
+                if verbose is True: print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
+                dictlist.append({"path": register_path, "field": register_field_name, "value": value})
+            elif return_type == 'int':
+                if verbose is True: print ("reading {0}[{1}]...".format(register_path, register_field_name))
+                value = register.field(register_field_name).value()
+                if verbose is True: print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
+                dictlist.append({"path": register_path, "field": register_field_name, "value": value})
+            else:
+                raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+
+            time.sleep(repeat_interval)
+
+        return dictlist
+
+    def read_registers_in_dataframe(self, registers_dataframe, return_type='hex', verbose=False, repeat=0, repeat_interval=0):
         """
 
         :param registers_dataframe:
         :param return_type:
         :param verbose: print out each register read
+        :param repeat: number of times to repeat, 0 means no repeat
+        :param repeat_interval: number of seconds to wait between two reads
         :return:
         """
         regs_dictlist = registers_dataframe.to_dict('records')
-        if return_type == 'hex':
-            for reg_dict in regs_dictlist:
-                if verbose is True: print ("reading {0}...".format(reg_dict['path']))
-                register = self.platform.regByPath(reg_dict['path'])
-                register.read()
-                reg_dict['value'] = hex(register.value()).rstrip('L')
-                if verbose is True: print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
-        elif return_type == 'int':
-            for reg_dict in regs_dictlist:
-                if verbose is True: print ("reading {0}...".format(reg_dict['path']))
-                register = self.platform.regByPath(reg_dict['path'])
-                register.read()
-                reg_dict['value'] = register.value()
-                if verbose is True: print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
-        else:
-            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+
+        for i in range(repeat):
+            if return_type == 'hex':
+                for reg_dict in regs_dictlist:
+                    if verbose is True: print ("reading {0}...".format(reg_dict['path']))
+                    register = self.platform.regByPath(reg_dict['path'])
+                    register.read()
+                    reg_dict['value'] = hex(register.value()).rstrip('L')
+                    if verbose is True: print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
+            elif return_type == 'int':
+                for reg_dict in regs_dictlist:
+                    if verbose is True: print ("reading {0}...".format(reg_dict['path']))
+                    register = self.platform.regByPath(reg_dict['path'])
+                    register.read()
+                    reg_dict['value'] = register.value()
+                    if verbose is True: print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
+            else:
+                raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
         return pandas.DataFrame(regs_dictlist)
 
