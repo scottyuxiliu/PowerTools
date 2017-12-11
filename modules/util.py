@@ -83,39 +83,46 @@ class Util:
 
     def enter_pdm_mode(self, verbose=False):
         if self.wombat.cpuDebug().debugEnabled() == 1:
-            if verbose is True: print ("CPU already in debug mode")
+            if verbose is True:
+                print ("CPU already in debug mode")
         else:
             while self.wombat.cpuDebug().debugEnabled() == 0:
-                if verbose is True: print ("attempting to enter PDM mode..."),
+                if verbose is True:
+                    print ("attempting to enter PDM mode..."),
                 self.wombat.cpuDebug().requestDebug()
                 time.sleep(5)
-            if verbose is True: print ("success")
+            if verbose is True:
+                print ("success")
 
     def exit_pdm_mode(self, verbose=False):
         if self.wombat.cpuDebug().debugEnabled() == 0:
-            if verbose is True: print ("CPU already out of debug mode")
+            if verbose is True:
+                print ("CPU already out of debug mode")
         else:
             while self.wombat.cpuDebug().debugEnabled() == 1:
-                if verbose is True: print ("attempting to exit PDM mode..."),
+                if verbose is True:
+                    print ("attempting to exit PDM mode..."),
                 self.wombat.cpuDebug().exitDebug()
                 time.sleep(5)
-            if verbose is True: print("success")
+            if verbose is True:
+                print("success")
 
     def read_memory(self, base_address, size):
         return 0
 
-    def read_register(self, register_path, return_type='hex', verbose=False, repeat=0, repeat_interval=0):
+    def read_register(self, register_path, return_type='hex', verbose=False, log_duration=1, log_period=1):
         """
         read register
         :param register_path:
         :param return_type: return hex or int
         :param verbose: output all the messages
-        :param repeat: number of times to repeat, 0 means no repeat
-        :param repeat_interval: number of seconds to wait between two reads
-        :return: register hex value
+        :param log_duration: number of seconds to log
+        :param log_period: number of seconds to wait between two reads
+        :return: default to register hex value
         """
         dictlist = []
         value = 0
+        repeat = log_duration / log_period
 
         for i in range(repeat):
             register = self.platform.regByPath(register_path)
@@ -133,23 +140,24 @@ class Util:
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
-            time.sleep(repeat_interval)
+            time.sleep(log_period)
 
         return dictlist
 
-    def read_register_field(self, register_path, register_field_name, return_type='hex', verbose=False, repeat=0, repeat_interval=0):
+    def read_register_field(self, register_path, register_field_name, return_type='hex', verbose=False, log_duration=1, log_period=1):
         """
         read a single register field
         :param register_path:
         :param register_field_name:
         :param return_type:
         :param verbose: output all the messages
-        :param repeat: number of times to repeat, 0 means no repeat
-        :param repeat_interval: number of seconds to wait between two reads
+        :param log_duration: number of seconds to log
+        :param log_period: number of seconds to wait between two reads
         :return:
         """
         dictlist = []
         value = 0
+        repeat = log_duration / log_period
 
         for i in range(repeat):
             register = self.platform.regByPath(register_path)
@@ -167,91 +175,117 @@ class Util:
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
-            time.sleep(repeat_interval)
+            time.sleep(log_period)
 
         return dictlist
 
-    def read_registers_in_dataframe(self, registers_dataframe, return_type='hex', verbose=False, repeat=0, repeat_interval=0):
+    def read_registers_in_dataframe(self, registers_dataframe, return_type='hex', verbose=False, log_duration=0, log_period=0):
         """
 
         :param registers_dataframe:
         :param return_type:
         :param verbose: print out each register read
-        :param repeat: number of times to repeat, 0 means no repeat
-        :param repeat_interval: number of seconds to wait between two reads
-        :return:
+        :param log_duration: number of seconds to log
+        :param log_period: number of seconds to wait between two reads
+        :return: dataframe
         """
         regs_dictlist = registers_dataframe.to_dict('records')
+        repeat = log_duration / log_period
 
         for i in range(repeat):
             if return_type == 'hex':
                 for reg_dict in regs_dictlist:
-                    if verbose is True: print ("reading {0}...".format(reg_dict['path']))
+                    if verbose is True:
+                        print ("reading {0}...".format(reg_dict['path']))
+
                     register = self.platform.regByPath(reg_dict['path'])
                     register.read()
-                    reg_dict['value'] = hex(register.value()).rstrip('L')
-                    if verbose is True: print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
+                    reg_dict['value'+str(i)] = hex(register.value()).rstrip('L')
+
+                    if verbose is True:
+                        print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
             elif return_type == 'int':
                 for reg_dict in regs_dictlist:
-                    if verbose is True: print ("reading {0}...".format(reg_dict['path']))
+                    if verbose is True:
+                        print ("reading {0}...".format(reg_dict['path']))
+
                     register = self.platform.regByPath(reg_dict['path'])
                     register.read()
-                    reg_dict['value'] = register.value()
-                    if verbose is True: print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
+                    reg_dict['value'+str(i)] = register.value()
+
+                    if verbose is True:
+                        print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
         return pandas.DataFrame(regs_dictlist)
 
-    def read_register_fields_in_dataframe(self, registers_dataframe, return_type='hex', status_check=True, verbose=False):
+    def read_register_fields_in_dataframe(self,
+                                          registers_dataframe,
+                                          return_type='hex',
+                                          verbose=False,
+                                          log_duration=0,
+                                          log_period=0,
+                                          status_check=True):
         """
         bitfield and path should both be present
         if status_check is true, recommend must be present
         :param registers_dataframe:
         :param return_type:
-        :param status_check: check if value == recommend
         :param verbose: print out each register read
+        :param log_duration: number of seconds to log
+        :param log_period: number of seconds to wait between two reads
+        :param status_check: check if value == recommend
         :return:
         """
         regs_dictlist = registers_dataframe.to_dict('records')
+        repeat = log_duration / log_period
 
         # if checking recommend == value, recommend field must be present in the dataframe
         if status_check is True:
             if any('recommend' in reg_dict for reg_dict in regs_dictlist) is False:
                 raise RuntimeError('there is no recommend column in the dataframe passed in')
 
-        if return_type == 'hex':
-            for reg_dict in regs_dictlist:
-                if verbose is True: print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
-                register = self.platform.regByPath(reg_dict['path'])
-                register.read()
-                if verbose is True: print ("done")
-                reg_dict['value'] = hex(register.field(reg_dict['bitfield']).value()).rstrip('L')
-                if verbose is True: print ("    {0}[{1}] = {2}".format(reg_dict['path'],
-                                                                       reg_dict['bitfield'],
-                                                                       reg_dict['value']))
-                # check if recommend == value
-                if status_check is True:
-                    if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status': ''})
-                    else: reg_dict.update({'status': 'BAD'})
+        for i in range(repeat):
+            if return_type == 'hex':
+                for reg_dict in regs_dictlist:
+                    if verbose is True:
+                        print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
 
-        elif return_type == 'int':
-            for reg_dict in regs_dictlist:
-                if verbose is True: print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
-                register = self.platform.regByPath(reg_dict['path'])
-                register.read()
-                if verbose is True: print ("done")
-                reg_dict['value'] = register.field(reg_dict['bitfield']).value()
-                if verbose is True: print ("    {0}[{1}] = {2}".format(reg_dict['path'],
-                                                                       reg_dict['bitfield'],
-                                                                       reg_dict['value']))
+                    register = self.platform.regByPath(reg_dict['path'])
+                    register.read()
 
-                if status_check is True:
-                    reg_dict['recommend'] = int(reg_dict['recommend'], 16) # convert hex to int
-                    if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status': ''})
-                    else: reg_dict.update({'status': 'BAD'})
-        else:
-            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+                    if verbose is True:
+                        print ("done")
+
+                    reg_dict['value'+str(i)] = hex(register.field(reg_dict['bitfield']).value()).rstrip('L')
+
+                    if verbose is True:
+                        print ("    {0}[{1}] = {2}".format(reg_dict['path'],
+                                                           reg_dict['bitfield'],
+                                                           reg_dict['value']))
+                    # check if recommend == value
+                    if status_check is True:
+                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status': ''})
+                        else: reg_dict.update({'status': 'BAD'})
+
+            elif return_type == 'int':
+                for reg_dict in regs_dictlist:
+                    if verbose is True: print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
+                    register = self.platform.regByPath(reg_dict['path'])
+                    register.read()
+                    if verbose is True: print ("done")
+                    reg_dict['value'] = register.field(reg_dict['bitfield']).value()
+                    if verbose is True: print ("    {0}[{1}] = {2}".format(reg_dict['path'],
+                                                                           reg_dict['bitfield'],
+                                                                           reg_dict['value']))
+
+                    if status_check is True:
+                        reg_dict['recommend'] = int(reg_dict['recommend'], 16) # convert hex to int
+                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status': ''})
+                        else: reg_dict.update({'status': 'BAD'})
+            else:
+                raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
         return pandas.DataFrame(regs_dictlist)
 
@@ -477,40 +511,6 @@ class Util:
 
 
     """ others """
-    def read_screen_refresh_rate(self):
-        data = []
-        reg_path = "PPR::OPTC::OTG::socket0::die0::OTG_V_TOTAL_MIN"
-
-        start_time = time.time()
-        for i in range(600):
-            refresh_rate = 148500000/(2200*int(self.read_register(reg_path)))
-            data.append({'time (s)': time.time()-start_time, 'refresh rate (Hz)': refresh_rate})
-            print("loop: {0}, refresh_rate: {1}".format(i, refresh_rate))
-            time.sleep(1)
-        df = pandas.DataFrame(data)
-        print(df)
-        df.to_csv('C:/Users/jaoliu/Documents/b30t14_0730stack_vb2_drrdis_refreshrate_mm14_0.csv')
-        return 0
-
-    def read_fmt_bit_depth_control(self):
-        data = []
-        start_time = time.time()
-
-        for i in range(1500):
-            data.append({'time (s)': time.time()-start_time,
-                         'FMT_BIT_DEPTH_CONTROL (FMT0)': self.read_register("PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL"),
-                         'FMT_BIT_DEPTH_CONTROL (FMT1)': self.read_register("PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt1_dispdec_FMT_BIT_DEPTH_CONTROL"),
-                         'FMT_BIT_DEPTH_CONTROL (FMT2)': self.read_register("PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt2_dispdec_FMT_BIT_DEPTH_CONTROL"),
-                         'FMT_BIT_DEPTH_CONTROL (FMT3)': self.read_register("PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt3_dispdec_FMT_BIT_DEPTH_CONTROL"),
-                         'FMT_BIT_DEPTH_CONTROL (FMT4)': self.read_register("PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt4_dispdec_FMT_BIT_DEPTH_CONTROL"),
-                         'FMT_BIT_DEPTH_CONTROL (FMT5)': self.read_register("PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt5_dispdec_FMT_BIT_DEPTH_CONTROL")})
-            print(data[-1])
-            time.sleep(2)
-        df = pandas.DataFrame(data)
-        print (df)
-        df.to_csv('C:/Users/jaoliu/Documents/FMT_BIT_DEPTH_CONTROL_0.csv')
-
-        return 0
 
     def subtract(self, a, b):
         """
@@ -521,9 +521,3 @@ class Util:
         """
         sub = a-b
         return sub
-
-    def _normalize_caseless(self,text):
-        return unicodedata.normalize("NFKD", text.casefold())
-
-    def _caseless_equal(self,left,right):
-        return self._normalize_caseless(left) == self._normalize_caseless(right)

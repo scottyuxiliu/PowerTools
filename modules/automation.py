@@ -15,4 +15,12 @@ password = 'SMU'
 
 ut = Util(connect_type, ip, username, password)
 
-ut.read_memory(0x124c4,8)
+# Example 1: read register multiple times
+def read_screen_refresh_rate():
+
+    reg_path = "PPR::OPTC::OTG::socket0::die0::OTG_V_TOTAL_MIN"
+    print (ut.read_register(reg_path, 'hex', True, 20, 1))
+
+    return 0
+
+
