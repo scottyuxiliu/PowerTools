@@ -142,7 +142,7 @@ class Util:
 
             time.sleep(log_period)
 
-        return dictlist
+        return pandas.DataFrame(dictlist)
 
     def read_register_field(self, register_path, register_field_name, return_type='hex', verbose=False, log_duration=1, log_period=1):
         """
@@ -179,7 +179,12 @@ class Util:
 
         return dictlist
 
-    def read_registers_in_dataframe(self, registers_dataframe, return_type='hex', verbose=False, log_duration=0, log_period=0):
+    def read_registers_in_dataframe(self,
+                                    registers_dataframe,
+                                    return_type='hex',
+                                    verbose=False,
+                                    log_duration=0,
+                                    log_period=0):
         """
 
         :param registers_dataframe:
@@ -203,7 +208,7 @@ class Util:
                     reg_dict['value'+str(i)] = hex(register.value()).rstrip('L')
 
                     if verbose is True:
-                        print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
+                        print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value'+str(i)]))
             elif return_type == 'int':
                 for reg_dict in regs_dictlist:
                     if verbose is True:
@@ -214,7 +219,7 @@ class Util:
                     reg_dict['value'+str(i)] = register.value()
 
                     if verbose is True:
-                        print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value']))
+                        print ("    {0} = {1}".format(reg_dict['path'], reg_dict['value'+str(i)]))
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
@@ -241,10 +246,11 @@ class Util:
         regs_dictlist = registers_dataframe.to_dict('records')
         repeat = log_duration / log_period
 
-        # if checking recommend == value, recommend field must be present in the dataframe
+        # if checking recommend == value, recommend field must be present in the dataframe, otherwise skip status check
         if status_check is True:
             if any('recommend' in reg_dict for reg_dict in regs_dictlist) is False:
-                raise RuntimeError('there is no recommend column in the dataframe passed in')
+                print ('there is no recommend column in the dataframe passed in')
+                status_check = False
 
         for i in range(repeat):
             if return_type == 'hex':
@@ -266,28 +272,55 @@ class Util:
                                                            reg_dict['value']))
                     # check if recommend == value
                     if status_check is True:
-                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status': ''})
-                        else: reg_dict.update({'status': 'BAD'})
+                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status'+str(i): ''})
+                        else: reg_dict.update({'status'+str(i): 'BAD'})
 
             elif return_type == 'int':
                 for reg_dict in regs_dictlist:
-                    if verbose is True: print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
+                    if verbose is True:
+                        print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
                     register = self.platform.regByPath(reg_dict['path'])
                     register.read()
-                    if verbose is True: print ("done")
-                    reg_dict['value'] = register.field(reg_dict['bitfield']).value()
+                    if verbose is True:
+                        print ("done")
+                    reg_dict['value'+str(i)] = register.field(reg_dict['bitfield']).value()
                     if verbose is True: print ("    {0}[{1}] = {2}".format(reg_dict['path'],
                                                                            reg_dict['bitfield'],
                                                                            reg_dict['value']))
 
                     if status_check is True:
                         reg_dict['recommend'] = int(reg_dict['recommend'], 16) # convert hex to int
-                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status': ''})
-                        else: reg_dict.update({'status': 'BAD'})
+                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status'+(i): ''})
+                        else: reg_dict.update({'status'+str(i): 'BAD'})
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
         return pandas.DataFrame(regs_dictlist)
+
+    def read_registers_in_xml_file(self,
+                                   xml_file_path,
+                                   results_csv_path=None,
+                                   return_type='hex',
+                                   verbose=False,
+                                   log_duration=0,
+                                   log_period=0):
+        """
+
+        :param xml_file_path:
+        :param results_csv_path:
+        :param return_type:
+        :param verbose:
+        :param log_duration: number of seconds to log
+        :param log_period: number of seconds to wait between two reads
+        :return:
+        """
+
+        df = self.xml_to_dataframe(xml_file_path)
+        df = self.read_registers_in_dataframe(df, return_type, verbose, log_duration, log_period)
+        if verbose is True:
+            print df
+        if results_csv_path is not None:
+            return df.to_csv(results_csv_path)
 
     def read_register_fields_in_xml_file(self, xml_file_path, results_csv_path=None, return_type='hex', status_check=True, verbose=False):
         """
@@ -425,7 +458,7 @@ class Util:
             # xml_regs.append(xml_reg.attrib)
         xml_regs = [xml_reg for xml_reg in xml_regs if xml_reg['path'] is not None]
         xml_regs_df = pandas.DataFrame(xml_regs) # dict list to dataframe
-        xml_regs_df['value'] = ''
+        # xml_regs_df['value'] = ''
         return xml_regs_df
 
     def xml_to_dictlist(self, xml_path):
