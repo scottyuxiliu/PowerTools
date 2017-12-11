@@ -118,24 +118,27 @@ class Util:
         :param verbose: output all the messages
         :param log_duration: number of seconds to log
         :param log_period: number of seconds to wait between two reads
-        :return: default to register hex value
+        :return: df, default to register hex value
         """
         dictlist = []
-        value = 0
         repeat = log_duration / log_period
 
         for i in range(repeat):
             register = self.platform.regByPath(register_path)
             register.read()
             if return_type == 'hex':
-                if verbose is True: print ("reading {0}...".format(register_path))
+                if verbose is True:
+                    print ("reading {0}...".format(register_path))
                 value = hex(register.value()).rstrip('L')
-                if verbose is True: print("    {0} = {1}".format(register_path, value))
+                if verbose is True:
+                    print("    {0} = {1}".format(register_path, value))
                 dictlist.append({"path": register_path, "value": value})
             elif return_type == 'int':
-                if verbose is True: print ("reading {0}...".format(register_path))
+                if verbose is True:
+                    print ("reading {0}...".format(register_path))
                 value = register.value()
-                if verbose is True: print("    {0} = {1}".format(register_path, value))
+                if verbose is True:
+                    print("    {0} = {1}".format(register_path, value))
                 dictlist.append({"path": register_path, "value": value})
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
@@ -144,7 +147,13 @@ class Util:
 
         return pandas.DataFrame(dictlist)
 
-    def read_register_field(self, register_path, register_field_name, return_type='hex', verbose=False, log_duration=1, log_period=1):
+    def read_register_field(self,
+                            register_path,
+                            register_field_name,
+                            return_type='hex',
+                            verbose=False,
+                            log_duration=1,
+                            log_period=1):
         """
         read a single register field
         :param register_path:
@@ -153,7 +162,7 @@ class Util:
         :param verbose: output all the messages
         :param log_duration: number of seconds to log
         :param log_period: number of seconds to wait between two reads
-        :return:
+        :return: df
         """
         dictlist = []
         value = 0
@@ -163,31 +172,35 @@ class Util:
             register = self.platform.regByPath(register_path)
             register.read()
             if return_type == 'hex':
-                if verbose is True: print ("reading {0}[{1}]...".format(register_path, register_field_name))
+                if verbose is True:
+                    print ("reading {0}[{1}]...".format(register_path, register_field_name))
                 value = hex(register.field(register_field_name).value()).rstrip('L')
-                if verbose is True: print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
+                if verbose is True:
+                    print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
                 dictlist.append({"path": register_path, "field": register_field_name, "value": value})
             elif return_type == 'int':
-                if verbose is True: print ("reading {0}[{1}]...".format(register_path, register_field_name))
+                if verbose is True:
+                    print ("reading {0}[{1}]...".format(register_path, register_field_name))
                 value = register.field(register_field_name).value()
-                if verbose is True: print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
+                if verbose is True:
+                    print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
                 dictlist.append({"path": register_path, "field": register_field_name, "value": value})
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
             time.sleep(log_period)
 
-        return dictlist
+        return pandas.DataFrame(dictlist)
 
     def read_registers_in_dataframe(self,
                                     registers_dataframe,
                                     return_type='hex',
                                     verbose=False,
-                                    log_duration=0,
-                                    log_period=0):
+                                    log_duration=1,
+                                    log_period=1):
         """
 
-        :param registers_dataframe:
+        :param registers_dataframe: must have path
         :param return_type:
         :param verbose: print out each register read
         :param log_duration: number of seconds to log
@@ -229,19 +242,18 @@ class Util:
                                           registers_dataframe,
                                           return_type='hex',
                                           verbose=False,
-                                          log_duration=0,
-                                          log_period=0,
+                                          log_duration=1,
+                                          log_period=1,
                                           status_check=True):
         """
-        bitfield and path should both be present
-        if status_check is true, recommend must be present
-        :param registers_dataframe:
+
+        :param registers_dataframe: must have path and bitfield; if status_check is true, recommend must be present
         :param return_type:
         :param verbose: print out each register read
         :param log_duration: number of seconds to log
         :param log_period: number of seconds to wait between two reads
         :param status_check: check if value == recommend
-        :return:
+        :return: df
         """
         regs_dictlist = registers_dataframe.to_dict('records')
         repeat = log_duration / log_period
@@ -269,10 +281,10 @@ class Util:
                     if verbose is True:
                         print ("    {0}[{1}] = {2}".format(reg_dict['path'],
                                                            reg_dict['bitfield'],
-                                                           reg_dict['value']))
+                                                           reg_dict['value'+str(i)]))
                     # check if recommend == value
                     if status_check is True:
-                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status'+str(i): ''})
+                        if reg_dict['recommend'] == reg_dict['value'+str(i)]: reg_dict.update({'status'+str(i): ''})
                         else: reg_dict.update({'status'+str(i): 'BAD'})
 
             elif return_type == 'int':
@@ -286,11 +298,11 @@ class Util:
                     reg_dict['value'+str(i)] = register.field(reg_dict['bitfield']).value()
                     if verbose is True: print ("    {0}[{1}] = {2}".format(reg_dict['path'],
                                                                            reg_dict['bitfield'],
-                                                                           reg_dict['value']))
+                                                                           reg_dict['value'+str(i)]))
 
                     if status_check is True:
                         reg_dict['recommend'] = int(reg_dict['recommend'], 16) # convert hex to int
-                        if reg_dict['recommend'] == reg_dict['value']: reg_dict.update({'status'+(i): ''})
+                        if reg_dict['recommend'] == reg_dict['value'+str(i)]: reg_dict.update({'status'+(i): ''})
                         else: reg_dict.update({'status'+str(i): 'BAD'})
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
@@ -302,8 +314,8 @@ class Util:
                                    results_csv_path=None,
                                    return_type='hex',
                                    verbose=False,
-                                   log_duration=0,
-                                   log_period=0):
+                                   log_duration=1,
+                                   log_period=1):
         """
 
         :param xml_file_path:
@@ -315,27 +327,39 @@ class Util:
         :return:
         """
 
-        df = self.xml_to_dataframe(xml_file_path)
+        df = self.xml_to_dataframe(xml_file_path, False, False)
         df = self.read_registers_in_dataframe(df, return_type, verbose, log_duration, log_period)
         if verbose is True:
             print df
         if results_csv_path is not None:
             return df.to_csv(results_csv_path)
 
-    def read_register_fields_in_xml_file(self, xml_file_path, results_csv_path=None, return_type='hex', status_check=True, verbose=False):
+    def read_register_fields_in_xml_file(self,
+                                         xml_file_path,
+                                         results_csv_path=None,
+                                         return_type='hex',
+                                         verbose=False,
+                                         log_duration=1,
+                                         log_period=1,
+                                         status_check=False):
         """
 
-        :param regs:
-        :param src_type:
-        :param status_check:
+        :param xml_file_path:
+        :param results_csv_path:
+        :param return_type:
         :param verbose:
+        :param log_duration: number of seconds to log
+        :param log_period: number of seconds to wait between two reads
+        :param status_check:
         :return:
         """
 
-        df = self.xml_to_dataframe(xml_file_path)
-        df = self.read_register_fields_in_dataframe(df, return_type, status_check, verbose)
-        print df
-        if results_csv_path is not None: return df.to_csv(results_csv_path)
+        df = self.xml_to_dataframe(xml_file_path, True, status_check)
+        df = self.read_register_fields_in_dataframe(df, return_type, verbose, log_duration, log_period, status_check)
+        if verbose is True:
+            print df
+        if results_csv_path is not None:
+            return df.to_csv(results_csv_path)
 
     def write_register(self, register_path, register_value, verbose=False):
         """
@@ -441,24 +465,34 @@ class Util:
         self.write_register_fields_in_dataframe(df, verbose)
 
     """ data loading section """
-    def xml_to_dataframe(self, xml_file_path):
+    def xml_to_dataframe(self, xml_file_path, bitfield_present=False, recommend_present=False):
         """
         read the xml file of registers and convert them to a dataframe
 
         :param xml_file_path:
+        :param bitfield_present: if the xml file has bitfield attribute
+        :param recommend_present: if the xml file has recommend attribute
         :return: df
         """
         xml_file = etree.parse(xml_file_path)
         xml_regs = []
-        for xml_reg in xml_file.findall('reg'):
-            # print (xml_reg.attrib)
-            xml_regs.append({'bitfield':xml_reg.get('bitfield'),
-                             'recommend':hex(int(xml_reg.get('recommend'), 16)).rstrip('L'), # string to int, and to hex
-                             'path':xml_reg.get('path')})
-            # xml_regs.append(xml_reg.attrib)
+
+        if bitfield_present is False and recommend_present is False:
+            for xml_reg in xml_file.findall('reg'):
+                xml_regs.append({'path': xml_reg.get('path')})
+        elif bitfield_present is True and recommend_present is False:
+            for xml_reg in xml_file.findall('reg'):
+                xml_regs.append({'bitfield': xml_reg.get('bitfield'), 'path': xml_reg.get('path')})
+        elif bitfield_present is True and recommend_present is True:
+            for xml_reg in xml_file.findall('reg'):
+                xml_regs.append({'bitfield':xml_reg.get('bitfield'),
+                                 'recommend':hex(int(xml_reg.get('recommend'), 16)).rstrip('L'), # string to int, and to hex
+                                 'path':xml_reg.get('path')})
+        else:
+            raise TypeError('incorrect arguments; you need to have bitfields if you have recommends')
+
         xml_regs = [xml_reg for xml_reg in xml_regs if xml_reg['path'] is not None]
         xml_regs_df = pandas.DataFrame(xml_regs) # dict list to dataframe
-        # xml_regs_df['value'] = ''
         return xml_regs_df
 
     def xml_to_dictlist(self, xml_path):
