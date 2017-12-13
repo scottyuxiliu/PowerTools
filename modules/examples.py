@@ -35,5 +35,6 @@ def read_fmt_bit_depth_control():
     return 0
 
 
+
 # read_screen_refresh_rate()
 read_fmt_bit_depth_control()
