@@ -7,9 +7,9 @@ class Sysexam:
         print ("done")
 
     def start_sysexam_on_host(self, sysexam_verify_xml_path, verify_results_csv_path):
-        xml_regs_df = self.util.xml_to_dataframe(sysexam_verify_xml_path)
-        # print xml_regs_df
-        xml_regs_df = self.util.read_register_fields_in_dataframe(xml_regs_df, 'int', True, True) # update bitfield values for each xml_reg
+        xml_regs_df = self.util.xml_to_dataframe(sysexam_verify_xml_path, True, True)
+        print xml_regs_df
+        xml_regs_df = self.util.read_register_fields_in_dataframe(xml_regs_df, 'hex', True, 1, 1, True) # update bitfield values for each xml_reg
         # print xml_regs_df
         # print xml_regs_df.columns.tolist()
         xml_regs_df = xml_regs_df[['status','path','bitfield','recommend','value']]
