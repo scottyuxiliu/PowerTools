@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<verify>
+	<!-- Raven verify file  -->
+<format type="header" text="BATTERY LIFE SETTINGS" />
+<header comment="ACP Power Features" />
+	<reg type="smn" address="" bitfield="" recommend="0x0" path="PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL" desc="" />
+	<reg type="smn" address="" bitfield="" recommend="0x0" path="PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt1_dispdec_FMT_BIT_DEPTH_CONTROL" desc="" />
+    <reg type="smn" address="" bitfield="" recommend="0x0" path="PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt2_dispdec_FMT_BIT_DEPTH_CONTROL" desc="" />
+    <reg type="smn" address="" bitfield="" recommend="0x0" path="PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt3_dispdec_FMT_BIT_DEPTH_CONTROL" desc="" />
+    <reg type="smn" address="" bitfield="" recommend="0x0" path="PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt4_dispdec_FMT_BIT_DEPTH_CONTROL" desc="" />
+    <reg type="smn" address="" bitfield="" recommend="0x0" path="PPR::OPP::FMT::socket0::die0::FMT_BIT_DEPTH_CONTROL_dce_dc_opp_addrmap_fmt5_dispdec_FMT_BIT_DEPTH_CONTROL" desc="" />
+</verify>
