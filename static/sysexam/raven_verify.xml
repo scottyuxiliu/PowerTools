@@ -84,17 +84,17 @@
 	<reg type="smn" address="0x599f4" bitfield="SBTSI_SBRMI_CLK_GATE_EN" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_PWRMGT" desc="TMON Clock Gating" />
 <format type="break" />
 <header comment="DF Power Features" />
-	<reg type="df" function="0x5" offset="0x344" instanceId="0xa0001" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::BCST::Cc6StatusFlat" desc=" CC6 " />
-	<reg type="df" function="0x5" offset="0x334" instanceId="0xa0001" bitfield="CpuComplexInPc6" recommend="0x1" path="PPR::DF::socket0::die0::BCST::ComplexPwrDnControl_CPUGPU" desc=" CPUOFF " />
-	<reg type="df" function="0x5" offset="0x360" instanceId="0xa0001" bitfield="ClkGateDis" recommend="0x0" path="PPR::DF::socket0::die0::BCST::PwrMgtCfg0" desc=" DF Clock Gating " />
-	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfInCstate" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc=" DF C-state " />
-	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="AllClientsIdle" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc=" DF all clients idle " />
-	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateClkPwrDnEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc=" DF Clock Power Down " />
-	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateDisable" recommend="0x0" path="PPR::DF::socket0::die0::BCST::CstateControl" desc=" DF C-States " />
+	<reg type="df" function="0x5" offset="0x344" instanceId="0xa0001" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::BCST::Cc6StatusFlat" desc="CC6 status for the cores, each bit maps to a core" />
+	<reg type="df" function="0x5" offset="0x334" instanceId="0xa0001" bitfield="CpuComplexInPc6" recommend="0x1" path="PPR::DF::socket0::die0::BCST::ComplexPwrDnControl_CPUGPU" desc="CPUOFF status" />
+	<reg type="df" function="0x5" offset="0x360" instanceId="0xa0001" bitfield="ClkGateDis" recommend="0x0" path="PPR::DF::socket0::die0::BCST::PwrMgtCfg0" desc="DF Clock Gating" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfInCstate" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF C-state status" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="AllClientsIdle" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF all clients idle" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateClkPwrDnEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF Clock Power Down when in C-state" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateDisable" recommend="0x0" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="Enable/Disable DF C-States" />
 	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateSelfRefrEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc=" DF Two Regions Stutter Mode " />
 	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateMmPwrGateOptEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" />
 	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateMmStutterOptEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" />
-	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstatePwrGateEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc=" DF Power Gating " />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstatePwrGateEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF Power Gating" />
 <format type="break" />
 <header comment="Display Power Features" />
 	<reg type="smn" address="0xe720" bitfield="DCHUBBUB_ARB_ALLOW_SELF_REFRESH_FORCE_ENABLE" recommend="0x0" path="PPR::DCHUBBUB::HUBBUB::socket0::die0::DCHUBBUB_ARB_DRAM_STATE_CNTL" desc="" />
@@ -213,7 +213,7 @@
 	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_REGS_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
 	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_AER_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
 <format type="break" />
-<header comment="PCIe Power Features" />
+<header comment="NBIO - PCIe Power Features" />
 	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_ALLOW_IN_L1" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
 	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
 	<reg type="smn" address="0x11180460" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
