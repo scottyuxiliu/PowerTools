@@ -48,5 +48,5 @@ def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
 
 # read_screen_refresh_rate()
 # read_fmt_bit_depth_control()
-start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/sysexam_registers_rvfp5_mandolindap.xml",
-                      "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvam4_b0dvt_15w_w10rs3_sysexam_0.csv")
+start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/sysexam_registers_rv.xml",
+                      "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvfp5_b0dvt_15w_jasonsystem_w10rs3_vmd8944n_1740rc26_sysexam_0.csv")
