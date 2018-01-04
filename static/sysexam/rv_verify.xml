@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<verify>
+	<!-- Raven verify file  -->
+<format type="header" text="BATTERY LIFE SETTINGS" />
+<header comment="ACP Power Features" />
+	<reg type="smn" address="0x1241420" bitfield="ACP_PGFSM_STATUS" recommend="0x2" path="PPR::ACP::ACPPGFSM::socket0::die0::ACP_PGFSM_STATUS" desc="ACP Power Gating (Static)" />
+<format type="break" />
+<header comment="ATHUB Power Features" />
+	<reg type="smn" address="0x30a8" bitfield="PG_STATUS" recommend="0x1" path="PPR::ATHUB::ATS::socket0::die0::ATHUB_MISC_CNTL" desc="ATHUB Dynamic Power Gating" />
+	<reg type="smn" address="0x30a8" bitfield="CG_STATUS" recommend="0x1" path="PPR::ATHUB::ATS::socket0::die0::ATHUB_MISC_CNTL" desc="ATHUB Clock Gating" />
+<format type="break" />
+<header comment="CLK Power Features" />
+	<reg type="smn" address="0x5b2f0" bitfield="DS_SMNCLK_MAP_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_4_n0" desc="SMNCLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b10c" bitfield="CLK0_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_ALLOW_DS_n0" desc="SMNCLK allow deep sleep signal" />
+	<reg type="smn" address="0x5b2e8" bitfield="DS_SYSHUB_MAP_EN" recommend="0x2" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_2_n0" desc="SOCCLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b134" bitfield="CLK1_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_ALLOW_DS_n0" desc="SOCCLK allow deep sleep signal" />
+	<reg type="smn" address="0x5b2ec" bitfield="DS_MP0HUB_MAP_EN" recommend="0x5" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_3_n0" desc="MP0CLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b15c" bitfield="CLK2_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_ALLOW_DS_n0" desc="MP0CLK allow deep sleep signal" />
+	<reg type="smn" address="0x5b2ec" bitfield="DS_MP1HUB_MAP_EN" recommend="0x9" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_3_n0" desc="MP1CLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b184" bitfield="CLK3_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_ALLOW_DS_n0" desc="MP1CLK allow deep sleep signal" />
+	<reg type="smn" address="0x5b2e4" bitfield="DS_NBIO_MAP_EN" recommend="0x22" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_1_n0" desc="LCLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b1d4" bitfield="CLK5_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_ALLOW_DS_n0" desc="LCLK allow deep sleep signal" />
+	<reg type="smn" address="0x5b2f4" bitfield="DS_SHUBCLK_MAP_EN" recommend="0x60" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_5_n0" desc="SHUBCLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b1fc" bitfield="CLK6_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK6_ALLOW_DS_n0" desc="SHUBCLK allow deep sleep signal" />
+	<reg type="smn" address="0x5b24c" bitfield="CLK8_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK8_ALLOW_DS_n0" desc="DCEFCLK allow deep sleep signal" />
+	<reg type="smn" address="0x5b90c" bitfield="CLK0_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_ALLOW_DS_n1" desc="VCLK has no allow deep sleep signal" />
+	<reg type="smn" address="0x5b934" bitfield="CLK1_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_ALLOW_DS_n1" desc="DCLK has no allow deep sleep signal" />
+	<reg type="smn" address="0x5b95c" bitfield="CLK2_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_ALLOW_DS_n1" desc="ACLK has no allow deep sleep signal" />
+	<reg type="smn" address="0x5b984" bitfield="CLK3_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_ALLOW_DS_n1" desc="ISPCLK has no allow deep sleep signal" />
+	<reg type="smn" address="0x5c10c" bitfield="CLK0_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_ALLOW_DS_n2" desc="FCLK allow deep sleep signal" />
+	<reg type="smn" address="0x5baf0" bitfield="DS_GFXCLK_MAP_EN" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DS_MAP_4_n0" desc="GFXCLK deep sleep sideband map" />
+	<reg type="smn" address="0x5f90c" bitfield="CLK0_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK0_ALLOW_DS_n0" desc="GFXCLK allow deep sleep signal" />
+<format type="break" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_0" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_1" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_2" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_3" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_4" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_5" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_6" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_7" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_8" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_9" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_10" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_11" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
+<format type="break" />
+	<reg type="smn" address="0x5b310" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_STATUS_n0" desc="GPU0 PLL (CLK instance 0) power down" />
+	<reg type="smn" address="0x5bb10" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_STATUS_n1" desc="GPU1 PLL (CLK instance 1) power down" />
+	<reg type="smn" address="0x5c310" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_STATUS_n2" desc="FCLK PLL (CLK instance 2) power down" />
+	<reg type="smn" address="0x5fb10" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_FSM_STATUS_n0" desc="GFXCLK PLL (CLK instance 4) power down" />
+	<reg type="smn" address="0x5b308" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_CONTROL_n0" />
+	<reg type="smn" address="0x5bb08" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_CONTROL_n0" />
+	<reg type="smn" address="0x5c308" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_CONTROL_n2" />
+	<reg type="smn" address="0x5fb08" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_FSM_CONTROL_n0" />
+<format type="break" />
+	<reg type="smn" address="0x5b238" bitfield="CLK7_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK7_SLICE_CNTL_n0" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5b288" bitfield="CLK9_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK9_SLICE_CNTL_n0" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5b9c0" bitfield="CLK4_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK4_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5b9e8" bitfield="CLK5_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5ba10" bitfield="CLK6_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK6_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5ba38" bitfield="CLK7_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK7_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5ba60" bitfield="CLK8_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK8_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5ba88" bitfield="CLK9_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK9_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5bab0" bitfield="CLK10_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK10_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5bad8" bitfield="CLK11_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK11_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c148" bitfield="CLK1_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c170" bitfield="CLK2_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c198" bitfield="CLK3_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c1c0" bitfield="CLK4_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK4_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c1e8" bitfield="CLK5_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c210" bitfield="CLK6_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK6_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c238" bitfield="CLK7_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK7_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c260" bitfield="CLK8_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK8_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c288" bitfield="CLK9_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK9_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c2b0" bitfield="CLK10_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK10_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+	<reg type="smn" address="0x5c2d8" bitfield="CLK11_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK11_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
+<format type="break" />
+	<reg type="smn" address="0x5b300" bitfield="DYN_PM_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_PWR_MGMT_CONTROL_n0" desc="Dynamic REFCLK gating" />
+	<reg type="smn" address="0x5bb00" bitfield="DYN_PM_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_PWR_MGMT_CONTROL_n1" desc="Dynamic REFCLK gating" />
+	<reg type="smn" address="0x5c300" bitfield="DYN_PM_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_PWR_MGMT_CONTROL_n2" desc="Dynamic REFCLK gating" />
+	<reg type="smn" address="0x5e00c" bitfield="DS_EN" recommend="0x1" path="PPR::SMU::FUSE::socket0::die0::FUSE_LP_CONTROL" desc="Fuse SRAM Power Gating" />
+	<reg type="smn" address="0x5e00c" bitfield="CLKG_EN" recommend="0x1" path="PPR::SMU::FUSE::socket0::die0::FUSE_LP_CONTROL" desc="Fuse Clock Gating" />
+	<reg type="smn" address="0x599bc" bitfield="Turn_Off_TMON0" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_TCON_LOCAL1" desc="TMON Power Down" />
+	<reg type="smn" address="0x599f4" bitfield="SBTSI_SBRMI_CLK_GATE_EN" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_PWRMGT" desc="TMON Clock Gating" />
+<format type="break" />
+<header comment="DF Power Features" />
+	<reg type="df" function="0x5" offset="0x344" instanceId="0xa0001" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::BCST::Cc6StatusFlat" desc="CC6 status for the cores, each bit maps to a core" />
+	<reg type="df" function="0x5" offset="0x334" instanceId="0xa0001" bitfield="CpuComplexInPc6" recommend="0x1" path="PPR::DF::socket0::die0::BCST::ComplexPwrDnControl_CPUGPU" desc="CPUOFF status" />
+	<reg type="df" function="0x5" offset="0x360" instanceId="0xa0001" bitfield="ClkGateDis" recommend="0x0" path="PPR::DF::socket0::die0::BCST::PwrMgtCfg0" desc="DF Clock Gating" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfInCstate" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF C-state status" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="AllClientsIdle" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF all clients idle" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateClkPwrDnEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF Clock Power Down when in C-state" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateDisable" recommend="0x0" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="Enable/Disable DF C-States" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateSelfRefrEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc=" DF Two Regions Stutter Mode " />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateMmPwrGateOptEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstateMmStutterOptEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" />
+	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfCstatePwrGateEn" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF Power Gating" />
+<format type="break" />
+<header comment="Display Power Features" />
+	<reg type="smn" address="0xe720" bitfield="DCHUBBUB_ARB_ALLOW_SELF_REFRESH_FORCE_ENABLE" recommend="0x0" path="PPR::DCHUBBUB::HUBBUB::socket0::die0::DCHUBBUB_ARB_DRAM_STATE_CNTL" desc="" />
+<format type="break" />
+	<reg type="smn" address="0x13FC0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound to verify Freesync on/off" />
+	<reg type="smn" address="0x13FC4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
+<format type="break" />
+<header comment="GFX Power Features" />
+	<reg type="smn" address="0x3b10c" bitfield="GFX_POWER_GATING_ENABLE" recommend="0x1" path="PPR::GC::RLC::socket0::die0::RLC_PG_CNTL" desc="Coarse Grain Power Gating (CGPG), 0 if GFXOFF enabled"/>
+	<reg type="smn" address="0x3b10c" bitfield="DYN_PER_CU_PG_ENABLE" recommend="0x0" path="PPR::GC::RLC::socket0::die0::RLC_PG_CNTL" desc="Load Balancing Per Watt (LBPW)"/>
+	<reg type="smn" address="0x3b124" bitfield="CGCG_EN" recommend="0x1" path="PPR::GC::RLC::socket0::die0::RLC_CGCG_CGLS_CTRL" desc="Coarse Grain Clock Gating (CGCG)"/>
+	<reg type="smn" address="0x3b120" bitfield="GFXIP_CGCG_OVERRIDE" recommend="0x0" path="PPR::GC::RLC::socket0::die0::RLC_CGTT_MGCG_OVERRIDE" />
+	<reg type="smn" address="0x3b120" bitfield="GFXIP_MGCG_OVERRIDE" recommend="0x0" path="PPR::GC::RLC::socket0::die0::RLC_CGTT_MGCG_OVERRIDE" />
+	<reg type="smn" address="0x3b068" bitfield="MGCG_EN" recommend="0x1" path="PPR::GC::RLC::socket0::die0::RLC_MGCG_CTRL" desc="Medium Grain Clock Gating (MGCG)"/>
+	<reg type="smn" address="0x3b064" bitfield="LOAD_BALANCE_ENABLE" recommend="0x0" path="PPR::GC::RLC::socket0::die0::RLC_LB_CNTL" desc="Load Balancing" />
+	<reg type="smn" address="0x3b10f1c" bitfield="DATA" recommend="0x520000e" path="PPR::MP::MP1CRU::socket0::die0::MP1_EXT_SCRATCH7" desc="GFXOFF" />
+<format type="break" />
+<header comment="FCH - AOAC Power Features" />
+	<reg type="smn" address="0xfed81e4e" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link39" desc="set D3Cold as target, this is touchpad" />
+	<reg type="smn" address="0xfed81e50" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link40" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e56" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link43" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e58" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link44" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e60" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link48" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e62" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link49" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e72" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link57" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e74" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link58" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e78" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link60" desc="set D3Cold as target" />
+<format type="break" />
+	<reg type="smn" address="0xfed81e4f" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link39" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e51" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link40" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e57" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link43" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e59" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link44" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e61" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link48" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e63" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link49" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e73" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link57" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e75" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link58" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e79" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link60" desc="D3Cold status" />
+<format type="break" />
+<header comment="FCH - I2C4 Power Features" />
+	<reg type="smn" address="0xfedc6708" bitfield="DAT" recommend="0x20303" path="PPR::FCH::I2C4::socket0::die0::RFMUX_Port0_Control8" desc="RFMUX shut down" />
+	<reg type="smn" address="0xfedc6718" bitfield="DAT" recommend="0x20303" path="PPR::FCH::I2C4::socket0::die0::RFMUX_Port1_Control8" desc="RFMUX shut down" />
+<format type="break" />
+<header comment="FCH - CLKGEN Power Features" />
+	<reg type="smn" address="0xfed80e4c" bitfield="PCIe_PHY_A_Refclk_Global_Dynamic_EnB" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::MiscClkCntl4" desc="CLKGEN buffer turn off" />
+	<reg type="smn" address="0xfed80eb0" bitfield="CLKGEN_PHY_A0_Refclk_Static_Disable" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="" />
+	<reg type="smn" address="0xfed80eb0" bitfield="CLKGEN_PHY_A1_SataMac_En" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="" />
+	<reg type="smn" address="0xfed80eb0" bitfield="CLKGEN_PHY_A1_Refclk_Dynamic_EnB" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="" />
+<format type="break" />
+<header comment="NBIO - IOHC Power Features" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" desc="IOHC clock gating" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
+	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" desc="IOHC clock gating" />
+	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" />
+	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" />
+	<reg type="smn" address="0x13b1008c" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x1" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="IOHC clock gating" />
+<format type="break" />
+	<reg type="smn" address="0x13b10340" bitfield="CFG_PG_EN" recommend="0x1" path="PPR::IOHC::socket0::die0::IOHC_PGMST_CNTL" desc="IOHC Dynamic Power Gating"/>
+<format type="break" />
+<header comment="NBIO - IOMMU Power Features" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_HOSTRSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_DMARSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_HOSTREQ_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+<format type="break" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_HOSTRSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_DMARSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_HOSTREQ_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+<format type="break" />
+	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ACacheDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ADynamicDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ARegsDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BMiscDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BDynamicDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BRegsDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+<format type="break" />
+	<reg type="smn" address="0x15700104" bitfield="IP_PG_en" recommend="0x1" path="PPR::IOMMUL2::socket0::die0::L2_PWRGATE_CNTRL_REG_3" desc="IOMMU Dyanmic Power Gating" />
+	<reg type="smn" address="0x157000d4" bitfield="L2AREG_SD_EN" recommend="0x1" path="PPR::IOMMUL2::socket0::die0::L2_L2A_MEMPWR_GATE_1" desc="IOMMU Memory Power Gating" />
+	<reg type="smn" address="0x13f01254" bitfield="L2BREG_SD_EN" recommend="0x1" path="PPR::IOMMUL2::socket0::die0::L2_L2B_MEMPWR_GATE_1" desc="IOMMU Memory Power Gating" />
+<format type="break" />
+<header comment="NBIO - NBIF/Syshub Power Features" />
+	<reg type="smn" address="0x1013a05c" bitfield="NBIF_MGCG_EN_LCLK" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF_MGCG_CTRL_LCLK" desc="nBIF Medium Grain Clock Gating" />
+	<reg type="smn" address="0x1013a0e0" bitfield="NBIF_CFG_PG_EN" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF_PGMST_CTRL" desc="nBIF Dynanic Power Gating" />
+	<reg type="smn" address="0x1013a05c" bitfield="NBIF_MGCG_HYSTERESIS_LCLK" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF_MGCG_CTRL_LCLK" desc="nBIF Medium Grain Clock Gating hysteresis timer" />
+	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_HYSTERESIS_SOCCLK" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" desc="Syshub SOCCLK Medium Grain Clock Gating hysteresis timer" />
+	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_HYSTERESIS_SHUBCLK" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" desc="Syshub SHUBCLK Medium Grain Clock Gating hysteresis timer" />
+<format type="break" />
+	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_EN_SHUBCLK" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" desc="SYSHUB Clock Gating" />
+	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_HST_DIS_SHUBCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" />
+	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_DMA_DIS_SHUBCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" />
+	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_REGS_DIS_SHUBCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" />
+	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_EN_SOCCLK" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
+	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_HST_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
+	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_DMA_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
+	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_REGS_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
+	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_AER_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
+<format type="break" />
+<header comment="NBIO - PCIe Power Features" />
+	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_ALLOW_IN_L1" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="0x11180460" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+<format type="break" />
+	<reg type="smn" address="0x11180070" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="0x11180070" bitfield="MST_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="0x11180070" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="0x11180070" bitfield="SLV_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+<format type="break" />
+	<reg type="smn" address="0x10148074" bitfield="PM_CONTROL" recommend="0x3" desc="ASPM L0s and L1 (L1.2)" />
+<format type="break" />
+<header comment="NBIO - SST Power Features" />
+	<reg type="smn" address="0x17400004" bitfield="TXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST0::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+	<reg type="smn" address="0x17400004" bitfield="RXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST0::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+	<reg type="smn" address="0x17500004" bitfield="TXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST1::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+	<reg type="smn" address="0x17500004" bitfield="RXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST1::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+<format type="break" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK4" recommend="0x1" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+<format type="break" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK4" recommend="0x1" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+<format type="break" />
+<header comment="ISP Power Features" />
+	<reg type="smn" address="0x60000" bitfield="ISP_POWER_STATUS" recommend="0x1" path="PPR::ISP::ISPPG::socket0::die0::ISP_POWER_STATUS" desc="ISP Power Gating"/>
+<format type="break" />
+<header comment="SDMA Power Features" />
+	<reg type="smn" address="0x4a38" bitfield="PG_CNTL_STATUS" recommend="0x2" path="PPR::OSS::SDMA0::socket0::die0::SDMA_POWER_GATING" desc="SDMA Dynamic Power Gating" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE0" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE1" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE2" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE3" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE4" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE5" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE6" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+	<reg type="smn" address="0x49ec" bitfield="SOFT_OVERRIDE7" recommend="0x0" path="PPR::OSS::SDMA0::socket0::die0::SDMA0_CLK_CTRL" />
+<format type="break" />
+<header comment="PSP Power Features" />
+	<reg type="smn" address="0x380603c" bitfield="DYN_CLOCK_EN" recommend="0x1" desc="CCP Clock Gating" />
+	<reg type="smn" address="0x380603c" bitfield="VAR_CCP_LS_EN" recommend="0x1" desc="CCP Light Sleep" />
+	<reg type="smn" address="0x3806054" bitfield="KSB_RAM_DS_EN" recommend="0x1" desc="PGMEM for KSB" />
+	<reg type="smn" address="0x3806054" bitfield="KSB_RAM_SLEEP" recommend="0x1" desc="PGMEM for KSB" />
+	<reg type="smn" address="0x380604c" bitfield="HW_PG_EN" recommend="0x1" desc="CCP Power Gating" />
+<format type="break" />
+<header comment="DCN Power Features" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="ESCCLK_GATE_DISABLE" desc="ESCCLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="BYTECLK_GATE_DISABLE" desc="BYTECLK Clock Gating in Display Controllerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DSICLK_GATE_DISABLE" desc="DSICLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_R_DIG_GATE_DISABLE" desc="REFCLK_R_DIG Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_GATE_DISABLE" desc="REFCLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="UNB_DB_CLK_GATE_DISABLE" desc="UNB_DB_CLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GTC_GATE_DISABLE" desc="DPREFCLK Clock Gating for DP 1.2 Global Time Code" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AUDIO_DTO2_CLK_GATE_DISABLE" desc="AUDIO_DTO2_CLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK2_GATE_DISABLE" desc="AOMCLK2 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK1_GATE_DISABLE" desc="AOMCLK1 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK0_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPPCLK_GATE_DISABLE" desc="DPPCLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_R_DCCG_GATE_DISABLE" desc="DPREFCLK_R_DCCG Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPDBG_CLK_GATE_DISABLE" desc="DPDBG_CLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DVOACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DACACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="SOCCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_R_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+<format type="break" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_GATE_DISABLE" desc="SYMCLKG Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_GATE_DISABLE" desc="SYMCLKF Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_GATE_DISABLE" desc="SYMCLKE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_GATE_DISABLE" desc="SYMCLKD Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_GATE_DISABLE" desc="SYMCLKC Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_GATE_DISABLE" desc="SYMCLKB Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_GATE_DISABLE" desc="SYMCLKA Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_FE_GATE_DISABLE" desc="SYMCLKG_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_FE_GATE_DISABLE" desc="SYMCLKF_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_FE_GATE_DISABLE" desc="SYMCLKE_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_FE_GATE_DISABLE" desc="SYMCLKD_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_FE_GATE_DISABLE" desc="SYMCLKC_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_FE_GATE_DISABLE" desc="SYMCLKB_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_FE_GATE_DISABLE" desc="SYMCLKA_FE Clock Gating in the Display Controller PHY output" />
+<format type="break" />
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1"  bitfield="DBG_CLK_GATE_EN" recommend="1" desc=" SDP Debug Clock Gating"/>
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="Med_BClk_Gate_En" recommend="1" desc="SDP Medium Grain B-Link Clock Gating"/>
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="HostMemShutDownEn" recommend="1" desc="SDP Host Memory Power Saving"/>
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="DmaMemShutDownEn" recommend="1" desc="SDP DMA Memory Power Saving"/>
+<format type="break" />
+<header comment="UMC Power Features" />
+	<reg type="smn" address="0x501e0" bitfield="SpecPchgClkGateDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc0::MiscCfg" desc="UMC Clock Gating" />
+	<reg type="smn" address="0x501e0" bitfield="RegchClkGateEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc0::MiscCfg" desc="UMC Clock Gating" />
+	<reg type="smn" address="0x5012c" bitfield="AggrPwrDownEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc0::SpazCtrl" desc="Aggressive Power Down (pre-charge)" />
+	<reg type="smn" address="0x5012c" bitfield="PwrDownMode" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc0::SpazCtrl" desc="Power Down Mode: Full Channel or Partial Channel" />
+	<reg type="smn" address="0x5012c" bitfield="PwrDownEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc0::SpazCtrl" desc="Power Down Mode: Full Channel or Partial Channel" />
+	<reg type="smn" address="0x5012c" bitfield="LpDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc0::SpazCtrl" desc="PHY Power Down Mode" />
+	<reg type="smn" address="0x511e4" bitfield="RegClkGateEn" recommend="0x1" path="PPR::UMC::CTRL::socket0::die0::umc0::UmcCtrlMiscCfg" />
+	<reg type="smn" address="0x511ac" bitfield="DFICLK_CGDis" recommend="0x0" path="PPR::UMC::CTRL::socket0::die0::umc0::ClkDivCtrl" />
+	<reg type="smn" address="0x511ac" bitfield="UCLK_CGDis" recommend="0x0" path="PPR::UMC::CTRL::socket0::die0::umc0::ClkDivCtrl" />
+	<reg type="smn" address="0x511ac" bitfield="FCLK_CGDis" recommend="0x0" path="PPR::UMC::CTRL::socket0::die0::umc0::ClkDivCtrl" />
+	<reg type="smn" address="0x511b0" bitfield="PwrGtEn" recommend="0x1" path="PPR::UMC::CTRL::socket0::die0::umc0::MstateCtrl" desc="UMC Dynamic Power Gating" />
+<format type="break" />
+	<reg type="smn" address="0x1501e0" bitfield="SpecPchgClkGateDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc1::MiscCfg" desc="UMC Clock Gating" />
+	<reg type="smn" address="0x1501e0" bitfield="RegchClkGateEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::MiscCfg" desc="UMC Clock Gating" />
+	<reg type="smn" address="0x15012c" bitfield="AggrPwrDownEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl" desc="Aggressive Power Down (pre-charge)" />
+	<reg type="smn" address="0x15012c" bitfield="PwrDownMode" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl" desc="Power Down Mode: Full Channel or Partial Channel" />
+	<reg type="smn" address="0x15012c" bitfield="PwrDownEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl" desc="Power Down Mode: Full Channel or Partial Channel" />
+	<reg type="smn" address="0x15012c" bitfield="LpDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl" desc="PHY Power Down Mode" />
+	<reg type="smn" address="0x1511e4" bitfield="RegClkGateEn" path="PPR::UMC::CTRL::socket0::die0::umc1::UmcCtrlMiscCfg" recommend="0x1" />
+	<reg type="smn" address="0x1511ac" bitfield="DFICLK_CGDis" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" recommend="0x0" />
+	<reg type="smn" address="0x1511ac" bitfield="UCLK_CGDis" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" recommend="0x0" />
+	<reg type="smn" address="0x1511ac" bitfield="FCLK_CGDis" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" recommend="0x0" />
+	<reg type="smn" address="0x1511b0" bitfield="PwrGtEn" recommend="0x1" path="PPR::UMC::CTRL::socket0::die0::umc1::MstateCtrl" desc="UMC Dynamic Power Gating" />
+<format type="break" />
+<header comment="VCN Power Features" />
+	<reg type="smn" address="0x20cb0" bitfield="DYN_CLOCK_MODE" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_CTRL" desc="SW Controlled Clock Gating" />
+	<reg type="smn" address="0x20d94" bitfield="DYN_CLOCK_MODE" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::JPEG_CGC_CTRL" desc="SW Controlled Clock Gating" />
+	<reg type="smn" address="0x20ca0" bitfield="LMI_MC_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD LMI MC memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="MPC_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD MPC memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="MPRD_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD MPRD memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="WCB_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD WCB memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="UDEC_RE_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD UDEC RE memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="UDEC_CM_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD UDEC CM memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="UDEC_IT_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD UDEC IT memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="UDEC_DB_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD UDEC DB memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="UDEC_MP_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD UDEC MP memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="SYS_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD System memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="VCPU_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD VCPU memory shutdown, 0 when UVD powered down" />
+	<reg type="smn" address="0x20ca0" bitfield="SCPU_SD_EN" recommend="0x1" path="PPR::UVD::UVD::socket0::die0::UVD_CGC_MEM_SD_CTRL" desc="UVD SCPU memory shutdown, 0 when UVD powered down" />
+<format type="break" />
+	<reg type="smn" address="0x1fb04" recommend="0x2AAAAA" desc="UVD SW Controlled Power Gating (Static)" />
+	<reg type="smn" address="0x1fb10" bitfield="UVD_POWER_STATUS" recommend="0x1" path="PPR::UVD::UVDPG::socket0::die0::UVD_POWER_STATUS" desc="UVD dynamic Power Gating" />
+<format type="break" />
+<header comment="PSP Power Features" />
+	<reg type="smn" address="0x3710010" bitfield="MEM_DEEP_SLEEP_EN" recommend="0x1" path="" desc="PSP SRAM Power Gating" />
+	<reg type="smn" address="0x3710010" bitfield="CLK_GATE_EN" recommend="0x1" path="" desc="PSP Clock Gating" />
+	<reg type="smn" address="0x3d10008" bitfield="MEM_DEEP_SLEEP_EN" recommend="0x1" path="" desc="MP2 SRAM Deep Sleep" />
+	<reg type="smn" address="0x3d10008" bitfield="CLK_GATE_EN" recommend="0x1" path="" desc="MP2 Clock Gating" />
+<format type="break" />
+<header comment="ChL3Cfg0" />
+	<reg type="msr" offset="0xc0011092" bitfield="MeshGateLvl" recommend="0x2" msgbad="CHECK" desc="L3 Mesh Clock Gating " />
+
+
+</verify>

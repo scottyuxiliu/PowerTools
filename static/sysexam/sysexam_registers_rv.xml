@@ -83,6 +83,48 @@
 	<reg type="smn" address="0x599bc" bitfield="Turn_Off_TMON0" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_TCON_LOCAL1" desc="TMON Power Down" />
 	<reg type="smn" address="0x599f4" bitfield="SBTSI_SBRMI_CLK_GATE_EN" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_PWRMGT" desc="TMON Clock Gating" />
 <format type="break" />
+<header comment="DCN Power Features" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="ESCCLK_GATE_DISABLE" desc="ESCCLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="BYTECLK_GATE_DISABLE" desc="BYTECLK Clock Gating in Display Controllerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DSICLK_GATE_DISABLE" desc="DSICLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_R_DIG_GATE_DISABLE" desc="REFCLK_R_DIG Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_GATE_DISABLE" desc="REFCLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="UNB_DB_CLK_GATE_DISABLE" desc="UNB_DB_CLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GTC_GATE_DISABLE" desc="DPREFCLK Clock Gating for DP 1.2 Global Time Code" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AUDIO_DTO2_CLK_GATE_DISABLE" desc="AUDIO_DTO2_CLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK2_GATE_DISABLE" desc="AOMCLK2 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK1_GATE_DISABLE" desc="AOMCLK1 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK0_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPPCLK_GATE_DISABLE" desc="DPPCLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_R_DCCG_GATE_DISABLE" desc="DPREFCLK_R_DCCG Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPDBG_CLK_GATE_DISABLE" desc="DPDBG_CLK Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DVOACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DACACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="SOCCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_R_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
+<format type="break" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_GATE_DISABLE" desc="SYMCLKG Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_GATE_DISABLE" desc="SYMCLKF Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_GATE_DISABLE" desc="SYMCLKE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_GATE_DISABLE" desc="SYMCLKD Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_GATE_DISABLE" desc="SYMCLKC Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_GATE_DISABLE" desc="SYMCLKB Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_GATE_DISABLE" desc="SYMCLKA Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_FE_GATE_DISABLE" desc="SYMCLKG_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_FE_GATE_DISABLE" desc="SYMCLKF_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_FE_GATE_DISABLE" desc="SYMCLKE_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_FE_GATE_DISABLE" desc="SYMCLKD_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_FE_GATE_DISABLE" desc="SYMCLKC_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_FE_GATE_DISABLE" desc="SYMCLKB_FE Clock Gating in the Display Controller PHY output" />
+	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_FE_GATE_DISABLE" desc="SYMCLKA_FE Clock Gating in the Display Controller PHY output" />
+<format type="break" />
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1"  bitfield="DBG_CLK_GATE_EN" recommend="1" desc=" SDP Debug Clock Gating"/>
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="Med_BClk_Gate_En" recommend="1" desc="SDP Medium Grain B-Link Clock Gating"/>
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="HostMemShutDownEn" recommend="1" desc="SDP Host Memory Power Saving"/>
+	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="DmaMemShutDownEn" recommend="1" desc="SDP DMA Memory Power Saving"/>
+<format type="break" />
 <header comment="DF Power Features" />
 	<reg type="df" function="0x5" offset="0x344" instanceId="0xa0001" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::BCST::Cc6StatusFlat" desc="CC6 status for the cores, each bit maps to a core" />
 	<reg type="df" function="0x5" offset="0x334" instanceId="0xa0001" bitfield="CpuComplexInPc6" recommend="0x1" path="PPR::DF::socket0::die0::BCST::ComplexPwrDnControl_CPUGPU" desc="CPUOFF status" />
@@ -99,7 +141,6 @@
 <header comment="Display Power Features" />
 	<reg type="smn" address="0xe720" bitfield="DCHUBBUB_ARB_ALLOW_SELF_REFRESH_FORCE_ENABLE" recommend="0x0" path="PPR::DCHUBBUB::HUBBUB::socket0::die0::DCHUBBUB_ARB_DRAM_STATE_CNTL" desc="" />
 <format type="break" />
-<header comment="Display Power Features" />
 	<reg type="smn" address="0x13FC0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound to verify Freesync on/off" />
 	<reg type="smn" address="0x13FC4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
 <format type="break" />
@@ -114,25 +155,25 @@
 	<reg type="smn" address="0x3b10f1c" bitfield="DATA" recommend="0x520000e" path="PPR::MP::MP1CRU::socket0::die0::MP1_EXT_SCRATCH7" desc="GFXOFF" />
 <format type="break" />
 <header comment="FCH - AOAC Power Features" />
-	<reg type="smn" address="0xfed81e4e" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link39" desc="set D3Cold as target, this is touchpad" />
-	<reg type="smn" address="0xfed81e50" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link40" desc="set D3Cold as target" />
-	<reg type="smn" address="0xfed81e56" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link43" desc="set D3Cold as target" />
-	<reg type="smn" address="0xfed81e58" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link44" desc="set D3Cold as target" />
-	<reg type="smn" address="0xfed81e60" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link48" desc="set D3Cold as target" />
-	<reg type="smn" address="0xfed81e62" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link49" desc="set D3Cold as target" />
-	<reg type="smn" address="0xfed81e72" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link57" desc="set D3Cold as target" />
-	<reg type="smn" address="0xfed81e74" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link58" desc="set D3Cold as target" />
-	<reg type="smn" address="0xfed81e78" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::DevD3Ctl_link60" desc="set D3Cold as target" />
+	<reg type="smn" address="0xfed81e4e" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link39::DevD3Ctl" desc="set D3Cold as target, this is I2C2 (touchpad)" />
+	<reg type="smn" address="0xfed81e50" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link40::DevD3Ctl" desc="set D3Cold as target, this is I2C3" />
+	<reg type="smn" address="0xfed81e56" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link43::DevD3Ctl" desc="set D3Cold as target, this is UART0" />
+	<reg type="smn" address="0xfed81e58" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link44::DevD3Ctl" desc="set D3Cold as target, this is UART1" />
+	<reg type="smn" address="0xfed81e60" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link48::DevD3Ctl" desc="set D3Cold as target, this is UART2" />
+	<reg type="smn" address="0xfed81e62" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link49::DevD3Ctl" desc="set D3Cold as target, this is AMBA" />
+	<reg type="smn" address="0xfed81e72" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link57::DevD3Ctl" desc="set D3Cold as target, this is SD1" />
+	<reg type="smn" address="0xfed81e74" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link58::DevD3Ctl" desc="set D3Cold as target, this is UART3" />
+	<reg type="smn" address="0xfed81e78" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link60::DevD3Ctl" desc="set D3Cold as target, this is eMMC" />
 <format type="break" />
-	<reg type="smn" address="0xfed81e4f" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link39" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e51" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link40" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e57" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link43" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e59" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link44" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e61" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link48" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e63" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link49" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e73" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link57" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e75" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link58" desc="D3Cold status" />
-	<reg type="smn" address="0xfed81e79" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::DevD3State_link60" desc="D3Cold status" />
+	<reg type="smn" address="0xfed81e4f" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link39::DevD3State" desc="D3Cold status of I2C2 (touchpad)" />
+	<reg type="smn" address="0xfed81e51" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link40::DevD3State" desc="D3Cold status of I2C3" />
+	<reg type="smn" address="0xfed81e57" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link43::DevD3State" desc="D3Cold status of UART0" />
+	<reg type="smn" address="0xfed81e59" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link44::DevD3State" desc="D3Cold status of UART1" />
+	<reg type="smn" address="0xfed81e61" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link48::DevD3State" desc="D3Cold status of UART2" />
+	<reg type="smn" address="0xfed81e63" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link49::DevD3State" desc="D3Cold status of AMBA" />
+	<reg type="smn" address="0xfed81e73" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link57::DevD3State" desc="D3Cold status of SD1" />
+	<reg type="smn" address="0xfed81e75" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link58::DevD3State" desc="D3Cold status of UART3" />
+	<reg type="smn" address="0xfed81e79" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link60::DevD3State" desc="D3Cold status of eMMC" />
 <format type="break" />
 <header comment="FCH - I2C4 Power Features" />
 	<reg type="smn" address="0xfedc6708" bitfield="DAT" recommend="0x20303" path="PPR::FCH::I2C4::socket0::die0::RFMUX_Port0_Control8" desc="RFMUX shut down" />
@@ -280,48 +321,6 @@
 	<reg type="smn" address="0x3806054" bitfield="KSB_RAM_SLEEP" recommend="0x1" desc="PGMEM for KSB" />
 	<reg type="smn" address="0x380604c" bitfield="HW_PG_EN" recommend="0x1" desc="CCP Power Gating" />
 <format type="break" />
-<header comment="DCN Power Features" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="ESCCLK_GATE_DISABLE" desc="ESCCLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="BYTECLK_GATE_DISABLE" desc="BYTECLK Clock Gating in Display Controllerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DSICLK_GATE_DISABLE" desc="DSICLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_R_DIG_GATE_DISABLE" desc="REFCLK_R_DIG Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_GATE_DISABLE" desc="REFCLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="UNB_DB_CLK_GATE_DISABLE" desc="UNB_DB_CLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GTC_GATE_DISABLE" desc="DPREFCLK Clock Gating for DP 1.2 Global Time Code" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AUDIO_DTO2_CLK_GATE_DISABLE" desc="AUDIO_DTO2_CLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK2_GATE_DISABLE" desc="AOMCLK2 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK1_GATE_DISABLE" desc="AOMCLK1 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK0_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPPCLK_GATE_DISABLE" desc="DPPCLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_R_DCCG_GATE_DISABLE" desc="DPREFCLK_R_DCCG Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPDBG_CLK_GATE_DISABLE" desc="DPDBG_CLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DVOACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DACACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="SOCCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_R_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-<format type="break" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_GATE_DISABLE" desc="SYMCLKG Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_GATE_DISABLE" desc="SYMCLKF Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_GATE_DISABLE" desc="SYMCLKE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_GATE_DISABLE" desc="SYMCLKD Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_GATE_DISABLE" desc="SYMCLKC Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_GATE_DISABLE" desc="SYMCLKB Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_GATE_DISABLE" desc="SYMCLKA Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_FE_GATE_DISABLE" desc="SYMCLKG_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_FE_GATE_DISABLE" desc="SYMCLKF_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_FE_GATE_DISABLE" desc="SYMCLKE_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_FE_GATE_DISABLE" desc="SYMCLKD_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_FE_GATE_DISABLE" desc="SYMCLKC_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_FE_GATE_DISABLE" desc="SYMCLKB_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_FE_GATE_DISABLE" desc="SYMCLKA_FE Clock Gating in the Display Controller PHY output" />
-<format type="break" />
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1"  bitfield="DBG_CLK_GATE_EN" recommend="1" desc=" SDP Debug Clock Gating"/>
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="Med_BClk_Gate_En" recommend="1" desc="SDP Medium Grain B-Link Clock Gating"/>
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="HostMemShutDownEn" recommend="1" desc="SDP Host Memory Power Saving"/>
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="DmaMemShutDownEn" recommend="1" desc="SDP DMA Memory Power Saving"/>
-<format type="break" />
 <header comment="UMC Power Features" />
 	<reg type="smn" address="0x501e0" bitfield="SpecPchgClkGateDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc0::MiscCfg" desc="UMC Clock Gating" />
 	<reg type="smn" address="0x501e0" bitfield="RegchClkGateEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc0::MiscCfg" desc="UMC Clock Gating" />
@@ -366,14 +365,6 @@
 	<reg type="smn" address="0x1fb04" recommend="0x2AAAAA" desc="UVD SW Controlled Power Gating (Static)" />
 	<reg type="smn" address="0x1fb10" bitfield="UVD_POWER_STATUS" recommend="0x1" path="PPR::UVD::UVDPG::socket0::die0::UVD_POWER_STATUS" desc="UVD dynamic Power Gating" />
 <format type="break" />
-<header comment="PSP Power Features" />
-	<reg type="smn" address="0x3710010" bitfield="MEM_DEEP_SLEEP_EN" recommend="0x1" path="" desc="PSP SRAM Power Gating" />
-	<reg type="smn" address="0x3710010" bitfield="CLK_GATE_EN" recommend="0x1" path="" desc="PSP Clock Gating" />
-	<reg type="smn" address="0x3d10008" bitfield="MEM_DEEP_SLEEP_EN" recommend="0x1" path="" desc="MP2 SRAM Deep Sleep" />
-	<reg type="smn" address="0x3d10008" bitfield="CLK_GATE_EN" recommend="0x1" path="" desc="MP2 Clock Gating" />
-<format type="break" />
 <header comment="ChL3Cfg0" />
 	<reg type="msr" offset="0xc0011092" bitfield="MeshGateLvl" recommend="0x2" msgbad="CHECK" desc="L3 Mesh Clock Gating " />
-
-
 </verify>

@@ -330,7 +330,7 @@ class Util:
         df = self.xml_to_dataframe(xml_file_path, False, False)
         df = self.read_registers_in_dataframe(df, return_type, verbose, log_duration, log_period)
         if verbose is True:
-            print df
+            print(df)
         if results_csv_path is not None:
             return df.to_csv(results_csv_path)
 
@@ -357,7 +357,7 @@ class Util:
         df = self.xml_to_dataframe(xml_file_path, True, status_check)
         df = self.read_register_fields_in_dataframe(df, return_type, verbose, log_duration, log_period, status_check)
         if verbose is True:
-            print df
+            print(df)
         if results_csv_path is not None:
             return df.to_csv(results_csv_path)
 
