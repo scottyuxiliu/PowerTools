@@ -83,6 +83,23 @@
 	<reg type="smn" address="0x599bc" bitfield="Turn_Off_TMON0" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_TCON_LOCAL1" desc="TMON Power Down" />
 	<reg type="smn" address="0x599f4" bitfield="SBTSI_SBRMI_CLK_GATE_EN" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_PWRMGT" desc="TMON Clock Gating" />
 <format type="break" />
+<header comment="CLK - Clock Frequencies" />
+	<reg type="smn" address="0x5B370" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B374" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B378" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B37C" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B380" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK4_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B384" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B388" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK6_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B390" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK8_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B398" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK10_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5B39C" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK11_CURRENT_CNT_n0" desc="" />
+	<reg type="smn" address="0x5BB70" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_CURRENT_CNT_n1" desc="" />
+	<reg type="smn" address="0x" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_CURRENT_CNT_n1" desc="" />
+	<reg type="smn" address="0x" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_CURRENT_CNT_n1" desc="" />
+	<reg type="smn" address="0x" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_CURRENT_CNT_n1" desc="" />
+	<reg type="smn" address="0x5C370" bitfield="" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_CURRENT_CNT_n2" desc="" />
+
 <header comment="DCN Power Features" />
 	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="ESCCLK_GATE_DISABLE" desc="ESCCLK Clock Gating in Display Controller" />
 	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="BYTECLK_GATE_DISABLE" desc="BYTECLK Clock Gating in Display Controllerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
