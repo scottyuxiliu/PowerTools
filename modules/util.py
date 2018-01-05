@@ -485,9 +485,17 @@ class Util:
                 xml_regs.append({'bitfield': xml_reg.get('bitfield'), 'path': xml_reg.get('path')})
         elif bitfield_present is True and recommend_present is True:
             for xml_reg in xml_file.findall('reg'):
-                xml_regs.append({'bitfield':xml_reg.get('bitfield'),
-                                 'recommend':hex(int(xml_reg.get('recommend'), 16)).rstrip('L'), # string to int, and to hex
-                                 'path':xml_reg.get('path')})
+                # print(xml_reg.attrib.keys())
+                if('desc' in xml_reg.attrib.keys()):
+                    xml_regs.append({'bitfield':xml_reg.get('bitfield'),
+                                     'recommend':hex(int(xml_reg.get('recommend'), 16)).rstrip('L'), # string to int, and to hex
+                                     'path':xml_reg.get('path'),
+                                     'desc':xml_reg.get('desc')})
+                else:
+                    xml_regs.append({'bitfield': xml_reg.get('bitfield'),
+                                     'recommend': hex(int(xml_reg.get('recommend'), 16)).rstrip('L'),
+                                     'path': xml_reg.get('path'),
+                                     'desc': 'n/a'})
         else:
             raise TypeError('incorrect arguments; you need to have bitfields if you have recommends')
 
