@@ -141,18 +141,18 @@
 <header comment="Display Power Features" />
 	<reg type="smn" address="0xe720" bitfield="DCHUBBUB_ARB_ALLOW_SELF_REFRESH_FORCE_ENABLE" recommend="0x0" path="PPR::DCHUBBUB::HUBBUB::socket0::die0::DCHUBBUB_ARB_DRAM_STATE_CNTL" desc="" />
 <format type="break" />
-	<reg type="smn" address="0x13FC0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG0::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound, " />
-	<reg type="smn" address="0x141C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG1::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound to verify Freesync on/off" />
-	<reg type="smn" address="0x143C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG2::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound to verify Freesync on/off" />
-	<reg type="smn" address="0x145C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG3::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound to verify Freesync on/off" />
-	<reg type="smn" address="0x147C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG4::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound to verify Freesync on/off" />
-	<reg type="smn" address="0x149C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG5::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound to verify Freesync on/off" />
-	<reg type="smn" address="0x13FC4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG0::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
-	<reg type="smn" address="0x141C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG1::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
-	<reg type="smn" address="0x143C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG2::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
-	<reg type="smn" address="0x145C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG3::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
-	<reg type="smn" address="0x147C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG4::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
-	<reg type="smn" address="0x149C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG5::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound to verify Freesync on/off" />
+	<reg type="smn" address="0x13FC0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG0::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate >= 148500*1000 / (2200 * OTG_V_TOTAL_MIN in decimal)" />
+	<reg type="smn" address="0x141C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG1::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate >= 148500*1000 / (2200 * OTG_V_TOTAL_MIN in decimal)" />
+	<reg type="smn" address="0x143C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG2::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate >= 148500*1000 / (2200 * OTG_V_TOTAL_MIN in decimal)" />
+	<reg type="smn" address="0x145C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG3::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate >= 148500*1000 / (2200 * OTG_V_TOTAL_MIN in decimal)" />
+	<reg type="smn" address="0x147C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG4::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate >= 148500*1000 / (2200 * OTG_V_TOTAL_MIN in decimal)" />
+	<reg type="smn" address="0x149C0" bitfield="OTG_V_TOTAL_MIN" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG5::OTG_V_TOTAL_MIN" desc="Screen refresh rate lower bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate >= 148500*1000 / (2200 * OTG_V_TOTAL_MIN in decimal)" />
+	<reg type="smn" address="0x13FC4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG0::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate <= 148500*1000 / (2200 * OTG_V_TOTAL_MAX in decimal)" />
+	<reg type="smn" address="0x141C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG1::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate <= 148500*1000 / (2200 * OTG_V_TOTAL_MAX in decimal)" />
+	<reg type="smn" address="0x143C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG2::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate <= 148500*1000 / (2200 * OTG_V_TOTAL_MAX in decimal)" />
+	<reg type="smn" address="0x145C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG3::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate <= 148500*1000 / (2200 * OTG_V_TOTAL_MAX in decimal)" />
+	<reg type="smn" address="0x147C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG4::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate <= 148500*1000 / (2200 * OTG_V_TOTAL_MAX in decimal)" />
+	<reg type="smn" address="0x149C4" bitfield="OTG_V_TOTAL_MAX" recommend="0" path="PPR::OPTC::OTG::socket0::die0::OTG5::OTG_V_TOTAL_MAX" desc="Screen refresh rate upper bound. Assuming a 19x10 panel, pixel clock would be 148500MHz. If Freesync is disabled, OTG_V_TOTAL_MIN = OTG_V_TOTAL_MAX = 1125 in decimal, and refresh rate = 148500*1000 / (2200 * 1125) = 60 Hz.	If Freesync is enabled, refresh rate <= 148500*1000 / (2200 * OTG_V_TOTAL_MAX in decimal)" />
 <format type="break" />
 <header comment="FCH - AOAC Power Features" />
 	<reg type="smn" address="0xfed81e4e" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link39::DevD3Ctl" desc="set D3Cold as target, this is I2C2 (touchpad)" />
@@ -285,30 +285,43 @@
 <format type="break" />
 	<reg type="smn" address="0x10148074" bitfield="PM_CONTROL" recommend="0x3" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
+<header comment="NBIO - PCIe - Function 0 Power Features" />
 	<reg type="smn" address="0x11140294" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11140294" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11140294" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11140294" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+<format type="break" />
+<header comment="NBIO - PCIe - Function 1 Power Features" />
 	<reg type="smn" address="0x11141294" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func1" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11141294" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func1" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11141294" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func1" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11141294" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func1" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+<format type="break" />
+<header comment="NBIO - PCIe - Function 2 Power Features" />
 	<reg type="smn" address="0x11142294" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func2" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11142294" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func2" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11142294" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func2" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11142294" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func2" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+<format type="break" />
+<header comment="NBIO - PCIe - Function 3 Power Features" />
 	<reg type="smn" address="0x11143294" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func3" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11143294" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func3" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11143294" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func3" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11143294" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func3" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+<format type="break" />
+<header comment="NBIO - PCIe - Function 4 Power Features" />
 	<reg type="smn" address="0x11144294" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func4" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11144294" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func4" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11144294" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func4" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11144294" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func4" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+<format type="break" />
+<header comment="NBIO - PCIe - Function 5 Power Features" />
 	<reg type="smn" address="0x11145294" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func5" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11145294" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func5" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11145294" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func5" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11145294" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func5" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+<format type="break" />
+<header comment="NBIO - PCIe - Function 6 Power Features" />
 	<reg type="smn" address="0x11146294" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func6" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11146294" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func6" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="0x11146294" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::PCIE_LC_STATE0_func6" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
@@ -363,7 +376,7 @@
 	<reg type="smn" address="0x3806054" bitfield="KSB_RAM_SLEEP" recommend="0x1" desc="PGMEM for KSB" />
 	<reg type="smn" address="0x380604c" bitfield="HW_PG_EN" recommend="0x1" desc="CCP Power Gating" />
 <format type="break" />
-<header comment="UMC Power Features" />
+<header comment="UMC - UMC0 Power Features" />
 	<reg type="smn" address="0x501e0" bitfield="SpecPchgClkGateDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc0::MiscCfg" desc="UMC Clock Gating" />
 	<reg type="smn" address="0x501e0" bitfield="RegchClkGateEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc0::MiscCfg" desc="UMC Clock Gating" />
 	<reg type="smn" address="0x5012c" bitfield="AggrPwrDownEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc0::SpazCtrl" desc="Aggressive Power Down (pre-charge)" />
@@ -376,6 +389,7 @@
 	<reg type="smn" address="0x511ac" bitfield="FCLK_CGDis" recommend="0x0" path="PPR::UMC::CTRL::socket0::die0::umc0::ClkDivCtrl" />
 	<reg type="smn" address="0x511b0" bitfield="PwrGtEn" recommend="0x1" path="PPR::UMC::CTRL::socket0::die0::umc0::MstateCtrl" desc="UMC Dynamic Power Gating" />
 <format type="break" />
+<header comment="UMC - UMC1 Power Features" />
 	<reg type="smn" address="0x1501e0" bitfield="SpecPchgClkGateDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc1::MiscCfg" desc="UMC Clock Gating" />
 	<reg type="smn" address="0x1501e0" bitfield="RegchClkGateEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::MiscCfg" desc="UMC Clock Gating" />
 	<reg type="smn" address="0x15012c" bitfield="AggrPwrDownEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl" desc="Aggressive Power Down (pre-charge)" />
