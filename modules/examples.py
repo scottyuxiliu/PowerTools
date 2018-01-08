@@ -37,14 +37,20 @@ def read_fmt_bit_depth_control():
 # Example 3: Sysexam
 def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
     xml_regs_df = ut.xml_to_dataframe(sysexam_verify_xml_path, True, True)
-    xml_regs_df = ut.read_register_fields_in_dataframe(xml_regs_df, 'hex', True, 1, 1, True) # update bitfield values for each xml_reg
+    xml_regs_df = ut.read_register_fields_in_dataframe(xml_regs_df, 'hex', True, 50, 10, True) # update bitfield values for each xml_reg
     # print(xml_regs_df)
     # xml_regs_df = xml_regs_df[['status0','path','bitfield','recommend','value0']]
     xml_regs_df.to_csv(verify_results_csv_path)
     return 0
 
+# Example 1: read register multiple times
 # read_screen_refresh_rate()
+# Example 2: read multiple registers from xml file and dump results into csv file
 # read_fmt_bit_depth_control()
+# Example 3: Sysexam
 # start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/sysexam_registers_rv.xml",
-#                       "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvfp5_b0dvt_15w_jasonsystem_w10rs3_vmd8944n_1740rc26_sysexam_2.csv")
-ut.enter_pdm_mode(True)
+#                       "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvam4_b0dvt_w10rs3_wmr7c28n_1740rc25_sysexam_1.csv")
+# Example 4: Enter/Exit PDM mode
+# ut.enter_pdm_mode(True)
+# Example 5: Memory Access
+ut.read_memory()
