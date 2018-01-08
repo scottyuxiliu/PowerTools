@@ -43,8 +43,8 @@ def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
     xml_regs_df.to_csv(verify_results_csv_path)
     return 0
 
-
 # read_screen_refresh_rate()
 # read_fmt_bit_depth_control()
-start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/sysexam_registers_rv.xml",
-                      "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvfp5_b0dvt_15w_jasonsystem_w10rs3_vmd8944n_1740rc26_sysexam_2.csv")
+# start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/sysexam_registers_rv.xml",
+#                       "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvfp5_b0dvt_15w_jasonsystem_w10rs3_vmd8944n_1740rc26_sysexam_2.csv")
+ut.enter_pdm_mode(True)

@@ -241,7 +241,7 @@
 	<reg type="smn" address="0x147000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
 	<reg type="smn" address="0x147000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
 	<reg type="smn" address="0x147000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" desc="Doesn't work in A0, works in B0" />
 	<reg type="smn" address="0x147000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
 	<reg type="smn" address="0x147000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
 <format type="break" />
@@ -252,7 +252,7 @@
 	<reg type="smn" address="0x148000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
 	<reg type="smn" address="0x148000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
 	<reg type="smn" address="0x148000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" desc="Doesn't work in A0, works in B0" />
 	<reg type="smn" address="0x148000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
 	<reg type="smn" address="0x148000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
 <format type="break" />

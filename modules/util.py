@@ -88,7 +88,7 @@ class Util:
         else:
             while self.wombat.cpuDebug().debugEnabled() == 0:
                 if verbose is True:
-                    print ("attempting to enter PDM mode..."),
+                    print ("attempting to enter PDM mode...")
                 self.wombat.cpuDebug().requestDebug()
                 time.sleep(5)
             if verbose is True:
