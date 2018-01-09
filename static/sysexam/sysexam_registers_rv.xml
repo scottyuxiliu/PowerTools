@@ -10,9 +10,9 @@
 	<reg type="smn" address="0x30a8" bitfield="CG_STATUS" recommend="0x1" path="PPR::ATHUB::ATS::socket0::die0::ATHUB_MISC_CNTL" desc="ATHUB Clock Gating" />
 <format type="break" />
 <header comment="CLK Power Features" />
-	<reg type="smn" address="0x5b2f0" bitfield="DS_SMNCLK_MAP_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_4_n0" desc="SMNCLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b2f0" bitfield="DS_SMNCLK_MAP_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_4_n0" desc="SMNCLK deep sleep sideband map: for setting Mp1ClkSMNCLKDs_allow sideband for SMNCLK, DS_SMNCLK_MAP_EN[0] = 1. DS_SMNCLK_MAP_EN[0] points to SMNCLK since SMNCLK is slice 0" />
 	<reg type="smn" address="0x5b10c" bitfield="CLK0_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_ALLOW_DS_n0" desc="SMNCLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b2e8" bitfield="DS_SYSHUB_MAP_EN" recommend="0x2" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_2_n0" desc="SOCCLK deep sleep sideband map" />
+	<reg type="smn" address="0x5b2e8" bitfield="DS_SYSHUB_MAP_EN" recommend="0x2" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_2_n0" desc="SOCCLK deep sleep sideband map: for setting SysHubSocClkDs_allow sideband for SOCCLK, DS_SYSHUB_MAP_EN[1] = 1. DS_SYSHUB_MAP_EN[1] points to SOCCLK since SOCCLK is slice 1" />
 	<reg type="smn" address="0x5b134" bitfield="CLK1_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_ALLOW_DS_n0" desc="SOCCLK allow deep sleep signal" />
 	<reg type="smn" address="0x5b2ec" bitfield="DS_MP0HUB_MAP_EN" recommend="0x5" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_3_n0" desc="MP0CLK deep sleep sideband map" />
 	<reg type="smn" address="0x5b15c" bitfield="CLK2_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_ALLOW_DS_n0" desc="MP0CLK allow deep sleep signal" />
@@ -285,6 +285,7 @@
 	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_AER_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
 <format type="break" />
 <header comment="NBIO - PCIe Power Features" />
+	<reg type="smn" address="0x11180460" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
 	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_ALLOW_IN_L1" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
 	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
 	<reg type="smn" address="0x11180460" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
