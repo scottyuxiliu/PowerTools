@@ -86,13 +86,17 @@ class Util:
             if verbose is True:
                 print ("CPU already in debug mode")
         else:
-            while self.wombat.cpuDebug().debugEnabled() == 0:
-                if verbose is True:
-                    print ("attempting to enter PDM mode...")
-                self.wombat.cpuDebug().requestDebug()
-                time.sleep(5)
-            if verbose is True:
-                print ("success")
+            for i in range(10):
+                if self.wombat.cpuDebug().debugEnabled() == 0:
+                    if verbose is True:
+                        print ("attempting to enter PDM mode...")
+                    self.wombat.cpuDebug().requestDebug()
+                    time.sleep(5)
+                else:
+                    if verbose is True:
+                        print ("success")
+                    return 0
+            raise TypeError('Did you forget to disable CPUOFF?')
 
     def exit_pdm_mode(self, verbose=False):
         if self.wombat.cpuDebug().debugEnabled() == 0:
@@ -115,7 +119,35 @@ class Util:
         mem.read()
         return 0
 
-    def read_register(self, register_path, return_type='hex', verbose=False, log_duration=1, log_period=1):
+    def read_register(self, register_path, return_type='hex', verbose=False):
+        """
+        read register
+        :param register_path:
+        :param return_type: return hex or int
+        :param verbose: output all the messages
+        :return: value, default to register hex value
+        """
+
+        register = self.platform.regByPath(register_path)
+        register.read()
+        if return_type == 'hex':
+            if verbose is True:
+                print ("reading {0}...".format(register_path))
+            value = hex(register.value()).rstrip('L')
+            if verbose is True:
+                print("    {0} = {1}".format(register_path, value))
+        elif return_type == 'int':
+            if verbose is True:
+                print ("reading {0}...".format(register_path))
+            value = register.value()
+            if verbose is True:
+                print("    {0} = {1}".format(register_path, value))
+        else:
+            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+
+        return value
+
+    def read_registers(self, register_path, return_type='hex', verbose=False, log_duration=1, log_period=1):
         """
         read register
         :param register_path:

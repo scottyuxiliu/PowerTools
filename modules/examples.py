@@ -7,6 +7,7 @@ sys.path.append(load_dir)
 print (sys.path)
 
 from util import Util
+from stutter_efficiency import StutterEfficiency
 
 connect_type = 'yaap'
 ip = '10.1.37.106' # jason system
@@ -18,6 +19,7 @@ password = 'SMU'
 # password = 'smu'
 
 ut = Util(connect_type, ip, username, password)
+st = StutterEfficiency(ut)
 
 
 # Example 1: read register multiple times
@@ -47,14 +49,17 @@ def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
     xml_regs_df.to_csv(verify_results_csv_path)
     return 0
 
+
 # Example 1: read register multiple times
 # read_screen_refresh_rate()
 # Example 2: read multiple registers from xml file and dump results into csv file
 # read_fmt_bit_depth_control()
 # Example 3: Sysexam
-start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/sysexam_registers_rv.xml",
-                      "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvam4_b0dvt_w10rs3_wmr7c28n_1740rc26_sysexam_4.csv")
+# start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/sysexam_registers_rv.xml",
+#                       "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/rvam4_b0dvt_w10rs3_wmr7c28n_1740rc22_sysexam_4.csv")
 # Example 4: Enter/Exit PDM mode
 # ut.enter_pdm_mode(True)
 # Example 5: Memory Access
 # ut.read_memory()
+# Example 4: Stutter Efficiency
+st.read_stutter(300, 1, True, True, "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/stutter_efficiency/rvam4_b0dvt_w10rs3_wmr7c28n_1740rc22_idlestutter_4.csv")

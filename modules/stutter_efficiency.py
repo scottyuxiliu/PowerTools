@@ -192,16 +192,20 @@ class StutterEfficiency():
             stutter_efficiency_1067= (fcstate_2*1067)/(stutter_fclk_norm_1067)
             stutter_efficiency_1200= (fcstate_2*1200)/(stutter_fclk_norm_1200)
 
+            # DF C-state residency - % of total time that we're not doing DMA or interrupt or saving/restoring state.  we could be servicing display stutter but that doesn't affect C-state %
             print("cstate_residency_400 = {0}".format(cstate_residency_400))
             print("cstate_residency_933 = {0}".format(cstate_residency_933))
             print("cstate_residency_1067 = {0}".format(cstate_residency_1067))
             print("cstate_residency_1200 = {0}".format(cstate_residency_1200))
             print("==================================")
+            # low power residency - % of total time we are in low power state i.e fclk is at lower frequency.it gets deducted when we exit low power to service dma, interrupts, or do stutter
+            # Low power residency = Cstate residency * stutter efficiency
             print("low_power_residency_400 = {0}".format(low_power_residency_400))
             print("low_power_residency_933 = {0}".format(low_power_residency_933))
             print("low_power_residency_1067 = {0}".format(low_power_residency_1067))
             print("low_power_residency_1200 = {0}".format(low_power_residency_1200))
             print("==================================")
+            # stutter efficiency - % in low power after we've entered C-state, e.g. after all DMA and interrupt has stopped and we've saved state. Display SR traffic is responsible for this
             print("stutter_efficiency_400 = {0}".format(stutter_efficiency_400))
             print("stutter_efficiency_933 = {0}".format(stutter_efficiency_933))
             print("stutter_efficiency_1067 = {0}".format(stutter_efficiency_1067))
