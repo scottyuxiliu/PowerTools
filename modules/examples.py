@@ -10,13 +10,14 @@ from util import Util
 from stutter_efficiency import StutterEfficiency
 
 connect_type = 'yaap'
-ip = '10.1.37.106' # jason system
-username = 'SMU'
-password = 'SMU'
 
-# ip = '10.1.36.145' # efe system
-# username = 'smu'
-# password = 'smu'
+# ip = '10.1.37.106' # jason system
+# username = 'SMU'
+# password = 'SMU'
+
+ip = '10.1.36.145' # efe system
+username = 'smu'
+password = 'smu'
 
 ut = Util(connect_type, ip, username, password)
 st = StutterEfficiency(ut)
@@ -62,4 +63,4 @@ def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
 # Example 5: Memory Access
 # ut.read_memory()
 # Example 4: Stutter Efficiency
-st.read_stutter(300, 1, True, True, "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/stutter_efficiency/rvam4_b0dvt_w10rs3_wmr7c28n_1740rc22_idlestutter_4.csv")
+st.read_stutter(300, 1, True, True, "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/stutter_efficiency/rvfp5_b0dvt_w10rs3_tmd1004fa_1740rc26_idlestutter_1.csv")

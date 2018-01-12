@@ -111,11 +111,16 @@ class Util:
             if verbose is True:
                 print("success")
 
-    def read_memory(self):
+    def read_physical_memory(self):
         pprCoreTopoIDs = Kysy.PPRCoreTopologyPhysicalIDs(0, 0, 0, 0, 0)
         bytes = Kysy.Bytes(0x4)
         mem = Kysy.PhysicalMemorySpace.mapMemory(self.platform.platformAccess(), pprCoreTopoIDs, 0xFED80E78, bytes, Kysy.MEMORY_DESTINATION_MMIO, Kysy.MEMORY_TYPE_UNCACHEABLE, Kysy.MEMORY_ACCESS_SIZE_64BIT)
         mem.fill(0)
+        mem.read()
+        return 0
+
+    def read_smn_buffer(self):
+        mem = Kysy.SMNAxiBufferAccess.create(self.platform, 0, 0, 0x5B370, 8, 4)
         mem.read()
         return 0
 
