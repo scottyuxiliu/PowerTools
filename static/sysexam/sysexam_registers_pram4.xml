@@ -2,87 +2,6 @@
 <verify>
 	<!-- Raven verify file  -->
 <format type="header" text="BATTERY LIFE SETTINGS" />
-<header comment="ACP Power Features" />
-	<reg type="smn" address="0x1241420" bitfield="ACP_PGFSM_STATUS" recommend="0x2" path="PPR::ACP::ACPPGFSM::socket0::die0::ACP_PGFSM_STATUS" desc="ACP Power Gating (Static). 0: Power is ON, 1: In power ON Process, 2: Power is OFF, 3: In power OFF Process" />
-<format type="break" />
-<header comment="ATHUB Power Features" />
-	<reg type="smn" address="0x30a8" bitfield="PG_STATUS" recommend="0x1" path="PPR::ATHUB::ATS::socket0::die0::ATHUB_MISC_CNTL" desc="ATHUB Dynamic Power Gating" />
-	<reg type="smn" address="0x30a8" bitfield="CG_STATUS" recommend="0x1" path="PPR::ATHUB::ATS::socket0::die0::ATHUB_MISC_CNTL" desc="ATHUB Clock Gating" />
-<format type="break" />
-<header comment="CLK Power Features" />
-	<reg type="smn" address="0x5b2f0" bitfield="DS_SMNCLK_MAP_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_4_n0" desc="SMNCLK deep sleep sideband map: for setting Mp1ClkSMNCLKDs_allow sideband for SMNCLK, DS_SMNCLK_MAP_EN[0] = 1. DS_SMNCLK_MAP_EN[0] points to SMNCLK since SMNCLK is slice 0" />
-	<reg type="smn" address="0x5b10c" bitfield="CLK0_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_ALLOW_DS_n0" desc="SMNCLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b2e8" bitfield="DS_SYSHUB_MAP_EN" recommend="0x2" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_2_n0" desc="SOCCLK deep sleep sideband map: for setting SysHubSocClkDs_allow sideband for SOCCLK, DS_SYSHUB_MAP_EN[1] = 1. DS_SYSHUB_MAP_EN[1] points to SOCCLK since SOCCLK is slice 1" />
-	<reg type="smn" address="0x5b134" bitfield="CLK1_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_ALLOW_DS_n0" desc="SOCCLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b2ec" bitfield="DS_MP0HUB_MAP_EN" recommend="0x5" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_3_n0" desc="MP0CLK deep sleep sideband map" />
-	<reg type="smn" address="0x5b15c" bitfield="CLK2_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_ALLOW_DS_n0" desc="MP0CLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b2ec" bitfield="DS_MP1HUB_MAP_EN" recommend="0x9" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_3_n0" desc="MP1CLK deep sleep sideband map" />
-	<reg type="smn" address="0x5b184" bitfield="CLK3_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_ALLOW_DS_n0" desc="MP1CLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b2e4" bitfield="DS_NBIO_MAP_EN" recommend="0x22" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_1_n0" desc="LCLK deep sleep sideband map" />
-	<reg type="smn" address="0x5b1d4" bitfield="CLK5_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_ALLOW_DS_n0" desc="LCLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b2f4" bitfield="DS_SHUBCLK_MAP_EN" recommend="0x60" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_DS_MAP_5_n0" desc="SHUBCLK deep sleep sideband map" />
-	<reg type="smn" address="0x5b1fc" bitfield="CLK6_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK6_ALLOW_DS_n0" desc="SHUBCLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b24c" bitfield="CLK8_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK8_ALLOW_DS_n0" desc="DCEFCLK allow deep sleep signal" />
-	<reg type="smn" address="0x5b90c" bitfield="CLK0_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_ALLOW_DS_n1" desc="VCLK has no allow deep sleep signal" />
-	<reg type="smn" address="0x5b934" bitfield="CLK1_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_ALLOW_DS_n1" desc="DCLK has no allow deep sleep signal" />
-	<reg type="smn" address="0x5b95c" bitfield="CLK2_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_ALLOW_DS_n1" desc="ACLK has no allow deep sleep signal" />
-	<reg type="smn" address="0x5b984" bitfield="CLK3_ALLOW_DS" recommend="0x0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_ALLOW_DS_n1" desc="ISPCLK has no allow deep sleep signal" />
-	<reg type="smn" address="0x5c10c" bitfield="CLK0_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_ALLOW_DS_n2" desc="FCLK allow deep sleep signal" />
-	<reg type="smn" address="0x5baf0" bitfield="DS_GFXCLK_MAP_EN" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DS_MAP_4_n0" desc="GFXCLK deep sleep sideband map" />
-	<reg type="smn" address="0x5f90c" bitfield="CLK0_ALLOW_DS" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK0_ALLOW_DS_n0" desc="GFXCLK allow deep sleep signal" />
-<format type="break" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_0" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_1" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_2" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_3" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_4" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_5" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_6" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_7" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_8" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_9" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_10" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-	<reg type="smn" address="0x5f8fc" bitfield="AllowZeroDID_11" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_DID_CONTROL_n0" desc="Allow Zero DID" />
-<format type="break" />
-	<reg type="smn" address="0x5b310" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_STATUS_n0" desc="GPU0 PLL (CLK instance 0) power down" />
-	<reg type="smn" address="0x5bb10" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_STATUS_n1" desc="GPU1 PLL (CLK instance 1) power down" />
-	<reg type="smn" address="0x5c310" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_STATUS_n2" desc="FCLK PLL (CLK instance 2) power down" />
-	<reg type="smn" address="0x5fb10" bitfield="RO_FSM_PLL_STATUS_STOPPED" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_FSM_STATUS_n0" desc="GFXCLK PLL (CLK instance 4) power down" />
-	<reg type="smn" address="0x5b308" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_CONTROL_n0" />
-	<reg type="smn" address="0x5bb08" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_CONTROL_n0" />
-	<reg type="smn" address="0x5c308" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_FSM_CONTROL_n2" />
-	<reg type="smn" address="0x5fb08" bitfield="EnableCLKOffInBypass" recommend="0x1" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK_FSM_CONTROL_n0" />
-<format type="break" />
-	<reg type="smn" address="0x5b238" bitfield="CLK7_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK7_SLICE_CNTL_n0" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5b288" bitfield="CLK9_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK9_SLICE_CNTL_n0" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5b9c0" bitfield="CLK4_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK4_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5b9e8" bitfield="CLK5_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5ba10" bitfield="CLK6_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK6_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5ba38" bitfield="CLK7_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK7_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5ba60" bitfield="CLK8_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK8_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5ba88" bitfield="CLK9_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK9_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5bab0" bitfield="CLK10_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK10_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5bad8" bitfield="CLK11_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK11_SLICE_CNTL_n1" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c148" bitfield="CLK1_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c170" bitfield="CLK2_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c198" bitfield="CLK3_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c1c0" bitfield="CLK4_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK4_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c1e8" bitfield="CLK5_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c210" bitfield="CLK6_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK6_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c238" bitfield="CLK7_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK7_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c260" bitfield="CLK8_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK8_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c288" bitfield="CLK9_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK9_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c2b0" bitfield="CLK10_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK10_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-	<reg type="smn" address="0x5c2d8" bitfield="CLK11_SLICE_CLK_GATE" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK11_SLICE_CNTL_n2" desc="Per slice DFS VCO clock gating (for unused slice)" />
-<format type="break" />
-	<reg type="smn" address="0x5b300" bitfield="DYN_PM_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_PWR_MGMT_CONTROL_n0" desc="Dynamic REFCLK gating" />
-	<reg type="smn" address="0x5bb00" bitfield="DYN_PM_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_PWR_MGMT_CONTROL_n1" desc="Dynamic REFCLK gating" />
-	<reg type="smn" address="0x5c300" bitfield="DYN_PM_EN" recommend="0x1" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK_PWR_MGMT_CONTROL_n2" desc="Dynamic REFCLK gating" />
-	<reg type="smn" address="0x5e00c" bitfield="DS_EN" recommend="0x1" path="PPR::SMU::FUSE::socket0::die0::FUSE_LP_CONTROL" desc="Fuse SRAM Power Gating" />
-	<reg type="smn" address="0x5e00c" bitfield="CLKG_EN" recommend="0x1" path="PPR::SMU::FUSE::socket0::die0::FUSE_LP_CONTROL" desc="Fuse Clock Gating" />
-	<reg type="smn" address="0x599bc" bitfield="Turn_Off_TMON0" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_TCON_LOCAL1" desc="TMON Power Down" />
-	<reg type="smn" address="0x599f4" bitfield="SBTSI_SBRMI_CLK_GATE_EN" recommend="0x1" path="PPR::SMU::THM::socket0::die0::THM_PWRMGT" desc="TMON Clock Gating" />
-<format type="break" />
 <header comment="CLK - Clock Frequencies" />
 	<reg type="smn" address="0x5B370" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_CURRENT_CNT_n0" desc="SMNCLK. The clock frequency might change every time SysExam is run. This field serves to provide guidance and the result should not be compared against the recommended value" />
 	<reg type="smn" address="0x5B374" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_CURRENT_CNT_n0" desc="SOCCLK" />
@@ -100,47 +19,6 @@
 	<reg type="smn" address="0x5BB7C" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_CURRENT_CNT_n1" desc="ISPCLK" />
 	<reg type="smn" address="0x5C370" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_CURRENT_CNT_n2" desc="FCLK" />
 	<reg type="smn" address="0x5FB70" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK2::socket0::die0::CLK2_CLK0_CURRENT_CNT_n0" desc="GFXCLK" />
-<header comment="DCN Power Features" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="ESCCLK_GATE_DISABLE" desc="ESCCLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="BYTECLK_GATE_DISABLE" desc="BYTECLK Clock Gating in Display Controllerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DSICLK_GATE_DISABLE" desc="DSICLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_R_DIG_GATE_DISABLE" desc="REFCLK_R_DIG Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="REFCLK_GATE_DISABLE" desc="REFCLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="UNB_DB_CLK_GATE_DISABLE" desc="UNB_DB_CLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GTC_GATE_DISABLE" desc="DPREFCLK Clock Gating for DP 1.2 Global Time Code" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AUDIO_DTO2_CLK_GATE_DISABLE" desc="AUDIO_DTO2_CLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK2_GATE_DISABLE" desc="AOMCLK2 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK1_GATE_DISABLE" desc="AOMCLK1 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="AOMCLK0_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPPCLK_GATE_DISABLE" desc="DPPCLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_R_DCCG_GATE_DISABLE" desc="DPREFCLK_R_DCCG Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPDBG_CLK_GATE_DISABLE" desc="DPDBG_CLK Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DVOACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DACACLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DPREFCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="SOCCLK_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_R_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-	<reg type="smn" address="0x4d0" recommend="0x0" bitfield="DISPCLK_DCCG_GATE_DISABLE" desc="AOMCLK0 Clock Gating in Display Controller" />
-<format type="break" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_GATE_DISABLE" desc="SYMCLKG Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_GATE_DISABLE" desc="SYMCLKF Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_GATE_DISABLE" desc="SYMCLKE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_GATE_DISABLE" desc="SYMCLKD Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_GATE_DISABLE" desc="SYMCLKC Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_GATE_DISABLE" desc="SYMCLKB Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_GATE_DISABLE" desc="SYMCLKA Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKG_FE_GATE_DISABLE" desc="SYMCLKG_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKF_FE_GATE_DISABLE" desc="SYMCLKF_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKE_FE_GATE_DISABLE" desc="SYMCLKE_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKD_FE_GATE_DISABLE" desc="SYMCLKD_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKC_FE_GATE_DISABLE" desc="SYMCLKC_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKB_FE_GATE_DISABLE" desc="SYMCLKB_FE Clock Gating in the Display Controller PHY output" />
-	<reg type="smn" address="0x4f0" recommend="0x0" bitfield="SYMCLKA_FE_GATE_DISABLE" desc="SYMCLKA_FE Clock Gating in the Display Controller PHY output" />
-<format type="break" />
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1"  bitfield="DBG_CLK_GATE_EN" recommend="1" desc=" SDP Debug Clock Gating"/>
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="Med_BClk_Gate_En" recommend="1" desc="SDP Medium Grain B-Link Clock Gating"/>
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="HostMemShutDownEn" recommend="1" desc="SDP Host Memory Power Saving"/>
-	<reg type="io" indexport="cd8" dataport="cdc" offset="208" width="32" bfindex="0" bfwidth="1" bitfield="DmaMemShutDownEn" recommend="1" desc="SDP DMA Memory Power Saving"/>
 <format type="break" />
 <header comment="DF Power Features" />
 	<reg type="df" function="0x5" offset="0x344" instanceId="0xa0001" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::BCST::Cc6StatusFlat" desc="CC6 status for the cores, each bit maps to a core" />
