@@ -3,7 +3,7 @@
 	<!-- Raven verify file  -->
 <format type="header" text="BATTERY LIFE SETTINGS" />
 <header comment="NBIO - IOHC Power Features" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" desc="IOHC clock gating" />
+	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" desc="IOHC Clock Gating" />
 	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
 	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
 	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
@@ -13,10 +13,10 @@
 	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
 	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
 	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" desc="IOHC clock gating" />
+	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" desc="IOHC Clock Gating" />
 	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" />
 	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" />
-	<reg type="smn" address="0x13b1008c" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x1" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="IOHC clock gating" />
+	<reg type="smn" address="0x13b1008c" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x1" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="IOHC Clock Gating" />
 <format type="break" />
 <header comment="NBIO - IOMMUL1 - PCIE0 Power Features" />
 	<reg type="smn" address="0x147000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" desc="IOMMU L1 Clock Gating" />
@@ -51,137 +51,176 @@
 	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BRegsDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
 	<reg type="smn" address="0x15700104" bitfield="IP_PG_en" recommend="0x1" path="PPR::IOMMUL2::socket0::die0::L2_PWRGATE_CNTRL_REG_3" desc="IOMMU Dyanmic Power Gating" />
 <format type="break" />
-<header comment="NBIO - NBIF/Syshub Power Features" />
+<header comment="NBIO - NBIF Power Features" />
 	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF0::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
 	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF1::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
 	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF2::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF0::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating hysteresis timer" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF1::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating hysteresis timer" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF2::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating hysteresis timer" />
-	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_HYSTERESIS_SOCCLK" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" desc="Syshub SOCCLK Medium Grain Clock Gating hysteresis timer" />
-	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_HYSTERESIS_SHUBCLK" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" desc="Syshub SHUBCLK Medium Grain Clock Gating hysteresis timer" />
-	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_EN_SHUBCLK" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" desc="SYSHUB Clock Gating" />
-	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_HST_DIS_SHUBCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" />
-	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_DMA_DIS_SHUBCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" />
-	<reg type="smn" address="0x1411040" bitfield="SYSHUB_MGCG_REGS_DIS_SHUBCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SHUBCLK" />
-	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_EN_SOCCLK" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
-	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_HST_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
-	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_DMA_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
-	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_REGS_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
-	<reg type="smn" address="0x1410310" bitfield="SYSHUB_MGCG_AER_DIS_SOCCLK" recommend="0x0" path="PPR::SYSHUBMM::socket0::die0::SYSHUB_MGCG_CTRL_SOCCLK" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF0::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF1::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF2::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
 <format type="break" />
-<header comment="NBIO - PCIe Power Features" />
-	<reg type="smn" address="0x11180460" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
-	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_ALLOW_IN_L1" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180460" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="0x11180070" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="0x11180070" bitfield="MST_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="0x11180070" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="0x11180070" bitfield="SLV_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="0x10148074" bitfield="PM_CONTROL" recommend="0x3" desc="ASPM L0s and L1 (L1.2)" />
+<header comment="NBIO - SYSHUB Power Features" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_EN" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::NBIF0::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_EN" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::NBIF1::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_HYSTERESIS" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::NBIF0::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_HYSTERESIS" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::NBIF1::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating Hysteresis timer" />
+<format type="break" />
+<header comment="NBIO - PCIE0 Power Features" />
+	<reg type="smn" address="" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
+	<reg type="smn" address="" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="LCLK Clock Gating" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_LS_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 0 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
 	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link0::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 1 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link1::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 2 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link2::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 3 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link3::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 4 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link4::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 5 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link5::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 6 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link6::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 7 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link7::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+<format type="break" />
+<header comment="NBIO - PCIe1 Power Features" />
+	<reg type="smn" address="" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
+	<reg type="smn" address="" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_LS_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 0 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link0::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 1 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link1::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 2 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link2::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 3 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link3::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 4 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link4::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 5 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link5::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 6 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link6::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 7 Power Features" />
 	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link7::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - SST0 Power Features" />
 	<reg type="smn" address="0x17400004" bitfield="TXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST0::SST_CLOCK_CTRL" desc="SST Clock Gating" />

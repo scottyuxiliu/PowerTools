@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<verify>
+	<!-- Raven verify file  -->
+<format type="header" text="BATTERY LIFE SETTINGS" />
+<header comment="FCH - AOAC Power Features" />
+	<reg type="smn" address="0x2d02e4e" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link39::DevD3Ctl" desc="set D3Cold as target, this is I2C2 (touchpad)" />
+	<reg type="smn" address="0x2d02e50" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link40::DevD3Ctl" desc="set D3Cold as target, this is I2C3" />
+	<reg type="smn" address="0x2d02e56" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link43::DevD3Ctl" desc="set D3Cold as target, this is UART0" />
+	<reg type="smn" address="0x2d02e58" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link44::DevD3Ctl" desc="set D3Cold as target, this is UART1" />
+	<reg type="smn" address="0x2d02e60" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link48::DevD3Ctl" desc="set D3Cold as target, this is UART2" />
+	<reg type="smn" address="0x2d02e62" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link49::DevD3Ctl" desc="set D3Cold as target, this is AMBA" />
+	<reg type="smn" address="0x2d02e72" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link57::DevD3Ctl" desc="set D3Cold as target, this is SD1" />
+	<reg type="smn" address="0x2d02e74" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link58::DevD3Ctl" desc="set D3Cold as target, this is UART3" />
+	<reg type="smn" address="0x2d02e78" bitfield="TargetedDeviceState" recommend="0x3" path="PPR::FCH::AOAC::socket0::die0::link60::DevD3Ctl" desc="set D3Cold as target, this is eMMC" />
+	<reg type="smn" address="0x2d02e4f" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link39::DevD3State" desc="D3Cold status of I2C2 (touchpad)" />
+	<reg type="smn" address="0x2d02e51" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link40::DevD3State" desc="D3Cold status of I2C3" />
+	<reg type="smn" address="0x2d02e57" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link43::DevD3State" desc="D3Cold status of UART0" />
+	<reg type="smn" address="0x2d02e59" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link44::DevD3State" desc="D3Cold status of UART1" />
+	<reg type="smn" address="0x2d02e61" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link48::DevD3State" desc="D3Cold status of UART2" />
+	<reg type="smn" address="0x2d02e63" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link49::DevD3State" desc="D3Cold status of AMBA" />
+	<reg type="smn" address="0x2d02e73" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link57::DevD3State" desc="D3Cold status of SD1" />
+	<reg type="smn" address="0x2d02e75" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link58::DevD3State" desc="D3Cold status of UART3" />
+	<reg type="smn" address="0x2d02e79" bitfield="D3Cold" recommend="0x1" path="PPR::FCH::AOAC::socket0::die0::link60::DevD3State" desc="D3Cold status of eMMC" />
+<format type="break" />
+<header comment="FCH - CLKGEN Power Features" />
+	<reg type="smn" address="0x2d01e4c" bitfield="PCIe_PHY_A_Refclk_Global_Dynamic_EnB" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::MiscClkCntl4" desc="CLKGEN buffer turn off" />
+	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A0_Refclk_Static_Disable" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off" />
+	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_SataMac_En" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off" />
+	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_Refclk_Dynamic_EnB" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off" />
+<format type="break" />
+<header comment="FCH - MISC Power Features" />
+	<reg type="smn" address="" bitfield="BlinkClkGateOffEn" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::ClkGatedCntl" desc="Cold Internal B-Link clock has two clock trees: one is a free running clock and the other is a gated clock. When all controllers agree to stop the gated B-Link clock and this bit is set, clock gating logic gates off the clock tree from clock root. This is persistent." />
+	<reg type="smn" address="" bitfield="AlinkClkGateOffEn" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::ClkGatedCntl" desc="Cold Internal A-Link clock has two clock trees: one is a free-running clock and the other is a gated clock. When all controllers agree to stop the gated A-Link clock and this bit is set, clock gating logic gates off the clock tree from clock root. This is persistent." />
+	<reg type="smn" address="" bitfield="ABClkGateEn" recommend="0x1" path="PPR::FCH::PM::socket0::die0::IsaControl" desc="Master switch for ALink and Blink clock gating." />
+	<reg type="smn" address="" bitfield="" recommend="" path="" desc="" />
+	<reg type="smn" address="" bitfield="" recommend="" path="" desc="" />
+<format type="break" />
+<header comment="FCH - I2C4 Power Features" />
+	<reg type="smn" address="0x2dd6708" bitfield="DAT" recommend="0x20303" path="PPR::FCH::I2C4::socket0::die0::RFMUX_Port0_Control8" desc="RFMUX shut down" />
+	<reg type="smn" address="0x2dd6718" bitfield="DAT" recommend="0x20303" path="PPR::FCH::I2C4::socket0::die0::RFMUX_Port1_Control8" desc="RFMUX shut down" />
+<format type="break" />
+<header comment="FCH - ITF - LPC Power Features" />
+	<reg type="smn" address="" bitfield="LpcClkRunEn" recommend="0x1" path="PPR::FCH::ITF::LPC::socket0::die0::ClkCntrl" desc="Should be set to 1 for mobile platforms for energy savings." />
+<format type="break" />
+<header comment="FCH - SDP Power Features" />
+	<reg type="smn" address="" bitfield="DBG_CLK_GATE_EN" recommend="0x1" path="PPR::FCH::SDP::socket0::die0::SDP_MISC_CTL" desc="Debug BCLK Clock Gating." />
+	<reg type="smn" address="" bitfield="MedBClkGateEn" recommend="0x1" path="PPR::FCH::SDP::socket0::die0::SDP_MISC_CTL" desc="BCLK Medium-Grain Clock Gating" />
+<format type="break" />
+</verify>

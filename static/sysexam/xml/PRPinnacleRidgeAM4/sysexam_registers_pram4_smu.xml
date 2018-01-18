@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<verify>
+	<!-- Raven verify file  -->
+<format type="header" text="BATTERY LIFE SETTINGS" />
+<header comment="CLK - Clock Frequencies" />
+	<reg type="smn" address="0x5B370" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_CURRENT_CNT_n0" desc="SMNCLK. The clock frequency might change every time SysExam is run. This field serves to provide guidance and the result should not be compared against the recommended value" />
+	<reg type="smn" address="0x5B374" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK1_CURRENT_CNT_n0" desc="SOCCLK" />
+	<reg type="smn" address="0x5B378" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK2_CURRENT_CNT_n0" desc="MP0CLK" />
+	<reg type="smn" address="0x5B37C" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK3_CURRENT_CNT_n0" desc="MP1CLK" />
+	<reg type="smn" address="0x5B380" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK4_CURRENT_CNT_n0" desc="LCLK" />
+	<reg type="smn" address="0x5B384" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK5_CURRENT_CNT_n0" desc="SHUBCLK" />
+	<reg type="smn" address="0x5B398" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK9_CURRENT_CNT_n0" desc="WAFLCLK" />
+	<reg type="smn" address="0x5C370" bitfield="CURRENT_COUNT" recommend="0" path="PPR::CLK::CLK0::socket0::die0::CLK0_CLK0_CURRENT_CNT_n1" desc="FCLK" />
+<format type="break" />
+</verify>
