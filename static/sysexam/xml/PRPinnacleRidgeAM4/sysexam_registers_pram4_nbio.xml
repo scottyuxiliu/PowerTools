@@ -3,20 +3,26 @@
 	<!-- Raven verify file  -->
 <format type="header" text="BATTERY LIFE SETTINGS" />
 <header comment="NBIO - IOHC Power Features" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" desc="IOHC Clock Gating" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" />
-	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" desc="IOHC Clock Gating" />
-	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" />
-	<reg type="smn" address="0x15b00004" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_1" />
-	<reg type="smn" address="0x13b1008c" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x1" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="IOHC Clock Gating" />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_SDF_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_SDF_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE0_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE0_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE1_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE1_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_NBIF0_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_NBIF0_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_IOAGR_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_IOAGR_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_L2_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_L2_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_s2p_int_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_s2p_int_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHCi2p_INT. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_SeqArb_Req. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_SeqArb_Rsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_Credit. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHC_CfgSlv. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHC_RAS. 0: Enable Clock Gating. 1: Disable Clock Gating." />
 <format type="break" />
 <header comment="NBIO - IOMMUL1 - PCIE0 Power Features" />
 	<reg type="smn" address="0x147000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" desc="IOMMU L1 Clock Gating" />

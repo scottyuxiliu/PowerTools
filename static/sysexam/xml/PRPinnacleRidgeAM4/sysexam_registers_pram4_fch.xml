@@ -32,8 +32,6 @@
 	<reg type="smn" address="" bitfield="BlinkClkGateOffEn" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::ClkGatedCntl" desc="Cold Internal B-Link clock has two clock trees: one is a free running clock and the other is a gated clock. When all controllers agree to stop the gated B-Link clock and this bit is set, clock gating logic gates off the clock tree from clock root. This is persistent." />
 	<reg type="smn" address="" bitfield="AlinkClkGateOffEn" recommend="0x1" path="PPR::FCH::MISC::socket0::die0::ClkGatedCntl" desc="Cold Internal A-Link clock has two clock trees: one is a free-running clock and the other is a gated clock. When all controllers agree to stop the gated A-Link clock and this bit is set, clock gating logic gates off the clock tree from clock root. This is persistent." />
 	<reg type="smn" address="" bitfield="ABClkGateEn" recommend="0x1" path="PPR::FCH::PM::socket0::die0::IsaControl" desc="Master switch for ALink and Blink clock gating." />
-	<reg type="smn" address="" bitfield="" recommend="" path="" desc="" />
-	<reg type="smn" address="" bitfield="" recommend="" path="" desc="" />
 <format type="break" />
 <header comment="FCH - I2C4 Power Features" />
 	<reg type="smn" address="0x2dd6708" bitfield="DAT" recommend="0x20303" path="PPR::FCH::I2C4::socket0::die0::RFMUX_Port0_Control8" desc="RFMUX shut down" />
