@@ -44,7 +44,7 @@ def read_fmt_bit_depth_control():
 # Example 3: Sysexam
 def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
     xml_regs_df = ut.xml_to_dataframe(sysexam_verify_xml_path, True, True)
-    xml_regs_df = ut.read_register_fields_in_dataframe(xml_regs_df, 'int', True, 100, 20, False) # update bitfield values for each xml_reg
+    xml_regs_df = ut.read_register_fields_in_dataframe(xml_regs_df, 'int', True, 200, 20, True) # update bitfield values for each xml_reg
     # print(xml_regs_df)
     # xml_regs_df = xml_regs_df[['status0','path','bitfield','recommend','value0']]
     xml_regs_df.to_csv(verify_results_csv_path)
@@ -56,8 +56,8 @@ def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
 # Example 2: read multiple registers from xml file and dump results into csv file
 # read_fmt_bit_depth_control()
 # Example 3: Sysexam
-start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/PRPinnacleRidgeAM4/sysexam_registers_pram4_nbio.xml",
-                      "C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/Idle/SysExam/pram4_b2_w10rs3_wmp8110n_17.12.2adrenalinedition_nbio_sysexam_1.csv")
+start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
+                      "C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/Data/MandolinDAP/SystemPwrFeatures/Idle/SysExam/rvfp5_b0dvt_mandolindap_w10rs3_tmd1102a_17.40rc33_default_sysexam_0.csv")
 # Example 4: Enter/Exit PDM mode
 # ut.enter_pdm_mode(True)
 # Example 5: Memory Access

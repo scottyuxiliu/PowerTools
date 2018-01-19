@@ -343,9 +343,10 @@ class Util:
                                                                            reg_dict['value'+str(i)]))
 
                     if status_check is True:
-                        reg_dict['recommend'] = int(reg_dict['recommend'], 16) # convert hex to int
-                        if reg_dict['recommend'] == reg_dict['value'+str(i)]: reg_dict.update({'status'+(i): ''})
-                        else: reg_dict.update({'status'+str(i): 'BAD'})
+                        if reg_dict['recommend'] == hex(reg_dict['value'+str(i)]).rstrip('L'):  # convert hex to int
+                            reg_dict.update({'status'+str(i): ''})
+                        else:
+                            reg_dict.update({'status'+str(i): 'BAD'})
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
