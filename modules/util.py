@@ -559,17 +559,17 @@ class Util:
             regs.append(reg.attrib)
         return regs
 
-    def loadcsv_mm14(self, csv_path, num_true, num_false, step_size):
+    def loadcsv_mm14(self, csv_path, columns_to_plot, workload_lower_bound_value, workload_upper_bound_value, output_csv_path=None):
         """
         load mm14 raw data from mm14 v1.5.1.55
         :param csv_path:
-        :param num_true: number to represent the duration of the workload
-        :param num_false: number to represent both ends of the workload
-        :param step_size: increment for the next workload
+        :param columns_to_plot: list of columns to plot
+        :param workload_upper_bound_value: number to represent the duration of the workload
+        :param workload_lower_bound_value: number to represent both ends of the workload
         :return: df
         """
+        step_size = (workload_upper_bound_value - workload_lower_bound_value) / 10
         df_pwr_data = pandas.read_csv(csv_path, na_values=['.'], dtype=numpy.float)
-        print(df_pwr_data)
         df_mm14_workloads = pandas.DataFrame(index=df_pwr_data.index,
                                              columns=['onenote', 'chrome', 'winzip', 'idle_0', 'word', 'powerpoint',
                                                       'acrobat', 'idle_1', 'outlook', 'excel', 'idle_2'],
@@ -578,53 +578,54 @@ class Util:
         # set up df_mm14_workloads
         row_count = df_pwr_data.shape[0]
         # onenote
-        df_mm14_workloads.iloc[:int(math.ceil(row_count * 0.05)), 0] = num_true
-        df_mm14_workloads.iloc[0, 0] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.05)), 0] = num_false
+        df_mm14_workloads.iloc[:int(math.ceil(row_count * 0.05)), 0] = workload_lower_bound_value
+        df_mm14_workloads.iloc[0, 0] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.05)), 0] = workload_lower_bound_value
         # chrome
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.05) + 2):int(math.ceil(row_count * 0.28)), 1] = num_true + step_size
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.05) + 1), 1] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.28)), 1] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.05) + 2):int(math.ceil(row_count * 0.28)), 1] = workload_lower_bound_value + step_size
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.05) + 1), 1] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.28)), 1] = workload_lower_bound_value
         # winzip
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.28) + 2):int(math.ceil(row_count * 0.29)), 2] = num_true + step_size * 2
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.28) + 1), 2] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.29)), 2] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.28) + 2):int(math.ceil(row_count * 0.29)), 2] = workload_lower_bound_value + step_size * 2
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.28) + 1), 2] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.29)), 2] = workload_lower_bound_value
         # idle_0
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.29) + 2):int(math.ceil(row_count * 0.54)), 3] = num_true + step_size * 3
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.29) + 1), 3] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.54)), 3] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.29) + 2):int(math.ceil(row_count * 0.54)), 3] = workload_lower_bound_value + step_size * 3
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.29) + 1), 3] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.54)), 3] = workload_lower_bound_value
         # word
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.54) + 2):int(math.ceil(row_count * 0.6)), 4] = num_true + step_size * 4
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.54) + 1), 4] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.6)), 4] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.54) + 2):int(math.ceil(row_count * 0.6)), 4] = workload_lower_bound_value + step_size * 4
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.54) + 1), 4] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.6)), 4] = workload_lower_bound_value
         # powerpoint
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.6) + 2):int(math.ceil(row_count * 0.61)), 5] = num_true + step_size * 5
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.6) + 1), 5] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.61)), 5] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.6) + 2):int(math.ceil(row_count * 0.61)), 5] = workload_lower_bound_value + step_size * 5
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.6) + 1), 5] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.61)), 5] = workload_lower_bound_value
         # acrobat
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.61) + 2):int(math.ceil(row_count * 0.69)), 6] = num_true + step_size * 6
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.61) + 1), 6] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.69)), 6] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.61) + 2):int(math.ceil(row_count * 0.69)), 6] = workload_lower_bound_value + step_size * 6
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.61) + 1), 6] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.69)), 6] = workload_lower_bound_value
         # idle_1
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.69) + 2):int(math.ceil(row_count * 0.82)), 7] = num_true + step_size * 7
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.69) + 1), 7] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.82)), 7] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.69) + 2):int(math.ceil(row_count * 0.82)), 7] = workload_lower_bound_value + step_size * 7
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.69) + 1), 7] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.82)), 7] = workload_lower_bound_value
         # outlook
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.82) + 2):int(math.ceil(row_count * 0.84)), 8] = num_true + step_size * 8
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.82) + 1), 8] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.84)), 8] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.82) + 2):int(math.ceil(row_count * 0.84)), 8] = workload_lower_bound_value + step_size * 8
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.82) + 1), 8] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.84)), 8] = workload_lower_bound_value
         # excel
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.84) + 2):int(math.ceil(row_count * 0.92)), 9] = num_true + step_size * 9
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.84) + 1), 9] = num_false
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.92)), 9] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.84) + 2):int(math.ceil(row_count * 0.92)), 9] = workload_lower_bound_value + step_size * 9
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.84) + 1), 9] = workload_lower_bound_value
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.92)), 9] = workload_lower_bound_value
         # idle_2
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.92) + 2):, 10] = num_true + step_size * 10
-        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.92) + 1), 10] = num_false
-        df_mm14_workloads.iloc[-1, 10] = num_false
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.92) + 2):, 10] = workload_lower_bound_value + step_size * 10
+        df_mm14_workloads.iloc[int(math.ceil(row_count * 0.92) + 1), 10] = workload_lower_bound_value
+        df_mm14_workloads.iloc[-1, 10] = workload_lower_bound_value
 
         # combine the dataframes
-        print(df_pwr_data.head(10))
-        df = pandas.concat([df_pwr_data, df_mm14_workloads], axis=1)
+        df = pandas.concat([df_pwr_data[columns_to_plot], df_mm14_workloads], axis=1)
+        if output_csv_path is not None:
+            df.to_csv(output_csv_path)
         return df
 
 

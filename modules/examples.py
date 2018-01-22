@@ -1,5 +1,6 @@
 import os
 import sys
+import matplotlib.pyplot
 
 # import kysy modules
 load_dir = os.path.abspath('C:/Applications/AMD/Kysy/Python')
@@ -56,11 +57,13 @@ def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
 # Example 2: read multiple registers from xml file and dump results into csv file
 # read_fmt_bit_depth_control()
 # Example 3: Sysexam
-start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
-                      "C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/Data/MandolinDAP/SystemPwrFeatures/Idle/SysExam/rvfp5_b0dvt_mandolindap_w10rs3_tmd1102a_17.40rc33_default_sysexam_0.csv")
+# start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
+#                       "C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/Data/MandolinDAP/SystemPwrFeatures/Idle/SysExam/rvfp5_b0dvt_mandolindap_w10rs3_tmd1102a_17.40rc33_default_sysexam_0.csv")
 # Example 4: Enter/Exit PDM mode
 # ut.enter_pdm_mode(True)
 # Example 5: Memory Access
 # ut.read_memory()
 # Example 4: Stutter Efficiency
 # st.read_stutter(300, 1, True, True, "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/stutter_efficiency/rvfp5_b0dvt_w10rs3_tmd1004fa_1740rc26_idlestutter_1.csv")
+# Example 5: MM14 Plot
+df = ut.loadcsv_mm14("C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/Data/MandolinDAP/SystemPwrFeatures/R7vsR5/Power/TMD1102_1740RC33_default_MM14_wk61_TSP_R5_run1.csv", 25, 30, 0.5)
