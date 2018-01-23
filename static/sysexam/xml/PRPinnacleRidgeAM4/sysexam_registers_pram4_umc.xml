@@ -19,9 +19,9 @@
 	<reg type="smn" address="0x15012c" bitfield="PwrDownMode" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl_ch0" desc="Power Down Mode: Full Channel or Partial Channel" />
 	<reg type="smn" address="0x15012c" bitfield="PwrDownEn" recommend="0x1" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl_ch0" desc="UMC Channel Power Down" />
 	<reg type="smn" address="0x15012c" bitfield="LpDis" recommend="0x0" path="PPR::UMC::CH::socket0::die0::umc1::SpazCtrl_ch0" desc="PHY Power Down Mode" />
-	<reg type="smn" address="0x1511e4" bitfield="RegClkGateEn" path="PPR::UMC::CTRL::socket0::die0::umc1::UmcCtrlMiscCfg" recommend="0x1" desc="UMC Medium-Grain Clock Gating for configuration registers" />
-	<reg type="smn" address="0x1511ac" bitfield="DFICLK_CGDis" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" recommend="0x0" desc="Dynamic DFICLK Coarse Clock Gating in DFI channel" />
-	<reg type="smn" address="0x1511ac" bitfield="UCLK_CGDis" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" recommend="0x0" desc="Dynamic UCLK Coarse Clock Gating in UMC" />
-	<reg type="smn" address="0x1511ac" bitfield="FCLK_CGDis" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" recommend="0x0" desc="Dynamic FCLK Coarse Clock Gating in UMC" />
+	<reg type="smn" address="0x1511e4" bitfield="RegClkGateEn" recommend="0x1" path="PPR::UMC::CTRL::socket0::die0::umc1::UmcCtrlMiscCfg" desc="UMC Medium-Grain Clock Gating for configuration registers" />
+	<reg type="smn" address="0x1511ac" bitfield="DFICLK_CGDis" recommend="0x0" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" desc="Dynamic DFICLK Coarse Clock Gating in DFI channel" />
+	<reg type="smn" address="0x1511ac" bitfield="UCLK_CGDis" recommend="0x0" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" desc="Dynamic UCLK Coarse Clock Gating in UMC" />
+	<reg type="smn" address="0x1511ac" bitfield="FCLK_CGDis" recommend="0x0" path="PPR::UMC::CTRL::socket0::die0::umc1::ClkDivCtrl" desc="Dynamic FCLK Coarse Clock Gating in UMC" />
 <format type="break" />
 </verify>

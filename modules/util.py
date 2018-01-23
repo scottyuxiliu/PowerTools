@@ -120,7 +120,13 @@ class Util:
     def read_physical_memory(self):
         pprCoreTopoIDs = Kysy.PPRCoreTopologyPhysicalIDs(0, 0, 0, 0, 0)
         bytes = Kysy.Bytes(0x4)
-        mem = Kysy.PhysicalMemorySpace.mapMemory(self.platform.platformAccess(), pprCoreTopoIDs, 0xFED80E78, bytes, Kysy.MEMORY_DESTINATION_MMIO, Kysy.MEMORY_TYPE_UNCACHEABLE, Kysy.MEMORY_ACCESS_SIZE_64BIT)
+        mem = Kysy.PhysicalMemorySpace.mapMemory(self.platform.platformAccess(),
+                                                 pprCoreTopoIDs,
+                                                 0xFED80E78,
+                                                 bytes,
+                                                 Kysy.MEMORY_DESTINATION_MMIO,
+                                                 Kysy.MEMORY_TYPE_UNCACHEABLE,
+                                                 Kysy.MEMORY_ACCESS_SIZE_64BIT)
         mem.fill(0)
         mem.read()
         return 0
@@ -140,6 +146,7 @@ class Util:
                                                                       number_of_bytes_to_read,
                                                                       number_of_read_attempts)
         smn_axi_buffer_access_object.read()
+        print(hex(smn_axi_buffer_access_object.dword(0)).rstrip('L'))
         return 0
 
     def read_mp1_buffer(self, mp1_address, number_of_bytes_to_read, number_of_read_attempts):
@@ -157,6 +164,7 @@ class Util:
                                                         self.die_id,
                                                         self.socket_id)
         mp1_buffer_access_object.read()
+        print(hex(mp1_buffer_access_object.dword(0)).rstrip('L'))
         return 0
 
     def read_register(self, register_path, return_type='hex', verbose=False):
@@ -361,8 +369,10 @@ class Util:
                                                            reg_dict['value'+str(i)]))
                     # check if recommend == value
                     if status_check is True:
-                        if reg_dict['recommend'] == reg_dict['value'+str(i)]: reg_dict.update({'status'+str(i): ''})
-                        else: reg_dict.update({'status'+str(i): 'BAD'})
+                        if reg_dict['recommend'] == reg_dict['value'+str(i)]:
+                            reg_dict.update({'status'+str(i): ''})
+                        else:
+                            reg_dict.update({'status'+str(i): 'BAD'})
 
             elif return_type == 'int':
                 for reg_dict in regs_dictlist:
@@ -373,9 +383,10 @@ class Util:
                     if verbose is True:
                         print ("done")
                     reg_dict['value'+str(i)] = register.field(reg_dict['bitfield']).value()
-                    if verbose is True: print ("    {0}[{1}] = {2}".format(reg_dict['path'],
-                                                                           reg_dict['bitfield'],
-                                                                           reg_dict['value'+str(i)]))
+                    if verbose is True:
+                        print ("    {0}[{1}] = {2}".format(reg_dict['path'],
+                                                           reg_dict['bitfield'],
+                                                           reg_dict['value'+str(i)]))
 
                     if status_check is True:
                         if reg_dict['recommend'] == hex(reg_dict['value'+str(i)]).rstrip('L'):  # convert hex to int
@@ -448,11 +459,12 @@ class Util:
         :return:
         """
         register = self.platform.regByPath(register_path)
-        if verbose is True: print ("writing {0} to {1}...".format(hex(register_value).rstrip('L'), register_path)),
+        if verbose is True:
+            print ("writing {0} to {1}...".format(hex(register_value).rstrip('L'), register_path)),
         register.value(register_value)
         register.write()
 
-        if verbose is True: # read back when verbose is true
+        if verbose is True:  # read back when verbose is true
             print ("done")
             time.sleep(2)
             register.read()
@@ -471,7 +483,8 @@ class Util:
         """
         register = self.platform.regByPath(register_path)
 
-        if verbose is True: print ("writing {0} to {1}...".format(hex(register_field_value).rstrip('L'),
+        if verbose is True:
+            print ("writing {0} to {1}...".format(hex(register_field_value).rstrip('L'),
                                                                   register_field_name)),
         register.field(register_field_name).value(register_field_value)
         register.write()
@@ -481,13 +494,14 @@ class Util:
             time.sleep(2)
             register.read()
             print("    {0}[{1}] = {2}".format(register_path,
-                                                              register_field_name,
-                                                              hex(register.field(register_field_name).value()).rstrip('L')))
+                                              register_field_name,
+                                              hex(register.field(register_field_name).value()).rstrip('L')))
 
     def write_registers_in_dataframe(self, registers_dataframe, verbose=False):
         """
         the registers_dataframe must contain path and recommend fields
         :param registers_dataframe: recommend field must be number format
+        :param verbose:
         :return:
         """
         regs_dictlist = registers_dataframe.to_dict('records')
@@ -581,6 +595,23 @@ class Util:
         xml_regs_df = pandas.DataFrame(xml_regs) # dict list to dataframe
         return xml_regs_df
 
+    def xml_to_dataframe_mixed(self, xml_file_path):
+        """
+        read the xml file of registers and convert them to a dataframe
+
+        :param xml_file_path:
+        :param bitfield_present: if the xml file has bitfield attribute
+        :param recommend_present: if the xml file has recommend attribute
+        :return: df
+        """
+        xml_file = etree.parse(xml_file_path)
+        xml_items = []
+
+        for xml_item in xml_file.findall('reg'):
+            print(xml_item.attrib['register'])
+
+        return 0
+
     def xml_to_dictlist(self, xml_path):
         """
         read the xml file of registers and convert them to list of dicts
@@ -606,6 +637,8 @@ class Util:
         """
         step_size = (workload_upper_bound_value - workload_lower_bound_value) / 10
         df_pwr_data = pandas.read_csv(csv_path, na_values=['.'], dtype=numpy.float)
+
+
         df_mm14_workloads = pandas.DataFrame(index=df_pwr_data.index,
                                              columns=['onenote', 'chrome', 'winzip', 'idle_0', 'word', 'powerpoint',
                                                       'acrobat', 'idle_1', 'outlook', 'excel', 'idle_2'],
