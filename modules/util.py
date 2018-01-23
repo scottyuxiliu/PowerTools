@@ -73,6 +73,12 @@ class Util:
             if connect_type == 'yaap':
                 self.wombat = Kysy.Wombat.create(ip, username, password)
                 self.platform = self.wombat.platform()
+
+        self.socket_id = 0
+        self.die_id = 0
+        self.ccx_id = 0
+        self.core_id = 0
+        self.thread_id = 0
         print ("done")
 
     """ wombat section """
@@ -119,9 +125,38 @@ class Util:
         mem.read()
         return 0
 
-    def read_smn_buffer(self):
-        mem = Kysy.SMNAxiBufferAccess.create(self.platform, 0, 0, 0x5B370, 8, 4)
-        mem.read()
+    def read_smn_buffer(self, smn_address, number_of_bytes_to_read, number_of_read_attempts):
+        """
+
+        :param smn_address:
+        :param number_of_bytes_to_read:
+        :param number_of_read_attempts:
+        :return:
+        """
+        smn_axi_buffer_access_object = Kysy.SMNAxiBufferAccess.create(self.platform,
+                                                                      self.socket_id,
+                                                                      self.die_id,
+                                                                      smn_address,
+                                                                      number_of_bytes_to_read,
+                                                                      number_of_read_attempts)
+        smn_axi_buffer_access_object.read()
+        return 0
+
+    def read_mp1_buffer(self, mp1_address, number_of_bytes_to_read, number_of_read_attempts):
+        """
+
+        :param mp1_address:
+        :param number_of_bytes_to_read:
+        :param number_of_read_attempts:
+        :return:
+        """
+        mp1_buffer_access_object = Kysy.MPBuffer.create(self.platform,
+                                                        mp1_address,
+                                                        number_of_bytes_to_read,
+                                                        number_of_read_attempts,
+                                                        self.die_id,
+                                                        self.socket_id)
+        mp1_buffer_access_object.read()
         return 0
 
     def read_register(self, register_path, return_type='hex', verbose=False):
@@ -559,7 +594,8 @@ class Util:
             regs.append(reg.attrib)
         return regs
 
-    def loadcsv_mm14(self, csv_path, columns_to_plot, workload_lower_bound_value, workload_upper_bound_value, output_csv_path=None):
+    @staticmethod
+    def loadcsv_mm14(csv_path, columns_to_plot, workload_lower_bound_value, workload_upper_bound_value, output_csv_path=None):
         """
         load mm14 raw data from mm14 v1.5.1.55
         :param csv_path:
@@ -631,7 +667,8 @@ class Util:
 
     """ others """
 
-    def subtract(self, a, b):
+    @staticmethod
+    def subtract(a, b):
         """
 
         :param a:

@@ -67,3 +67,5 @@ def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
 # st.read_stutter(300, 1, True, True, "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/stutter_efficiency/rvfp5_b0dvt_w10rs3_tmd1004fa_1740rc26_idlestutter_1.csv")
 # Example 5: MM14 Plot
 df = ut.loadcsv_mm14("C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/Data/MandolinDAP/SystemPwrFeatures/R7vsR5/Power/TMD1102_1740RC33_default_MM14_wk61_TSP_R5_run1.csv", 25, 30, 0.5)
+# Example 6: Read SMN Buffer
+ut.read_smn_buffer(0x5B370, 8, 4)
