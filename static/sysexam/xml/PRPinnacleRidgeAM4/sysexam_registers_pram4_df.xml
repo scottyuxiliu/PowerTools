@@ -3,16 +3,16 @@
 	<!-- Raven verify file  -->
 <format type="header" text="BATTERY LIFE SETTINGS" />
 <header comment="DF Power Features" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core0" desc="CC6 status for core 0. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core1" desc="CC6 status for core 1. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core2" desc="CC6 status for core 2. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core3" desc="CC6 status for core 3. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core4" desc="CC6 status for core 4. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core5" desc="CC6 status for core 5. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core6" desc="CC6 status for core 6. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::Cc6Status_core7" desc="CC6 status for core 7. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core0" desc="CC6 status for core 0. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core1" desc="CC6 status for core 1. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core2" desc="CC6 status for core 2. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core3" desc="CC6 status for core 3. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core4" desc="CC6 status for core 4. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core5" desc="CC6 status for core 5. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core6" desc="CC6 status for core 6. 0: Not in CC6, 1: In CC6" />
+	<reg type="df" function="" offset="" instanceId="" bitfield="CoreInCc6" recommend="0x1" path="PPR::DF::socket0::die0::Cc6Status_core7" desc="CC6 status for core 7. 0: Not in CC6, 1: In CC6" />
 	<reg type="df" function="0x5" offset="0x344" instanceId="0xa0001" bitfield="CoreInCc6" recommend="0xF" path="PPR::DF::socket0::die0::BCST::Cc6StatusFlat" desc="CC6 status for the cores, each bit maps to a core. 0: Not in CC6, 1: In CC6" />
-	<reg type="df" function="0x5" offset="0x334" instanceId="0xa0001" bitfield="CpuComplexInPc6" recommend="0x1" path="PPR::DF::socket0::die0::BCST::ComplexPwrDnControl_CPUGPU" desc="0: Not in CPUOFF, 1: in CPUOFF" />
+	<reg type="df" function="0x5" offset="0x334" instanceId="0xa0001" bitfield="CpuComplexInPc6" recommend="0x1" path="PPR::DF::socket0::die0::BCST::ComplexPwrDnControl_CPU" desc="0: Not in CPUOFF, 1: in CPUOFF" />
 	<reg type="df" function="0x5" offset="0x360" instanceId="0xa0001" bitfield="ClkGateDis" recommend="0x0" path="PPR::DF::socket0::die0::BCST::PwrMgtCfg0" desc="DF Clock Gating. 0: Clock Gating enabled, 1: Clock Gating disabled" />
 	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="DfInCstate" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF C-state status" />
 	<reg type="df" function="0x5" offset="0x300" instanceId="0xa0001" bitfield="AllClientsIdle" recommend="0x1" path="PPR::DF::socket0::die0::BCST::CstateControl" desc="DF all clients idle" />

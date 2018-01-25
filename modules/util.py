@@ -131,10 +131,17 @@ class Util:
         mem.read()
         return 0
 
-    def read_smn_buffer(self, smn_address, number_of_bytes_to_read, number_of_read_attempts):
+    def read_smn_buffer(self,
+                        smn_address,
+                        return_type='hex',
+                        verbose=False,
+                        number_of_bytes_to_read=4,
+                        number_of_read_attempts=4):
         """
 
-        :param smn_address:
+        :param smn_address: SMN address doesn't need to be in 0x format. It should be an integer.
+        :param return_type:
+        :param verbose:
         :param number_of_bytes_to_read:
         :param number_of_read_attempts:
         :return:
@@ -146,13 +153,68 @@ class Util:
                                                                       number_of_bytes_to_read,
                                                                       number_of_read_attempts)
         smn_axi_buffer_access_object.read()
-        print(hex(smn_axi_buffer_access_object.dword(0)).rstrip('L'))
-        return 0
 
-    def read_mp1_buffer(self, mp1_address, number_of_bytes_to_read, number_of_read_attempts):
+        if return_type == 'hex':
+            if verbose is True:
+                print ("reading SMN buffer address {0}...".format(hex(smn_address).rstrip('L')))
+            value = hex(smn_axi_buffer_access_object.dword(0)).rstrip('L')
+            if verbose is True:
+                print("    value at address {0} is {1}".format(hex(smn_address).rstrip('L'), value))
+        elif return_type == 'int':
+            if verbose is True:
+                print ("reading SMN buffer address {0}...".format(hex(smn_address).rstrip('L')))
+            value = smn_axi_buffer_access_object.dword(0)
+            if verbose is True:
+                print("    value at address {0} is {1}".format(hex(smn_address).rstrip('L'), value))
+        else:
+            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+
+        return value
+
+    def write_smn_buffer(self,
+                         smn_address,
+                         smn_data,
+                         verbose=False,
+                         number_of_bytes_to_read=4,
+                         number_of_read_attempts=4):
         """
 
-        :param mp1_address:
+        :param smn_address: SMN address doesn't need to be in 0x format. It should be an integer.
+        :param smn_data: SMN data should be an integer.
+        :param verbose:
+        :param number_of_bytes_to_read:
+        :param number_of_read_attempts:
+        :return:
+        """
+        smn_axi_buffer_access_object = Kysy.SMNAxiBufferAccess.create(self.platform,
+                                                                      self.socket_id,
+                                                                      self.die_id,
+                                                                      smn_address,
+                                                                      number_of_bytes_to_read,
+                                                                      number_of_read_attempts)
+        smn_axi_buffer_access_object.read()
+        if verbose is True:
+            print ("writing {0} to {1}...".format(hex(smn_data).rstrip('L'), smn_address)),
+        smn_axi_buffer_access_object.dword(0, smn_data)
+        smn_axi_buffer_access_object.write()
+        if verbose is True:  # read back when verbose is true
+            print ("done")
+            time.sleep(2)
+            smn_axi_buffer_access_object.read()
+            print("    value at address {0} is {1}".format(hex(smn_address).rstrip('L'),
+                                                           hex(smn_data).rstrip('L')))
+
+    def read_mp1_buffer(self,
+                        mp1_address,
+                        return_type='hex',
+                        verbose=False,
+                        number_of_bytes_to_read=4,
+                        number_of_read_attempts=4):
+        """
+
+        :param mp1_address: MP1 address doesn't need to be in 0x format. It can be an integer.
+        :param return_type:
+        :param verbose:
         :param number_of_bytes_to_read:
         :param number_of_read_attempts:
         :return:
@@ -164,8 +226,57 @@ class Util:
                                                         self.die_id,
                                                         self.socket_id)
         mp1_buffer_access_object.read()
-        print(hex(mp1_buffer_access_object.dword(0)).rstrip('L'))
-        return 0
+
+        if return_type == 'hex':
+            if verbose is True:
+                print ("reading MP1 buffer address {0}...".format(hex(mp1_address).rstrip('L')))
+            value = hex(mp1_buffer_access_object.dword(0)).rstrip('L')
+            if verbose is True:
+                print("    value at address {0} is {1}".format(hex(mp1_address).rstrip('L'), value))
+        elif return_type == 'int':
+            if verbose is True:
+                print ("reading MP1 buffer address {0}...".format(hex(mp1_address).rstrip('L')))
+            value = mp1_buffer_access_object.dword(0)
+            if verbose is True:
+                print("    value at address {0} is {1}".format(hex(mp1_address).rstrip('L'), value))
+        else:
+            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+
+        return value
+
+    def write_mp1_buffer(self,
+                         mp1_address,
+                         mp1_data,
+                         verbose=False,
+                         number_of_bytes_to_read=4,
+                         number_of_read_attempts=4):
+        """
+
+        :param mp1_address: SMN address doesn't need to be in 0x format. It should be an integer.
+        :param mp1_data:
+        :param verbose:
+        :param number_of_bytes_to_read:
+        :param number_of_read_attempts:
+        :return:
+        """
+        mp1_buffer_access_object = Kysy.MPBuffer.create(self.platform,
+                                                        mp1_address,
+                                                        number_of_bytes_to_read,
+                                                        number_of_read_attempts,
+                                                        self.die_id,
+                                                        self.socket_id)
+        mp1_buffer_access_object.read()
+
+        if verbose is True:
+            print ("writing {0} to {1}...".format(hex(mp1_data).rstrip('L'), hex(mp1_address).rstrip('L'))),
+        mp1_buffer_access_object.dword(0, mp1_data)
+        mp1_buffer_access_object.write()
+        if verbose is True:  # read back when verbose is true
+            print ("done")
+            time.sleep(2)
+            mp1_buffer_access_object.read()
+            print("    value at address {0} is {1}".format(hex(mp1_address).rstrip('L'),
+                                                           hex(mp1_data).rstrip('L')))
 
     def read_register(self, register_path, return_type='hex', verbose=False):
         """
@@ -249,11 +360,11 @@ class Util:
         :param log_period: number of seconds to wait between two reads
         :return: df
         """
-        dictlist = []
-        value = 0
+
         repeat = log_duration / log_period
 
-        for i in range(repeat):
+        # if reading only once, return the value
+        if repeat == 1:
             register = self.platform.regByPath(register_path)
             register.read()
             if return_type == 'hex':
@@ -262,20 +373,40 @@ class Util:
                 value = hex(register.field(register_field_name).value()).rstrip('L')
                 if verbose is True:
                     print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
-                dictlist.append({"path": register_path, "field": register_field_name, "value": value})
             elif return_type == 'int':
                 if verbose is True:
                     print ("reading {0}[{1}]...".format(register_path, register_field_name))
                 value = register.field(register_field_name).value()
                 if verbose is True:
                     print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
-                dictlist.append({"path": register_path, "field": register_field_name, "value": value})
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+            return value
 
-            time.sleep(log_period)
-
-        return pandas.DataFrame(dictlist)
+        # if reading more than once, return the dataframe
+        else:
+            dictlist = []
+            for i in range(repeat):
+                register = self.platform.regByPath(register_path)
+                register.read()
+                if return_type == 'hex':
+                    if verbose is True:
+                        print ("reading {0}[{1}]...".format(register_path, register_field_name))
+                    value = hex(register.field(register_field_name).value()).rstrip('L')
+                    if verbose is True:
+                        print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
+                    dictlist.append({"path": register_path, "field": register_field_name, "value": value})
+                elif return_type == 'int':
+                    if verbose is True:
+                        print ("reading {0}[{1}]...".format(register_path, register_field_name))
+                    value = register.field(register_field_name).value()
+                    if verbose is True:
+                        print("    {0}[{1}] = {2}".format(register_path, register_field_name, value))
+                    dictlist.append({"path": register_path, "field": register_field_name, "value": value})
+                else:
+                    raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+                time.sleep(log_period)
+            return pandas.DataFrame(dictlist)
 
     def read_registers_in_dataframe(self,
                                     registers_dataframe,
@@ -353,18 +484,14 @@ class Util:
             if return_type == 'hex':
                 for reg_dict in regs_dictlist:
                     if verbose is True:
-                        print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
-
-                    register = self.platform.regByPath(reg_dict['path'])
+                        print ("reading {0}[{1}]...".format(reg_dict['access_address'], reg_dict['bitfield'])),
+                    register = self.platform.regByPath(reg_dict['access_address'])
                     register.read()
-
                     if verbose is True:
                         print ("done")
-
                     reg_dict['value'+str(i)] = hex(register.field(reg_dict['bitfield']).value()).rstrip('L')
-
                     if verbose is True:
-                        print ("    {0}[{1}] = {2}".format(reg_dict['path'],
+                        print ("    {0}[{1}] = {2}".format(reg_dict['access_address'],
                                                            reg_dict['bitfield'],
                                                            reg_dict['value'+str(i)]))
                     # check if recommend == value
@@ -377,14 +504,14 @@ class Util:
             elif return_type == 'int':
                 for reg_dict in regs_dictlist:
                     if verbose is True:
-                        print ("reading {0}[{1}]...".format(reg_dict['path'], reg_dict['bitfield'])),
-                    register = self.platform.regByPath(reg_dict['path'])
+                        print ("reading {0}[{1}]...".format(reg_dict['access_address'], reg_dict['bitfield'])),
+                    register = self.platform.regByPath(reg_dict['access_address'])
                     register.read()
                     if verbose is True:
                         print ("done")
                     reg_dict['value'+str(i)] = register.field(reg_dict['bitfield']).value()
                     if verbose is True:
-                        print ("    {0}[{1}] = {2}".format(reg_dict['path'],
+                        print ("    {0}[{1}] = {2}".format(reg_dict['access_address'],
                                                            reg_dict['bitfield'],
                                                            reg_dict['value'+str(i)]))
 
@@ -416,10 +543,8 @@ class Util:
         :return:
         """
 
-        df = self.xml_to_dataframe(xml_file_path, False, False)
+        df = self.xml_to_dataframe(xml_file_path)
         df = self.read_registers_in_dataframe(df, return_type, verbose, log_duration, log_period)
-        if verbose is True:
-            print(df)
         if results_csv_path is not None:
             return df.to_csv(results_csv_path)
 
@@ -440,15 +565,72 @@ class Util:
         :param log_duration: number of seconds to log
         :param log_period: number of seconds to wait between two reads
         :param status_check:
-        :return:
+        :return: self.read_register_fields_in_dataframe(df, return_type, verbose, log_duration, log_period, status_check)
         """
 
-        df = self.xml_to_dataframe(xml_file_path, True, status_check)
+        df = self.xml_to_dataframe(xml_file_path)
         df = self.read_register_fields_in_dataframe(df, return_type, verbose, log_duration, log_period, status_check)
-        if verbose is True:
-            print(df)
-        if results_csv_path is not None:
-            return df.to_csv(results_csv_path)
+        if results_csv_path is None:
+            return df
+        else:
+            df.to_csv(results_csv_path)
+            return df
+
+    def read_all_in_dictlist(self,
+                             dictlist,
+                             return_type='hex',
+                             verbose=False,
+                             log_duration=1,
+                             log_period=1,
+                             status_check=False):
+        """
+
+        :param dictlist:
+        :param return_type:
+        :param verbose:
+        :param log_duration:
+        :param log_period:
+        :param status_check:
+        :return:
+        """
+        repeat = log_duration / log_period
+
+        if repeat == 1:
+            for dict in dictlist:
+                if dict['access_method'] == 'reg_by_path':
+                    dict['value'] = self.read_register_field(dict['access_address'],
+                                                             dict['bitfield'],
+                                                             return_type,
+                                                             verbose,
+                                                             log_duration,
+                                                             log_period)
+                elif dict['access_method'] == 'smn_buffer':
+                    dict['value'] = self.read_smn_buffer(int(dict['access_address'], 16), 'hex', True)
+                elif dict['access_method'] == 'mp1_buffer':
+                    dict['value'] = self.read_mp1_buffer(int(dict['access_address'], 16), 'hex', True)
+                else:
+                    raise TypeError('unrecognized access_method {0}. access_method can only be reg_by_path, smn_buffer or mp1_buffer'.format(dict['access_method']))
+            return pandas.DataFrame(dictlist)
+        else:
+            for i in range(repeat):
+                for dict in dictlist:
+                    if dict['access_method'] == 'reg_by_path':
+                        dict['value'+str(i)] = self.read_register_field(dict['address'],
+                                                                 dict['bitfield'],
+                                                                 return_type,
+                                                                 verbose,
+                                                                 1,
+                                                                 1)
+                    elif dict['access_method'] == 'smn_buffer':
+                        dict['value'+str(i)] = self.read_smn_buffer(int(dict['address'], 16), 'hex', True)
+                    elif dict['access_method'] == 'mp1_buffer':
+                        dict['value'+str(i)] = self.read_mp1_buffer(int(dict['address'], 16), 'hex', True)
+                    else:
+                        raise TypeError('unrecognized access_method {0}. access_method can only be reg_by_path, smn_buffer or mp1_buffer'.format(dict['access_method']))
+
+                time.sleep(log_period)
+
+            return pandas.DataFrame(dictlist)
 
     def write_register(self, register_path, register_value, verbose=False):
         """
@@ -459,11 +641,11 @@ class Util:
         :return:
         """
         register = self.platform.regByPath(register_path)
+        register.read()
         if verbose is True:
             print ("writing {0} to {1}...".format(hex(register_value).rstrip('L'), register_path)),
         register.value(register_value)
         register.write()
-
         if verbose is True:  # read back when verbose is true
             print ("done")
             time.sleep(2)
@@ -477,19 +659,19 @@ class Util:
         write a single register field
         :param register_path:
         :param register_field_name:
-        :param register_field_value:
+        :param register_field_value: needs to be a decimal integer
         :param verbose:
         :return:
         """
         register = self.platform.regByPath(register_path)
-
+        register.read()
         if verbose is True:
-            print ("writing {0} to {1}...".format(hex(register_field_value).rstrip('L'),
-                                                                  register_field_name)),
+            print ("writing {0} to {1}[{2}]...".format(hex(register_field_value).rstrip('L'),
+                                                       register_path,
+                                                       register_field_name)),
         register.field(register_field_name).value(register_field_value)
         register.write()
-
-        if verbose is True: # read back when verbose is true
+        if verbose is True:  # read back when verbose is true
             print ("done")
             time.sleep(2)
             register.read()
@@ -506,46 +688,20 @@ class Util:
         """
         regs_dictlist = registers_dataframe.to_dict('records')
         for reg_dict in regs_dictlist:
-            if verbose is True: print ("writing {0} to {1}...".format(hex(reg_dict['recommend']).rstrip('L'),
-                                                                      reg_dict['path'])),
-
-            register = self.platform.regByPath(reg_dict['path'])
-            register.value(reg_dict['recommend'])
-            register.write()
-
-            if verbose is True:
-                print ("done")
-                time.sleep(2)
-                register.read()
-                print("    {0} = {1}".format(reg_dict['path'],
-                                             hex(register.value()).rstrip('L')))
+            self.write_register(reg_dict['access_address'], reg_dict['recommend'], verbose)
 
     def write_register_fields_in_dataframe(self, registers_dataframe, verbose=False):
         """
         the registers_dataframe must contain path, bitfield and recommend fields
         :param registers_dataframe:
-        :param return_type:
         :param verbose: print out each register read
         :return:
         """
         regs_dictlist = registers_dataframe.to_dict('records')
         for reg_dict in regs_dictlist:
-            if verbose is True: print ("writing {0} to {1}...".format(hex(reg_dict['bitfield']).rstrip('L'),
-                                                                      reg_dict['bitfield'])),
+            self.write_register_field(reg_dict['access_address'], reg_dict['bitfield'], int(reg_dict['recommend'], 16), verbose)
 
-            register = self.platform.regByPath(reg_dict['path'])
-            register.field(reg_dict['bitfield']).value(reg_dict['recommend'])
-            register.write()
-
-            if verbose is True:
-                print ("done")
-                time.sleep(2)
-                register.read()
-                print("    {0}[{1}] = {2}".format(reg_dict['path'],
-                                                  reg_dict['bitfield'],
-                                                  hex(register.field(reg_dict['bitfield']).value()).rstrip('L')))
-
-    def write_register_fields_in_xml_file(self, xml_file_path, verbose=False):
+    def write_register_fields_in_xml_file(self, xml_path, verbose=False):
         """
 
         :param xml_file_path:
@@ -553,66 +709,31 @@ class Util:
         :return:
         """
 
-        df = self.xml_to_dataframe(xml_file_path)
+        df = self.xml_to_dataframe(xml_path)
         self.write_register_fields_in_dataframe(df, verbose)
 
+    def write_all_in_dictlist(self, dictlist, verbose=False):
+        """
+
+        :param dictlist:
+        :param verbose:
+        :return:
+        """
+
+        for dict_item in dictlist:
+            if dict_item['access_method'] == 'reg_by_path':
+                self.write_register_field(dict_item['access_address'], dict_item['bitfield'], int(dict_item['recommend'], 16), verbose)
+            elif dict_item['access_method'] == 'smn_buffer':
+                self.write_smn_buffer(int(dict_item['access_address'], 16), int(dict_item['recommend'], 16), verbose)
+            elif dict_item['access_method'] == 'mp1_buffer':
+                self.write_mp1_buffer(int(dict_item['access_address'], 16), int(dict_item['recommend'], 16), verbose)
+            else:
+                raise TypeError('unrecognized access_method {0}. access_method can only be reg_by_path, smn_buffer or mp1_buffer'.format(dict_item['access_method']))
+
     """ data loading section """
-    def xml_to_dataframe(self, xml_file_path, bitfield_present=False, recommend_present=False):
-        """
-        read the xml file of registers and convert them to a dataframe
 
-        :param xml_file_path:
-        :param bitfield_present: if the xml file has bitfield attribute
-        :param recommend_present: if the xml file has recommend attribute
-        :return: df
-        """
-        xml_file = etree.parse(xml_file_path)
-        xml_regs = []
-
-        if bitfield_present is False and recommend_present is False:
-            for xml_reg in xml_file.findall('reg'):
-                xml_regs.append({'path': xml_reg.get('path')})
-        elif bitfield_present is True and recommend_present is False:
-            for xml_reg in xml_file.findall('reg'):
-                xml_regs.append({'bitfield': xml_reg.get('bitfield'), 'path': xml_reg.get('path')})
-        elif bitfield_present is True and recommend_present is True:
-            for xml_reg in xml_file.findall('reg'):
-                # print(xml_reg.attrib.keys())
-                if('desc' in xml_reg.attrib.keys()):
-                    xml_regs.append({'bitfield':xml_reg.get('bitfield'),
-                                     'recommend':hex(int(xml_reg.get('recommend'), 16)).rstrip('L'), # string to int, and to hex
-                                     'path':xml_reg.get('path'),
-                                     'desc':xml_reg.get('desc')})
-                else:
-                    xml_regs.append({'bitfield': xml_reg.get('bitfield'),
-                                     'recommend': hex(int(xml_reg.get('recommend'), 16)).rstrip('L'),
-                                     'path': xml_reg.get('path'),
-                                     'desc': 'n/a'})
-        else:
-            raise TypeError('incorrect arguments; you need to have bitfields if you have recommends')
-
-        xml_regs = [xml_reg for xml_reg in xml_regs if xml_reg['path'] is not None]
-        xml_regs_df = pandas.DataFrame(xml_regs) # dict list to dataframe
-        return xml_regs_df
-
-    def xml_to_dataframe_mixed(self, xml_file_path):
-        """
-        read the xml file of registers and convert them to a dataframe
-
-        :param xml_file_path:
-        :param bitfield_present: if the xml file has bitfield attribute
-        :param recommend_present: if the xml file has recommend attribute
-        :return: df
-        """
-        xml_file = etree.parse(xml_file_path)
-        xml_items = []
-
-        for xml_item in xml_file.findall('reg'):
-            print(xml_item.attrib['register'])
-
-        return 0
-
-    def xml_to_dictlist(self, xml_path):
+    @staticmethod
+    def xml_to_dictlist(xml_path):
         """
         read the xml file of registers and convert them to list of dicts
 
@@ -620,10 +741,36 @@ class Util:
         :return:
         """
         xml_file = etree.parse(xml_path)
-        regs = []
-        for reg in xml_file.findall('reg'):
-            regs.append(reg.attrib)
-        return regs
+        xml_items = []
+        for xml_item in xml_file.findall('reg'):
+            xml_items.append({'bitfield': xml_item.get('bitfield'),
+                              'recommend': hex(int(xml_item.get('recommend'), 16)).rstrip('L'),  # string to int, and to hex
+                              'access_method': xml_item.get('access_method'),
+                              'access_address': xml_item.get('access_address'),
+                              'desc': xml_item.get('desc')})
+        return xml_items
+
+    @staticmethod
+    def xml_to_dataframe(xml_path):
+        """
+        read the xml file of registers and convert them to a dataframe
+        xml_item.attrib returns a dictionary of attributes and their values
+        :param xml_path:
+        :return: df
+        """
+        xml_file = etree.parse(xml_path)
+        xml_items = []
+        for xml_item in xml_file.findall('reg'):
+            if xml_item.attrib['recommend'] is not None and xml_item.attrib['access_method'] is not None and xml_item.attrib['address'] is not None:
+                xml_items.append({'bitfield': xml_item.get('bitfield'),
+                                  'recommend': hex(int(xml_item.get('recommend'), 16)).rstrip('L'),
+                                  # string to int, and to hex
+                                  'access_method': xml_item.get('access_method'),
+                                  'access_address': xml_item.get('access_address'),
+                                  'desc': xml_item.get('desc')})
+
+        xml_regs_df = pandas.DataFrame(xml_items)  # dict list to dataframe
+        return xml_regs_df
 
     @staticmethod
     def loadcsv_mm14(csv_path, columns_to_plot, workload_lower_bound_value, workload_upper_bound_value, output_csv_path=None):

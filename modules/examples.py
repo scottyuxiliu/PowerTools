@@ -42,34 +42,45 @@ def read_fmt_bit_depth_control():
                                   1)
     return 0
 
-# Example 3: Sysexam
-def start_sysexam_on_host(sysexam_verify_xml_path, verify_results_csv_path):
-    xml_regs_df = ut.xml_to_dataframe(sysexam_verify_xml_path, True, True)
-    xml_regs_df = ut.read_register_fields_in_dataframe(xml_regs_df, 'int', True, 200, 20, True) # update bitfield values for each xml_reg
-    # print(xml_regs_df)
-    # xml_regs_df = xml_regs_df[['status0','path','bitfield','recommend','value0']]
-    xml_regs_df.to_csv(verify_results_csv_path)
-    return 0
-
-
 # Example 1: read register multiple times
 # read_screen_refresh_rate()
+
 # Example 2: read multiple registers from xml file and dump results into csv file
 # read_fmt_bit_depth_control()
+
+
 # Example 3: Sysexam
-# start_sysexam_on_host("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
-#                       "C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/Data/MandolinDAP/SystemPwrFeatures/Idle/SysExam/rvfp5_b0dvt_mandolindap_w10rs3_tmd1102a_17.40rc33_default_sysexam_0.csv")
+# ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/PRPinnacleRidgeAM4/sysexam_registers_pram4_umc.xml",
+#                                     "C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/Idle/SysExam/pram4_turpandap_w10rs3_wmp8124n_17.12.2adrenalinedition_stack1.0.0_umc_sysexam_0.csv",
+#                                     'hex',
+#                                     True,
+#                                     50,
+#                                     10,
+#                                     True)
+
 # Example 4: Enter/Exit PDM mode
 # ut.enter_pdm_mode(True)
+
 # Example 5: Memory Access
 # ut.read_memory()
+
 # Example 4: Stutter Efficiency
 # st.read_stutter(300, 1, True, True, "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/stutter_efficiency/rvfp5_b0dvt_w10rs3_tmd1004fa_1740rc26_idlestutter_1.csv")
+
 # Example 5: MM14 Plot
 # df = ut.loadcsv_mm14("C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/Data/MandolinDAP/SystemPwrFeatures/R7vsR5/Power/TMD1102_1740RC33_default_MM14_wk61_TSP_R5_run1.csv", 25, 30, 0.5)
+
 # Example 6: Read SMN Buffer
 # ut.read_smn_buffer(0x5012C, 8, 4)
+
 # Example 7: Read MP1 Buffer
-# ut.read_mp1_buffer(0x8578, 8, 4)
-# Example 8: Test
-ut.xml_to_dataframe_mixed("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/PRPinnacleRidgeAM4/sysexam_test.xml")
+# ut.read_mp1_buffer(0x8578, 'hex', True)
+
+# Example 8: Read everything
+# dictlist = ut.xml_to_dictlist("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/PRPinnacleRidgeAM4/sysexam_test.xml")
+# ut.read_all_in_dictlist(dictlist, 'hex', True, 100, 10, False).to_csv("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/test/results.csv")
+
+# Example 9: Week of 2018.01.22 Optimized Settings
+ut.write_register_fields_in_xml_file("C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/optimized_settings_weekof_2018.01.22.xml",
+                                     True)
+# ut.write_register_field("PPR::UMC::CH::socket0::die0::umc0::SpazCtrl_ch0", "AggrPwrDownEn", 1, True)

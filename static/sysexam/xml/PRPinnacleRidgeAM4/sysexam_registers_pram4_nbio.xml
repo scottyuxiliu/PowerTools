@@ -3,257 +3,257 @@
 	<!-- Raven verify file  -->
 <format type="header" text="BATTERY LIFE SETTINGS" />
 <header comment="NBIO - IOHC Power Features" />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_SDF_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_SDF_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE0_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE0_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE1_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE1_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_NBIF0_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_NBIF0_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_IOAGR_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_IOAGR_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_L2_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_L2_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_s2p_int_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_s2p_int_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHCi2p_INT. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_SeqArb_Req. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_SeqArb_Rsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_Credit. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHC_CfgSlv. 0: Enable Clock Gating. 1: Disable Clock Gating." />
-	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHC_RAS. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_SDF_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_SDF_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE0_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE0_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE1_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_PCIE1_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_NBIF0_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_NBIF0_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_IOAGR_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_0" desc="Disable dynamic clock gating for SION_IOAGR_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_L2_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK1" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_L2_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK2" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_s2p_int_OrigReq. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK3" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_s2p_int_CompRsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK4" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHCi2p_INT. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK5" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_SeqArb_Req. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK6" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_SeqArb_Rsp. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK7" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for SION_Credit. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK8" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHC_CfgSlv. 0: Enable Clock Gating. 1: Disable Clock Gating." />
+	<reg type="smn" address="" bitfield="SOFT_OVERRIDE_CLK9" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOHC::socket0::die0::IOHC_GLUE_CG_LCLK_CTRL_1" desc="Disable dynamic clock gating for IOHC_RAS. 0: Enable Clock Gating. 1: Disable Clock Gating." />
 <format type="break" />
 <header comment="NBIO - IOMMUL1 - PCIE0 Power Features" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" desc="IOMMU L1 Clock Gating" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_HOSTRSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_DMARSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_HOSTREQ_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" desc="Doesn't work in A0, works in B0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x147000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" desc="IOMMU L1 Clock Gating" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_HOSTRSP_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_DMARSP_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_HOSTREQ_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" desc="Should be set to 0 for PIR AM4" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x147000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::PCIE0::L1_CLKCNTRL_0" />
 <format type="break" />
 <header comment="NBIO - IOMMUL1 - IOAGR Power Features" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" desc="IOMMU L1 Clock Gating" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_HOSTRSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_DMARSP_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_HOSTREQ_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" desc="Doesn't work in A0, works in B0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
-	<reg type="smn" address="0x148000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" path="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_L2_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" desc="IOMMU L1 Clock Gating" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_HOSTRSP_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_DMARSP_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_HOSTREQ_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_REG_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_MEMORY_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_PERF_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_CPSLV_CLKGATE_EN" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" desc="Should be set to 0 for PIR AM4" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_CACHE_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
+	<reg type="smn" address="0x148000cc" bitfield="L1_DMA_CLKGATE_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL1::socket0::die0::IOAGR::L1_CLKCNTRL_0" />
 <format type="break" />
 <header comment="NBIO - IOMMUL2 Power Features" />
-	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ACacheDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
-	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ADynamicDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
-	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ARegsDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
-	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BMiscDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
-	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BDynamicDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
-	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BRegsDisable" recommend="0x0" path="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
-	<reg type="smn" address="0x15700104" bitfield="IP_PG_en" recommend="0x1" path="PPR::IOMMUL2::socket0::die0::L2_PWRGATE_CNTRL_REG_3" desc="IOMMU Dyanmic Power Gating" />
+	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ACacheDisable" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ADynamicDisable" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x157000cc" bitfield="CKGateL2ARegsDisable" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL2::socket0::die0::L2_L2A_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BMiscDisable" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BDynamicDisable" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x13f01240" bitfield="CKGateL2BRegsDisable" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOMMUL2::socket0::die0::L2_L2B_CK_GATE_CONTROL" desc="IOMMU L2 Clock Gating" />
+	<reg type="smn" address="0x15700104" bitfield="IP_PG_en" recommend="0x1" access_method="reg_by_path" access_address="PPR::IOMMUL2::socket0::die0::L2_PWRGATE_CNTRL_REG_3" desc="IOMMU Dyanmic Power Gating" />
 <format type="break" />
 <header comment="NBIO - NBIF Power Features" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF0::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF1::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" path="PPR::NBIFMM::socket0::die0::NBIF2::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF0::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF1::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
-	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" path="PPR::NBIFMM::socket0::die0::NBIF2::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::NBIFMM::socket0::die0::NBIF0::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::NBIFMM::socket0::die0::NBIF1::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::NBIFMM::socket0::die0::NBIF2::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" access_method="reg_by_path" access_address="PPR::NBIFMM::socket0::die0::NBIF0::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" access_method="reg_by_path" access_address="PPR::NBIFMM::socket0::die0::NBIF1::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NBIF_MGCG_HYSTERESIS" recommend="0x40" access_method="reg_by_path" access_address="PPR::NBIFMM::socket0::die0::NBIF2::NBIF_MGCG_CTRL" desc="nBIF Medium Grain Clock Gating Hysteresis timer" />
 <format type="break" />
 <header comment="NBIO - SYSHUB Power Features" />
-	<reg type="smn" address="" bitfield="NGDC_MGCG_EN" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::NBIF0::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating" />
-	<reg type="smn" address="" bitfield="NGDC_MGCG_EN" recommend="0x1" path="PPR::SYSHUBMM::socket0::die0::NBIF1::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating" />
-	<reg type="smn" address="" bitfield="NGDC_MGCG_HYSTERESIS" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::NBIF0::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating Hysteresis timer" />
-	<reg type="smn" address="" bitfield="NGDC_MGCG_HYSTERESIS" recommend="0x40" path="PPR::SYSHUBMM::socket0::die0::NBIF1::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::SYSHUBMM::socket0::die0::NBIF0::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::SYSHUBMM::socket0::die0::NBIF1::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_HYSTERESIS" recommend="0x40" access_method="reg_by_path" access_address="PPR::SYSHUBMM::socket0::die0::NBIF0::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating Hysteresis timer" />
+	<reg type="smn" address="" bitfield="NGDC_MGCG_HYSTERESIS" recommend="0x40" access_method="reg_by_path" access_address="PPR::SYSHUBMM::socket0::die0::NBIF1::NGDC_MGCG_CTRL" desc="SysHub Medium Grain Clock Gating Hysteresis timer" />
 <format type="break" />
 <header comment="NBIO - PCIE0 Power Features" />
-	<reg type="smn" address="" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
-	<reg type="smn" address="" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="LCLK Clock Gating" />
-	<reg type="smn" address="" bitfield="REPLAY_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="MST_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="MST_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="REPLAY_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="MST_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_LS_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
+	<reg type="smn" address="" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::CPM_CONTROL" desc="LCLK Clock Gating" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_DS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_DS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_DS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_SD_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_SD_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_LS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_LS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_LS_EN" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_LS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE0::PCIE_CNTL2" />
 	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 0 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link0::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link0::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 1 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link1::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link1::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 2 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link2::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link2::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 3 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link3::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link3::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 4 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link4::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link4::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 5 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link5::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link5::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 6 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link6::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link6::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe0 - Function 7 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE0::link7::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE0::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE0::link7::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 Power Features" />
-	<reg type="smn" address="" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
-	<reg type="smn" address="" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
-	<reg type="smn" address="" bitfield="REPLAY_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="MST_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_DS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="MST_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_SD_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="REPLAY_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="MST_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_LS_EN" recommend="0x0" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
-	<reg type="smn" address="" bitfield="SLV_MEM_LS_EN" recommend="0x1" path="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="CLKREQb_UNGATE_TXCLK_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" desc="The link controller will have a clock to response when the endpoint asserts CLKREQ# and that should resolve WLAN instability issue" />
+	<reg type="smn" address="" bitfield="LCLK_GATE_TXCLK_FREE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="REFCLK_REGS_GATE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PRBS_GATE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_REGS_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_LCNT_GATE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_PERM_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="TXCLK_DYN_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="LCLK_DYN_GATE_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::CPM_CONTROL" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_DS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_DS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_DS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_SD_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_SD_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_SD_EN" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_SD_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="REPLAY_MEM_LS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="MST_MEM_LS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_AGGRESSIVE_LS_EN" recommend="0x0" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
+	<reg type="smn" address="" bitfield="SLV_MEM_LS_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::PCIECORE::socket0::die0::PCIE1::PCIE_CNTL2" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 0 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link0::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link0::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link0::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 1 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link1::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link1::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link1::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 2 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link2::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link2::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link2::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 3 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link3::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link3::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link3::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 4 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link4::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link4::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link4::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 5 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link5::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link5::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link5::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 6 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link6::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link6::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link6::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - PCIe1 - Function 7 Power Features" />
-	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" path="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
-	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" path="PPR::PCIERCCFG::socket0::die0::PCIE1::link7::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
+	<reg type="smn" address="" bitfield="LC_CURRENT_STATE" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE1" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE2" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="LC_PREV_STATE3" recommend="0" access_method="reg_by_path" access_address="PPR::PCIEPORT::socket0::die0::PCIE1::link7::PCIE_LC_STATE0" desc="Link status. 00/01/02/03/04: Link down, 20/21/22: L0, 18/19/1A/1B: L1" />
+	<reg type="smn" address="" bitfield="PM_CONTROL" recommend="0x3" access_method="reg_by_path" access_address="PPR::PCIERCCFG::socket0::die0::PCIE1::link7::LINK_CNTL" desc="ASPM L0s and L1 (L1.2)" />
 <format type="break" />
 <header comment="NBIO - SST0 Power Features" />
-	<reg type="smn" address="0x17400004" bitfield="TXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST0::SST_CLOCK_CTRL" desc="SST Clock Gating" />
-	<reg type="smn" address="0x17400004" bitfield="RXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST0::SST_CLOCK_CTRL" desc="SST Clock Gating" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK4" recommend="0x1" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400004" bitfield="TXCLKGATEEn" recommend="0x1" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+	<reg type="smn" address="0x17400004" bitfield="RXCLKGATEEn" recommend="0x1" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK0" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK1" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK2" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK3" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK4" recommend="0x1" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK5" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK6" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK7" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK8" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17400404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK9" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST0::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
 <format type="break" />
 <header comment="NBIO - SST1 Power Features" />
-	<reg type="smn" address="0x17500004" bitfield="TXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST1::SST_CLOCK_CTRL" desc="SST Clock Gating" />
-	<reg type="smn" address="0x17500004" bitfield="RXCLKGATEEn" recommend="0x1" path="PPR::SST::socket0::die0::SST1::SST_CLOCK_CTRL" desc="SST Clock Gating" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK0" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK1" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK2" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK3" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK4" recommend="0x1" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK5" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK6" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK7" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK8" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
-	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK9" recommend="0x0" path="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500004" bitfield="TXCLKGATEEn" recommend="0x1" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+	<reg type="smn" address="0x17500004" bitfield="RXCLKGATEEn" recommend="0x1" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SST_CLOCK_CTRL" desc="SST Clock Gating" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK0" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK1" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK2" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK3" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK4" recommend="0x1" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK5" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK6" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK7" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK8" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
+	<reg type="smn" address="0x17500404" bitfield="CFG_SSTSION_GLUE_CG_LCLK_CTRL_0_SOFT_OVERRIDE_CLK9" recommend="0x0" access_method="reg_by_path" access_address="PPR::SST::socket0::die0::SST1::SION_WRAPPER_CFG_SSTSION_GLUE_CG_LCLK_CTRL_SOFT_OVERRIDE_CLK" desc="SST Clock Gating branch check" />
 <format type="break" />
 </verify>
