@@ -278,48 +278,21 @@ class Util:
             print("    value at address {0} is {1}".format(hex(mp1_address).rstrip('L'),
                                                            hex(mp1_data).rstrip('L')))
 
-    def read_register(self, register_path, return_type='hex', verbose=False):
+    def read_register(self, register_path, return_type='hex', verbose=False, log_duration=1, log_period=1):
         """
-        read register
-        :param register_path:
-        :param return_type: return hex or int
-        :param verbose: output all the messages
-        :return: value, default to register hex value
-        """
-
-        register = self.platform.regByPath(register_path)
-        register.read()
-        if return_type == 'hex':
-            if verbose is True:
-                print ("reading {0}...".format(register_path))
-            value = hex(register.value()).rstrip('L')
-            if verbose is True:
-                print("    {0} = {1}".format(register_path, value))
-        elif return_type == 'int':
-            if verbose is True:
-                print ("reading {0}...".format(register_path))
-            value = register.value()
-            if verbose is True:
-                print("    {0} = {1}".format(register_path, value))
-        else:
-            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
-
-        return value
-
-    def read_registers(self, register_path, return_type='hex', verbose=False, log_duration=1, log_period=1):
-        """
-        read register
+        read register several times, returns a dataframe with the access_address and value[0...n]
         :param register_path:
         :param return_type: return hex or int
         :param verbose: output all the messages
         :param log_duration: number of seconds to log
         :param log_period: number of seconds to wait between two reads
-        :return: df, default to register hex value
+        :return: value if reading once, dictionary if reading several times
         """
-        dictlist = []
+
         repeat = log_duration / log_period
 
-        for i in range(repeat):
+        # if reading only once, return the value
+        if repeat == 1:
             register = self.platform.regByPath(register_path)
             register.read()
             if return_type == 'hex':
@@ -328,20 +301,58 @@ class Util:
                 value = hex(register.value()).rstrip('L')
                 if verbose is True:
                     print("    {0} = {1}".format(register_path, value))
-                dictlist.append({"path": register_path, "value": value})
             elif return_type == 'int':
                 if verbose is True:
                     print ("reading {0}...".format(register_path))
                 value = register.value()
                 if verbose is True:
                     print("    {0} = {1}".format(register_path, value))
-                dictlist.append({"path": register_path, "value": value})
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+            return value
+        else:
+            dict_list = {"access_address": register_path}
+            for i in range(repeat):
+                register = self.platform.regByPath(register_path)
+                register.read()
+                if return_type == 'hex':
+                    if verbose is True:
+                        print ("reading {0}...".format(register_path))
+                        value = hex(register.value()).rstrip('L')
+                    if verbose is True:
+                        print("    {0} = {1}".format(register_path, value))
+                    dict_list["value"+str(i)] = value
+                elif return_type == 'int':
+                    if verbose is True:
+                        print ("reading {0}...".format(register_path))
+                    value = register.value()
+                    if verbose is True:
+                        print("    {0} = {1}".format(register_path, value))
+                        dict_list["value" + str(i)] = value
+                else:
+                    raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+                time.sleep(log_period)
+            return pandas.DataFrame(dict_list)
 
-            time.sleep(log_period)
-
-        return pandas.DataFrame(dictlist)
+    def write_register(self, register_path, register_value, verbose=False):
+        """
+        write a value to a single register
+        :param register_path:
+        :param register_value:
+        :param verbose:
+        :return:
+        """
+        register = self.platform.regByPath(register_path)
+        register.read()
+        if verbose is True:
+            print ("writing {0} to {1}...".format(hex(register_value).rstrip('L'), register_path)),
+        register.value(register_value)
+        register.write()
+        if verbose is True:  # read back when verbose is true
+            print ("done")
+            time.sleep(2)
+            register.read()
+            print("    {0} = {1}".format(register_path, hex(register.value()).rstrip('L')))
 
     def read_register_field(self,
                             register_path,
@@ -407,6 +418,32 @@ class Util:
                     raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
                 time.sleep(log_period)
             return pandas.DataFrame(dictlist)
+
+    def write_register_field(self, register_path, register_field_name, register_field_value, verbose=False):
+
+        """
+        write a single register field
+        :param register_path:
+        :param register_field_name:
+        :param register_field_value: needs to be a decimal integer
+        :param verbose:
+        :return:
+        """
+        register = self.platform.regByPath(register_path)
+        register.read()
+        if verbose is True:
+            print ("writing {0} to {1}[{2}]...".format(hex(register_field_value).rstrip('L'),
+                                                       register_path,
+                                                       register_field_name)),
+        register.field(register_field_name).value(register_field_value)
+        register.write()
+        if verbose is True:  # read back when verbose is true
+            print ("done")
+            time.sleep(2)
+            register.read()
+            print("    {0}[{1}] = {2}".format(register_path,
+                                              register_field_name,
+                                              hex(register.field(register_field_name).value()).rstrip('L')))
 
     def read_registers_in_dataframe(self,
                                     registers_dataframe,
@@ -527,6 +564,28 @@ class Util:
 
         return pandas.DataFrame(regs_dictlist)
 
+    def write_registers_in_dataframe(self, registers_dataframe, verbose=False):
+        """
+        the registers_dataframe must contain path and recommend fields
+        :param registers_dataframe: recommend field must be number format
+        :param verbose:
+        :return:
+        """
+        regs_dictlist = registers_dataframe.to_dict('records')
+        for reg_dict in regs_dictlist:
+            self.write_register(reg_dict['access_address'], reg_dict['recommend'], verbose)
+
+    def write_register_fields_in_dataframe(self, registers_dataframe, verbose=False):
+        """
+        the registers_dataframe must contain path, bitfield and recommend fields
+        :param registers_dataframe:
+        :param verbose: print out each register read
+        :return:
+        """
+        regs_dictlist = registers_dataframe.to_dict('records')
+        for reg_dict in regs_dictlist:
+            self.write_register_field(reg_dict['access_address'], reg_dict['bitfield'], int(reg_dict['recommend'], 16), verbose)
+
     def read_registers_in_xml_file(self,
                                    xml_file_path,
                                    results_csv_path=None,
@@ -578,79 +637,10 @@ class Util:
             df.to_csv(results_csv_path)
             return df
 
-    def write_register(self, register_path, register_value, verbose=False):
-        """
-        write a value to a single register
-        :param register_path:
-        :param register_value:
-        :param verbose:
-        :return:
-        """
-        register = self.platform.regByPath(register_path)
-        register.read()
-        if verbose is True:
-            print ("writing {0} to {1}...".format(hex(register_value).rstrip('L'), register_path)),
-        register.value(register_value)
-        register.write()
-        if verbose is True:  # read back when verbose is true
-            print ("done")
-            time.sleep(2)
-            register.read()
-            print("    {0} = {1}".format(register_path, hex(register.value()).rstrip('L')))
-
-    def write_register_field(self, register_path, register_field_name, register_field_value, verbose=False):
-
-
-        """
-        write a single register field
-        :param register_path:
-        :param register_field_name:
-        :param register_field_value: needs to be a decimal integer
-        :param verbose:
-        :return:
-        """
-        register = self.platform.regByPath(register_path)
-        register.read()
-        if verbose is True:
-            print ("writing {0} to {1}[{2}]...".format(hex(register_field_value).rstrip('L'),
-                                                       register_path,
-                                                       register_field_name)),
-        register.field(register_field_name).value(register_field_value)
-        register.write()
-        if verbose is True:  # read back when verbose is true
-            print ("done")
-            time.sleep(2)
-            register.read()
-            print("    {0}[{1}] = {2}".format(register_path,
-                                              register_field_name,
-                                              hex(register.field(register_field_name).value()).rstrip('L')))
-
-    def write_registers_in_dataframe(self, registers_dataframe, verbose=False):
-        """
-        the registers_dataframe must contain path and recommend fields
-        :param registers_dataframe: recommend field must be number format
-        :param verbose:
-        :return:
-        """
-        regs_dictlist = registers_dataframe.to_dict('records')
-        for reg_dict in regs_dictlist:
-            self.write_register(reg_dict['access_address'], reg_dict['recommend'], verbose)
-
-    def write_register_fields_in_dataframe(self, registers_dataframe, verbose=False):
-        """
-        the registers_dataframe must contain path, bitfield and recommend fields
-        :param registers_dataframe:
-        :param verbose: print out each register read
-        :return:
-        """
-        regs_dictlist = registers_dataframe.to_dict('records')
-        for reg_dict in regs_dictlist:
-            self.write_register_field(reg_dict['access_address'], reg_dict['bitfield'], int(reg_dict['recommend'], 16), verbose)
-
     def write_register_fields_in_xml_file(self, xml_path, verbose=False):
         """
 
-        :param xml_file_path:
+        :param xml_path:
         :param verbose:
         :return:
         """
