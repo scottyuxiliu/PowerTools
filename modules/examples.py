@@ -80,10 +80,10 @@ def read_fmt_bit_depth_control():
 # ut.read_all_in_dictlist(dictlist, 'hex', True, 100, 10, False).to_csv("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/test/results.csv")
 
 # Example 9: Week of 2018.01.22 Optimized Settings
-ut.write_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml", True)
-ut.read_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml",
-                        "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.csv",
-                        'hex',
-                        True,
-                        15,
-                        3)
+# ut.write_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml", True)
+# ut.read_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml",
+#                         "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.csv",
+#                         'hex',
+#                         True,
+#                         15,
+#                         3)
