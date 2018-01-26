@@ -491,6 +491,17 @@ class Util:
 
         return pandas.DataFrame(regs_dictlist)
 
+    def write_registers_in_dataframe(self, registers_dataframe, verbose=False):
+        """
+        the registers_dataframe must contain path and recommend fields
+        :param registers_dataframe: recommend field must be number format
+        :param verbose:
+        :return:
+        """
+        regs_dictlist = registers_dataframe.to_dict('records')
+        for reg_dict in regs_dictlist:
+            self.write_register(reg_dict['access_address'], reg_dict['recommend'], verbose)
+
     def read_register_fields_in_dataframe(self,
                                           registers_dataframe,
                                           return_type='hex',
@@ -564,17 +575,6 @@ class Util:
 
         return pandas.DataFrame(regs_dictlist)
 
-    def write_registers_in_dataframe(self, registers_dataframe, verbose=False):
-        """
-        the registers_dataframe must contain path and recommend fields
-        :param registers_dataframe: recommend field must be number format
-        :param verbose:
-        :return:
-        """
-        regs_dictlist = registers_dataframe.to_dict('records')
-        for reg_dict in regs_dictlist:
-            self.write_register(reg_dict['access_address'], reg_dict['recommend'], verbose)
-
     def write_register_fields_in_dataframe(self, registers_dataframe, verbose=False):
         """
         the registers_dataframe must contain path, bitfield and recommend fields
@@ -608,6 +608,17 @@ class Util:
         df = self.read_registers_in_dataframe(df, return_type, verbose, log_duration, log_period)
         if results_csv_path is not None:
             return df.to_csv(results_csv_path)
+
+    def write_registers_in_xml_file(self, xml_path, verbose=False):
+        """
+
+        :param xml_path:
+        :param verbose:
+        :return:
+        """
+
+        df = self.xml_to_dataframe(xml_path)
+        self.write_registers_in_dataframe(df, verbose)
 
     def read_register_fields_in_xml_file(self,
                                          xml_file_path,
