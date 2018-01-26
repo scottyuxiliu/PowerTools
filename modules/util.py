@@ -194,7 +194,7 @@ class Util:
                                                                       number_of_read_attempts)
         smn_axi_buffer_access_object.read()
         if verbose is True:
-            print ("writing {0} to {1}...".format(hex(smn_data).rstrip('L'), smn_address)),
+            print ("writing {0} to SMN buffer address {1}...".format(hex(smn_data).rstrip('L'), hex(smn_address).rstrip('L'))),
         smn_axi_buffer_access_object.dword(0, smn_data)
         smn_axi_buffer_access_object.write()
         if verbose is True:  # read back when verbose is true
@@ -268,7 +268,7 @@ class Util:
         mp1_buffer_access_object.read()
 
         if verbose is True:
-            print ("writing {0} to {1}...".format(hex(mp1_data).rstrip('L'), hex(mp1_address).rstrip('L'))),
+            print ("writing {0} to MP1 buffer address {1}...".format(hex(mp1_data).rstrip('L'), hex(mp1_address).rstrip('L'))),
         mp1_buffer_access_object.dword(0, mp1_data)
         mp1_buffer_access_object.write()
         if verbose is True:  # read back when verbose is true
@@ -523,6 +523,8 @@ class Util:
             else:
                 raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
+            time.sleep(log_period)
+
         return pandas.DataFrame(regs_dictlist)
 
     def read_registers_in_xml_file(self,
@@ -575,62 +577,6 @@ class Util:
         else:
             df.to_csv(results_csv_path)
             return df
-
-    def read_all_in_dictlist(self,
-                             dictlist,
-                             return_type='hex',
-                             verbose=False,
-                             log_duration=1,
-                             log_period=1,
-                             status_check=False):
-        """
-
-        :param dictlist:
-        :param return_type:
-        :param verbose:
-        :param log_duration:
-        :param log_period:
-        :param status_check:
-        :return:
-        """
-        repeat = log_duration / log_period
-
-        if repeat == 1:
-            for dict in dictlist:
-                if dict['access_method'] == 'reg_by_path':
-                    dict['value'] = self.read_register_field(dict['access_address'],
-                                                             dict['bitfield'],
-                                                             return_type,
-                                                             verbose,
-                                                             log_duration,
-                                                             log_period)
-                elif dict['access_method'] == 'smn_buffer':
-                    dict['value'] = self.read_smn_buffer(int(dict['access_address'], 16), 'hex', True)
-                elif dict['access_method'] == 'mp1_buffer':
-                    dict['value'] = self.read_mp1_buffer(int(dict['access_address'], 16), 'hex', True)
-                else:
-                    raise TypeError('unrecognized access_method {0}. access_method can only be reg_by_path, smn_buffer or mp1_buffer'.format(dict['access_method']))
-            return pandas.DataFrame(dictlist)
-        else:
-            for i in range(repeat):
-                for dict in dictlist:
-                    if dict['access_method'] == 'reg_by_path':
-                        dict['value'+str(i)] = self.read_register_field(dict['address'],
-                                                                 dict['bitfield'],
-                                                                 return_type,
-                                                                 verbose,
-                                                                 1,
-                                                                 1)
-                    elif dict['access_method'] == 'smn_buffer':
-                        dict['value'+str(i)] = self.read_smn_buffer(int(dict['address'], 16), 'hex', True)
-                    elif dict['access_method'] == 'mp1_buffer':
-                        dict['value'+str(i)] = self.read_mp1_buffer(int(dict['address'], 16), 'hex', True)
-                    else:
-                        raise TypeError('unrecognized access_method {0}. access_method can only be reg_by_path, smn_buffer or mp1_buffer'.format(dict['access_method']))
-
-                time.sleep(log_period)
-
-            return pandas.DataFrame(dictlist)
 
     def write_register(self, register_path, register_value, verbose=False):
         """
@@ -712,6 +658,101 @@ class Util:
         df = self.xml_to_dataframe(xml_path)
         self.write_register_fields_in_dataframe(df, verbose)
 
+    def read_all_in_xml_file(self,
+                             xml_file_path,
+                             results_csv_path=None,
+                             return_type='hex',
+                             verbose=False,
+                             log_duration=1,
+                             log_period=1,
+                             status_check=False):
+        """
+
+        :param xml_file_path:
+        :param results_csv_path:
+        :param return_type:
+        :param verbose:
+        :param log_duration: number of seconds to log
+        :param log_period: number of seconds to wait between two reads
+        :param status_check:
+        :return: self.read_register_fields_in_dataframe(df, return_type, verbose, log_duration, log_period, status_check)
+        """
+
+        dict_list = self.xml_to_dictlist(xml_file_path)
+        df = self.read_all_in_dictlist(dict_list, return_type, verbose, log_duration, log_period, status_check)
+        if results_csv_path is None:
+            return df
+        else:
+            df.to_csv(results_csv_path)
+            return df
+
+    def write_all_in_xml_file(self, xml_path, verbose=False):
+        """
+
+        :param xml_path:
+        :param verbose:
+        :return:
+        """
+
+        dict_list = self.xml_to_dictlist(xml_path)
+        self.write_all_in_dictlist(dict_list, verbose)
+
+    def read_all_in_dictlist(self,
+                             dictlist,
+                             return_type='hex',
+                             verbose=False,
+                             log_duration=1,
+                             log_period=1,
+                             status_check=False):
+        """
+
+        :param dictlist:
+        :param return_type:
+        :param verbose:
+        :param log_duration:
+        :param log_period:
+        :param status_check:
+        :return:
+        """
+        repeat = log_duration / log_period
+
+        if repeat == 1:
+            for dict_item in dictlist:
+                if dict_item['access_method'] == 'reg_by_path':
+                    dict_item['value'] = self.read_register_field(dict_item['access_address'],
+                                                                  dict_item['bitfield'],
+                                                                  return_type,
+                                                                  verbose,
+                                                                  log_duration,
+                                                                  log_period)
+                elif dict_item['access_method'] == 'smn_buffer':
+                    dict_item['value'] = self.read_smn_buffer(int(dict_item['access_address'], 16), 'hex', True)
+                elif dict_item['access_method'] == 'mp1_buffer':
+                    dict_item['value'] = self.read_mp1_buffer(int(dict_item['access_address'], 16), 'hex', True)
+                else:
+                    raise TypeError('unrecognized access_method {0}. access_method can only be reg_by_path, smn_buffer or mp1_buffer'.format(dict_item['access_method']))
+            return pandas.DataFrame(dictlist)
+        else:
+            for i in range(repeat):
+                for dict_item in dictlist:
+                    if dict_item['access_method'] == 'reg_by_path':
+                        dict_item['value'+str(i)] = self.read_register_field(dict_item['access_address'],
+                                                                             dict_item['bitfield'],
+                                                                             return_type,
+                                                                             verbose,
+                                                                             1,
+                                                                             1)
+                    elif dict_item['access_method'] == 'smn_buffer':
+                        dict_item['value'+str(i)] = self.read_smn_buffer(int(dict_item['access_address'], 16), 'hex', True)
+                    elif dict_item['access_method'] == 'mp1_buffer':
+                        dict_item['value'+str(i)] = self.read_mp1_buffer(int(dict_item['access_address'], 16), 'hex', True)
+                    else:
+                        raise TypeError('unrecognized access_method {0}. access_method can only be reg_by_path, smn_buffer or mp1_buffer'.format(dict_item['access_method']))
+
+                time.sleep(log_period)
+
+            return pandas.DataFrame(dictlist)
+
     def write_all_in_dictlist(self, dictlist, verbose=False):
         """
 
@@ -743,11 +784,12 @@ class Util:
         xml_file = etree.parse(xml_path)
         xml_items = []
         for xml_item in xml_file.findall('reg'):
-            xml_items.append({'bitfield': xml_item.get('bitfield'),
-                              'recommend': hex(int(xml_item.get('recommend'), 16)).rstrip('L'),  # string to int, and to hex
-                              'access_method': xml_item.get('access_method'),
-                              'access_address': xml_item.get('access_address'),
-                              'desc': xml_item.get('desc')})
+            if xml_item.attrib['recommend'] is not None and xml_item.attrib['access_method'] is not None and xml_item.attrib['address'] is not None:
+                xml_items.append({'bitfield': xml_item.get('bitfield'),
+                                  'recommend': hex(int(xml_item.get('recommend'), 16)).rstrip('L'),  # string to int, and to hex
+                                  'access_method': xml_item.get('access_method'),
+                                  'access_address': xml_item.get('access_address'),
+                                  'desc': xml_item.get('desc')})
         return xml_items
 
     @staticmethod

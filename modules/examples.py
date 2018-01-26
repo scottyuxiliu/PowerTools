@@ -48,15 +48,14 @@ def read_fmt_bit_depth_control():
 # Example 2: read multiple registers from xml file and dump results into csv file
 # read_fmt_bit_depth_control()
 
-
 # Example 3: Sysexam
-# ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/PRPinnacleRidgeAM4/sysexam_registers_pram4_umc.xml",
-#                                     "C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/Idle/SysExam/pram4_turpandap_w10rs3_wmp8124n_17.12.2adrenalinedition_stack1.0.0_umc_sysexam_0.csv",
-#                                     'hex',
-#                                     True,
-#                                     50,
-#                                     10,
-#                                     True)
+ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/PRPinnacleRidgeAM4/sysexam_registers_pram4_umc.xml",
+                                    "C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/Idle/SysExam/pram4_turpandap_w10rs3_wmp8124n_17.12.2adrenalinedition_stack1.0.0_umc_sysexam_0.csv",
+                                    'hex',
+                                    True,
+                                    15,
+                                    3,
+                                    True)
 
 # Example 4: Enter/Exit PDM mode
 # ut.enter_pdm_mode(True)
@@ -81,6 +80,10 @@ def read_fmt_bit_depth_control():
 # ut.read_all_in_dictlist(dictlist, 'hex', True, 100, 10, False).to_csv("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/test/results.csv")
 
 # Example 9: Week of 2018.01.22 Optimized Settings
-ut.write_register_fields_in_xml_file("C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/optimized_settings_weekof_2018.01.22.xml",
-                                     True)
-# ut.write_register_field("PPR::UMC::CH::socket0::die0::umc0::SpazCtrl_ch0", "AggrPwrDownEn", 1, True)
+# ut.write_all_in_xml_file("C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/2018.01.22/optimized_settings_weekof_2018.01.22.xml", True)
+# ut.read_all_in_xml_file("C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/2018.01.22/optimized_settings_weekof_2018.01.22.xml",
+#                         "C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/2018.01.22/optimized_settings_weekof_2018.01.22_results.csv",
+#                         'hex',
+#                         True,
+#                         50,
+#                         10)
