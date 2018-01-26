@@ -12,7 +12,7 @@ from stutter_efficiency import StutterEfficiency
 
 connect_type = 'yaap'
 
-ip = '10.1.37.106' # jason system
+ip = '10.1.37.106'  # jason system
 username = 'SMU'
 password = 'SMU'
 
@@ -49,13 +49,13 @@ def read_fmt_bit_depth_control():
 # read_fmt_bit_depth_control()
 
 # Example 3: Sysexam
-ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
-                                    "C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/SystemPowerFeatures/MandolinDAP/Idle/SysExam/rvfp5_b0dvt_mandolindap_w10rs3_tmd1102a_17.40rc33_default_part4_sysexam_0.csv",
-                                    'hex',
-                                    True,
-                                    25,
-                                    5,
-                                    True)
+# ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
+#                                     "C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/SystemPowerFeatures/MandolinDAP/Idle/SysExam/rvfp5_b0dvt_mandolindap_w10rs3_tmd1102a_17.40rc33_default_part4_sysexam_0.csv",
+#                                     'hex',
+#                                     True,
+#                                     25,
+#                                     5,
+#                                     True)
 
 # Example 4: Enter/Exit PDM mode
 # ut.enter_pdm_mode(True)
@@ -80,10 +80,10 @@ ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/PycharmProject
 # ut.read_all_in_dictlist(dictlist, 'hex', True, 100, 10, False).to_csv("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/test/results.csv")
 
 # Example 9: Week of 2018.01.22 Optimized Settings
-# ut.write_all_in_xml_file("C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/2018.01.22/optimized_settings_weekof_2018.01.22.xml", True)
-# ut.read_all_in_xml_file("C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/2018.01.22/optimized_settings_weekof_2018.01.22.xml",
-#                         "C:/Users/powerhost/Documents/AMD/Projects/PRPinnacleRidgeAM4/Data/SystemPwrFeatures/WeeklyUpdate/2018.01.22/optimized_settings_weekof_2018.01.22_results.csv",
-#                         'hex',
-#                         True,
-#                         50,
-#                         10)
+ut.write_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml", True)
+ut.read_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml",
+                        "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.csv",
+                        'hex',
+                        True,
+                        15,
+                        3)

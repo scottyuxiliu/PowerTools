@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<verify>
+<header comment="UMC - UMC0 Power Features" />
+	<reg type="smn" address="0x5012c" bitfield="" recommend="0x21100460" access_method="smn_buffer" access_address="0x5012c" desc="UMC Channel Aggressive Power Down (pre-charge)" />
+<format type="break" />
+<header comment="UMC - UMC1 Power Features" />
+	<reg type="smn" address="0x15012c" bitfield="" recommend="0x21100460" access_method="smn_buffer" access_address="0x15012c" desc="UMC channel Aggressive Power Down (pre-charge)" />
+<format type="break" />
+</verify>

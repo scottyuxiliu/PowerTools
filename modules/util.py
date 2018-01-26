@@ -785,7 +785,7 @@ class Util:
         xml_file = etree.parse(xml_path)
         xml_items = []
         for xml_item in xml_file.findall('reg'):
-            if xml_item.attrib['recommend'] is not None and xml_item.attrib['access_method'] is not None and xml_item.attrib['address'] is not None:
+            if xml_item.attrib['recommend'] is not None and xml_item.attrib['access_method'] is not None and xml_item.attrib['access_address'] is not None:
                 xml_items.append({'bitfield': xml_item.get('bitfield'),
                                   'recommend': hex(int(xml_item.get('recommend'), 16)).rstrip('L'),  # string to int, and to hex
                                   'access_method': xml_item.get('access_method'),
@@ -804,13 +804,14 @@ class Util:
         xml_file = etree.parse(xml_path)
         xml_items = []
         for xml_item in xml_file.findall('reg'):
-            if xml_item.attrib['recommend'] is not None and xml_item.attrib['access_method'] is not None and xml_item.attrib['address'] is not None:
-                xml_items.append({'bitfield': xml_item.get('bitfield'),
-                                  'recommend': hex(int(xml_item.get('recommend'), 16)).rstrip('L'),
-                                  # string to int, and to hex
-                                  'access_method': xml_item.get('access_method'),
-                                  'access_address': xml_item.get('access_address'),
-                                  'desc': xml_item.get('desc')})
+            if 'recommend' in xml_item.attrib and 'access_method' in xml_item.attrib and 'access_address' in xml_item.attrib:
+                if xml_item.attrib['recommend'] is not None and xml_item.attrib['access_method'] is not None and xml_item.attrib['access_address'] is not None:
+                    xml_items.append({'bitfield': xml_item.get('bitfield'),
+                                      'recommend': hex(int(xml_item.get('recommend'), 16)).rstrip('L'),
+                                      # string to int, and to hex
+                                      'access_method': xml_item.get('access_method'),
+                                      'access_address': xml_item.get('access_address'),
+                                      'desc': xml_item.get('desc')})
 
         xml_regs_df = pandas.DataFrame(xml_items)  # dict list to dataframe
         return xml_regs_df
