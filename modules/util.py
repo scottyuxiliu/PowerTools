@@ -204,6 +204,47 @@ class Util:
             print("    value at address {0} is {1}".format(hex(smn_address).rstrip('L'),
                                                            hex(smn_data).rstrip('L')))
 
+    def read_mp0_buffer(self,
+                        mp0_address,
+                        return_type='hex',
+                        verbose=False,
+                        number_of_bytes_to_read=4,
+                        number_of_read_attempts=4):
+        """
+
+        :param mp0_address: MP1 address doesn't need to be in 0x format. It can be an integer.
+        :param return_type:
+        :param verbose:
+        :param number_of_bytes_to_read:
+        :param number_of_read_attempts:
+        :return:
+        """
+        mp0_buffer_access_object = Kysy.MPBuffer.create(self.platform,
+                                                        mp0_address,
+                                                        number_of_bytes_to_read,
+                                                        number_of_read_attempts,
+                                                        self.die_id,
+                                                        self.socket_id,
+                                                        Kysy.MP0)
+        mp0_buffer_access_object.read()
+
+        if return_type == 'hex':
+            if verbose is True:
+                print ("reading MP1 buffer address {0}...".format(hex(mp0_address).rstrip('L')))
+            value = hex(mp0_buffer_access_object.dword(0)).rstrip('L')
+            if verbose is True:
+                print("    value at address {0} is {1}".format(hex(mp0_address).rstrip('L'), value))
+        elif return_type == 'int':
+            if verbose is True:
+                print ("reading MP1 buffer address {0}...".format(hex(mp0_address).rstrip('L')))
+            value = mp0_buffer_access_object.dword(0)
+            if verbose is True:
+                print("    value at address {0} is {1}".format(hex(mp0_address).rstrip('L'), value))
+        else:
+            raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
+
+        return value
+
     def read_mp1_buffer(self,
                         mp1_address,
                         return_type='hex',
@@ -224,7 +265,8 @@ class Util:
                                                         number_of_bytes_to_read,
                                                         number_of_read_attempts,
                                                         self.die_id,
-                                                        self.socket_id)
+                                                        self.socket_id,
+                                                        Kysy.MP1)
         mp1_buffer_access_object.read()
 
         if return_type == 'hex':
@@ -243,6 +285,41 @@ class Util:
             raise TypeError('user passed in {0}, but return type can only be hex or int'.format(return_type))
 
         return value
+
+    def write_mp0_buffer(self,
+                         mp0_address,
+                         mp0_data,
+                         verbose=False,
+                         number_of_bytes_to_read=4,
+                         number_of_read_attempts=4):
+        """
+
+        :param mp0_address: SMN address doesn't need to be in 0x format. It should be an integer.
+        :param mp0_data:
+        :param verbose:
+        :param number_of_bytes_to_read:
+        :param number_of_read_attempts:
+        :return:
+        """
+        mp0_buffer_access_object = Kysy.MPBuffer.create(self.platform,
+                                                        mp0_address,
+                                                        number_of_bytes_to_read,
+                                                        number_of_read_attempts,
+                                                        self.die_id,
+                                                        self.socket_id,
+                                                        Kysy.MP0)
+        mp0_buffer_access_object.read()
+
+        if verbose is True:
+            print ("writing {0} to MP1 buffer address {1}...".format(hex(mp0_data).rstrip('L'), hex(mp0_address).rstrip('L'))),
+        mp0_buffer_access_object.dword(0, mp0_data)
+        mp0_buffer_access_object.write()
+        if verbose is True:  # read back when verbose is true
+            print ("done")
+            time.sleep(2)
+            mp0_buffer_access_object.read()
+            print("    value at address {0} is {1}".format(hex(mp0_address).rstrip('L'),
+                                                           hex(mp0_data).rstrip('L')))
 
     def write_mp1_buffer(self,
                          mp1_address,
@@ -264,7 +341,8 @@ class Util:
                                                         number_of_bytes_to_read,
                                                         number_of_read_attempts,
                                                         self.die_id,
-                                                        self.socket_id)
+                                                        self.socket_id,
+                                                        Kysy.MP1)
         mp1_buffer_access_object.read()
 
         if verbose is True:
