@@ -48,13 +48,13 @@ def read_fmt_bit_depth_control():
 # read_fmt_bit_depth_control()
 
 # Example 3: Sysexam
-# ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
-#                                     "C:/Users/powerhost/Documents/AMD/Projects/RVRavenRidgeFP5/SystemPowerFeatures/MandolinDAP/Idle/SysExam/rvfp5_b0dvt_mandolindap_w10rs3_tmd1102a_17.40rc33_default_part4_sysexam_0.csv",
-#                                     'hex',
-#                                     True,
-#                                     25,
-#                                     5,
-#                                     True)
+ut.read_register_fields_in_xml_file("C:/Users/powerhost/Documents/Microsoft VS Code Projects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rv.xml",
+                                    "C:/Users/powerhost/Documents/AMD/Projects/RV/Lenovo E485/Idle/SysExam Logs/rvfp5b10_b0dvt_lenovoe485_w10rs3_r0uet15w_1740rc3_default_idlesysexam_0.csv",
+                                    'hex',
+                                    True,
+                                    25,
+                                    5,
+                                    True)
 
 # Example 4: Enter/Exit PDM mode
 # ut.enter_pdm_mode(True)
@@ -80,9 +80,9 @@ def read_fmt_bit_depth_control():
 
 # Example 9: Week of 2018.01.22 Optimized Settings
 # ut.write_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml", True)
-ut.read_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml",
-                        "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.csv",
-                        'hex',
-                        True,
-                        9,
-                        3)
+# ut.read_all_in_xml_file("C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.xml",
+#                         "C:/Users/powerhost/Documents/PycharmProjects/PowerTools/static/sysexam/xml/RVRavenRidgeFP5/sysexam_registers_rvfp5_umc_write.csv",
+#                         'hex',
+#                         True,
+#                         9,
+#                         3)
