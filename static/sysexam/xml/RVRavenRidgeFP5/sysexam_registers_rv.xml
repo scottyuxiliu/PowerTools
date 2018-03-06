@@ -196,23 +196,23 @@
 	<reg type="smn" address="0x2dd6718" bitfield="DAT" recommend="0x20303" access_method="reg_by_path" access_address="PPR::FCH::I2C4::socket0::die0::RFMUX_Port1_Control8" desc="RFMUX shut down" />
 <format type="break" />
 <header comment="FCH - CLKGEN Power Features" />
-	<reg type="smn" address="0x2d01e4c" bitfield="PCIe_PHY_A_Refclk_Global_Dynamic_EnB" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::MiscClkCntl4" desc="CLKGEN buffer turn off" />
-	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A0_Refclk_Static_Disable" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off" />
-	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_SataMac_En" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off" />
-	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_Refclk_Dynamic_EnB" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off" />
+	<reg type="smn" address="0x2d01e4c" bitfield="PCIe_PHY_A_Refclk_Global_Dynamic_EnB" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::MiscClkCntl4" desc="CLKGEN buffer turn off. BIOS Controlled." />
+	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A0_Refclk_Static_Disable" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off. BIOS Controlled." />
+	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_SataMac_En" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off. BIOS Controlled." />
+	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_Refclk_Dynamic_EnB" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off. BIOS Controlled." />
 <format type="break" />
 <header comment="GFX Power Features" />
-	<reg type="smn" address="0x3b10c" bitfield="GFX_POWER_GATING_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_PG_CNTL" desc="Coarse Grain Power Gating (CGPG), 0 if in GFXOFF"/>
-	<reg type="smn" address="0x3b10c" bitfield="DYN_PER_CU_PG_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_PG_CNTL" desc="Load Balancing Per Watt (LBPW)"/>
-	<reg type="smn" address="0x3b124" bitfield="CGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_CGCG_CGLS_CTRL" desc="Coarse Grain Clock Gating (CGCG), 0 if in GFXOFF"/>
-	<reg type="smn" address="0x3b120" bitfield="GFXIP_CGCG_OVERRIDE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_CGTT_MGCG_OVERRIDE" />
-	<reg type="smn" address="0x3b120" bitfield="GFXIP_MGCG_OVERRIDE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_CGTT_MGCG_OVERRIDE" />
-	<reg type="smn" address="0x3b068" bitfield="MGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_MGCG_CTRL" desc="Medium Grain Clock Gating (MGCG), 0 if in GFXOFF"/>
-	<reg type="smn" address="0x3b064" bitfield="LOAD_BALANCE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_LB_CNTL" desc="Load Balancing" />
-	<reg type="smn" address="0x3b10f1c" bitfield="DATA" recommend="0x520000e" access_method="reg_by_path" access_address="PPR::MP::MP1CRU::socket0::die0::MP1_EXT_SCRATCH7" desc="GFXOFF" />
+	<reg type="smn" address="0x3b10c" bitfield="GFX_POWER_GATING_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_PG_CNTL" desc="Coarse Grain Power Gating (CGPG), 0 if in GFXOFF. . Driver Controlled."/>
+	<reg type="smn" address="0x3b10c" bitfield="DYN_PER_CU_PG_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_PG_CNTL" desc="Load Balancing Per Watt (LBPW). Driver Controlled."/>
+	<reg type="smn" address="0x3b124" bitfield="CGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_CGCG_CGLS_CTRL" desc="Coarse Grain Clock Gating (CGCG), 0 if in GFXOFF. Driver Controlled."/>
+	<reg type="smn" address="0x3b120" bitfield="GFXIP_CGCG_OVERRIDE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_CGTT_MGCG_OVERRIDE" desc="" />
+	<reg type="smn" address="0x3b120" bitfield="GFXIP_MGCG_OVERRIDE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_CGTT_MGCG_OVERRIDE" desc="" />
+	<reg type="smn" address="0x3b068" bitfield="MGCG_EN" recommend="0x1" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_MGCG_CTRL" desc="Medium Grain Clock Gating (MGCG), 0 if in GFXOFF. Driver Controlled."/>
+	<reg type="smn" address="0x3b064" bitfield="LOAD_BALANCE_ENABLE" recommend="0x0" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_LB_CNTL" desc="Load Balancing. Driver Controlled." />
+	<reg type="smn" address="0x3b10f1c" bitfield="DATA" recommend="0x520000e" access_method="reg_by_path" access_address="PPR::MP::MP1CRU::socket0::die0::MP1_EXT_SCRATCH7" desc="GFXOFF. SMU Firmware Controlled." />
 <format type="break" />
 <header comment="L3 Power Features" />
-	<reg type="smn" address="0x18090000" bitfield="MeshGateLvl" recommend="0x2" access_method="reg_by_path" access_address="PPR::L3::L3CRB::socket0::die0::lthree0::ChL3Cfg0" desc="L3 Mesh Clock Gating. 0: Off, 1: Request, 2: Memory, 3: Dataflow" />
+	<reg type="smn" address="0x18090000" bitfield="MeshGateLvl" recommend="0x2" access_method="reg_by_path" access_address="PPR::L3::L3CRB::socket0::die0::lthree0::ChL3Cfg0" desc="L3 Mesh Clock Gating. 0: Off, 1: Request, 2: Memory, 3: Dataflow. SMU Firmware Controlled." />
 <format type="break" />
 <header comment="NBIO - IOHC Power Features" />
 	<reg type="smn" address="0x15b00000" bitfield="SOFT_OVERRIDE_CLK0" recommend="0x0" access_method="reg_by_path" access_address="PPR::IOAGR::socket0::die0::IOAGR_GLUE_CG_LCLK_CTRL_0" desc="IOHC clock gating" />
