@@ -191,15 +191,15 @@
 	<reg type="smn" address="0x2d02e75" bitfield="D3Cold" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::AOAC::socket0::die0::link58::DevD3State" desc="D3Cold status of UART3" />
 	<reg type="smn" address="0x2d02e79" bitfield="D3Cold" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::AOAC::socket0::die0::link60::DevD3State" desc="D3Cold status of eMMC" />
 <format type="break" />
-<header comment="FCH - I2C4 Power Features" />
-	<reg type="smn" address="0x2dd6708" bitfield="DAT" recommend="0x20303" access_method="reg_by_path" access_address="PPR::FCH::I2C4::socket0::die0::RFMUX_Port0_Control8" desc="RFMUX shut down" />
-	<reg type="smn" address="0x2dd6718" bitfield="DAT" recommend="0x20303" access_method="reg_by_path" access_address="PPR::FCH::I2C4::socket0::die0::RFMUX_Port1_Control8" desc="RFMUX shut down" />
-<format type="break" />
 <header comment="FCH - CLKGEN Power Features" />
 	<reg type="smn" address="0x2d01e4c" bitfield="PCIe_PHY_A_Refclk_Global_Dynamic_EnB" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::MiscClkCntl4" desc="CLKGEN buffer turn off. BIOS Controlled." />
 	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A0_Refclk_Static_Disable" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off. BIOS Controlled." />
 	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_SataMac_En" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off. BIOS Controlled." />
 	<reg type="smn" address="0x2d01eb0" bitfield="CLKGEN_PHY_A1_Refclk_Dynamic_EnB" recommend="0x1" access_method="reg_by_path" access_address="PPR::FCH::MISC::socket0::die0::CGPLLCntrlReg5" desc="CLKGEN buffer turn off. BIOS Controlled." />
+<format type="break" />
+<header comment="FCH - I2C4 Power Features" />
+	<reg type="smn" address="0x2dd6708" bitfield="DAT" recommend="0x20303" access_method="reg_by_path" access_address="PPR::FCH::I2C4::socket0::die0::RFMUX_Port0_Control8" desc="RFMUX shut down" />
+	<reg type="smn" address="0x2dd6718" bitfield="DAT" recommend="0x20303" access_method="reg_by_path" access_address="PPR::FCH::I2C4::socket0::die0::RFMUX_Port1_Control8" desc="RFMUX shut down" />
 <format type="break" />
 <header comment="GFX Power Features" />
 	<reg type="smn" address="0x3b10c" bitfield="GFX_POWER_GATING_ENABLE" recommend="0x1" access_method="reg_by_path" access_address="PPR::GC::RLC::socket0::die0::RLC_PG_CNTL" desc="Coarse Grain Power Gating (CGPG), 0 if in GFXOFF. . Driver Controlled."/>
